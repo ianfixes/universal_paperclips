@@ -606,7 +606,7 @@ table.table2 td:nth-child(1)
   font-weight: bold;
 }
 
-table.table2 td:nth-child(n>1)
+table.table2 td:nth-child(n+1)
 {
   table-layout: fixed;
 }
