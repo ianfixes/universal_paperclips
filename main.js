@@ -3223,7 +3223,7 @@ function raiseProbeNav(amount) {
 
 function lowerProbeNav(amount) {
   if (isNaN(amount)) { amount = 1; }
-  var maxDelta = Math.min(probeSpeed, amount);
+  var maxDelta = Math.min(probeNav, amount);
 
   probeNav -= maxDelta;
   document.getElementById('probeNavDisplay').innerHTML = probeNav;
@@ -3239,7 +3239,7 @@ function raiseProbeHaz(amount) {
 
 function lowerProbeHaz(amount) {
   if (isNaN(amount)) { amount = 1; }
-  var maxDelta = Math.min(probeSpeed, amount);
+  var maxDelta = Math.min(probeHaz, amount);
 
   probeHaz -= maxDelta;
   document.getElementById('probeHazDisplay').innerHTML = probeHaz;
@@ -3255,7 +3255,7 @@ function raiseProbeRep(amount) {
 
 function lowerProbeRep(amount) {
   if (isNaN(amount)) { amount = 1; }
-  var maxDelta = Math.min(probeSpeed, amount);
+  var maxDelta = Math.min(probeRep, amount);
 
   probeRep -= maxDelta;
   document.getElementById('probeRepDisplay').innerHTML = probeRep;
@@ -3271,7 +3271,7 @@ function raiseProbeFac(amount) {
 
 function lowerProbeFac(amount) {
   if (isNaN(amount)) { amount = 1; }
-  var maxDelta = Math.min(probeSpeed, amount);
+  var maxDelta = Math.min(probeFac, amount);
 
   probeFac -= maxDelta;
   document.getElementById('probeFacDisplay').innerHTML = probeFac;
@@ -3287,7 +3287,7 @@ function raiseProbeHarv(amount) {
 
 function lowerProbeHarv(amount) {
   if (isNaN(amount)) { amount = 1; }
-  var maxDelta = Math.min(probeSpeed, amount);
+  var maxDelta = Math.min(probeHarv, amount);
 
   probeHarv -= maxDelta;
   document.getElementById('probeHarvDisplay').innerHTML = probeHarv;
@@ -3303,7 +3303,7 @@ function raiseProbeWire(amount) {
 
 function lowerProbeWire(amount) {
   if (isNaN(amount)) { amount = 1; }
-  var maxDelta = Math.min(probeSpeed, amount);
+  var maxDelta = Math.min(probeWire, amount);
 
   probeWire -= maxDelta;
   document.getElementById('probeWireDisplay').innerHTML = probeWire;
@@ -3319,7 +3319,7 @@ function raiseProbeCombat(amount) {
 
 function lowerProbeCombat(amount) {
   if (isNaN(amount)) { amount = 1; }
-  var maxDelta = Math.min(probeSpeed, amount);
+  var maxDelta = Math.min(probeCount, amount);
 
   probeCombat -= maxDelta;
   document.getElementById('probeCombatDisplay').innerHTML = probeCombat;
