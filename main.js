@@ -1,9 +1,6 @@
 // Threnody ---------------------------------------------------------
 function playThrenody() {
-
-  var x = document.getElementById("threnody1");
-  x.play();
-
+  document.getElementById("threnody1").play();
 }
 
 
@@ -37,39 +34,20 @@ function toggleWireBuyer() {
 }
 
 function buyWire(times) {
-  if (isNaN(times)) {
-    if (funds >= wireCost) {
-      wirePriceTimer = 0;
-      wire = wire + wireSupply;
-      funds = funds - wireCost;
-      wirePurchase = wirePurchase + 1;
-      wireBasePrice = wireBasePrice + 0.05;
-      document.getElementById('wire').innerHTML = Math.floor(wire).toLocaleString();
-      document.getElementById('funds').innerHTML = funds.toLocaleString(undefined, {
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2
-      });
-    }
-  } else {
-    // try to buy a specific amount
-    wirePriceTimer = 0;
-    var counter = 0;
-    while (funds >= wireCost && counter < times) {
-      wire += wireSupply;
-      funds -= wireCost;
-      wirePurchase++;
-      wireBasePrice += 0.05;
-      counter++;
-    }
+  if (isNaN(times)) { times = 1; }
+  
+  wirePriceTimer = 0;
+  var maxBuys = Math.min(Math.floor(funds / wireCost), times);
+  wire += wireSupply * maxBuys;
+  funds -= wireCost * maxBuys;
+  wirePurchase += maxBuys;
+  wireBasePrice += 0.05 * maxBuys;
 
-    document.getElementById('wire').innerHTML = Math.floor(wire).toLocaleString();
-      document.getElementById('funds').innerHTML = funds.toLocaleString(undefined, {
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2
-      });
-
-    console.log("Force bought wire " + counter + " time(s).");
-  }
+  document.getElementById('wire').innerHTML = Math.floor(wire).toLocaleString();
+  document.getElementById('funds').innerHTML = funds.toLocaleString(undefined, {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2
+  });
 }
 
 // QCHIPS -----------------------------------------------------------
