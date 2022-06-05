@@ -782,7 +782,7 @@ p.hypnoDrone
 {
   body
   {
-    background-color: black;
+    background-color: #111;
     color: #ccc;
   }
 
@@ -803,7 +803,7 @@ p.hypnoDrone
 
   .projectButton:disabled
   {
-    color: #555;
+    color: #444;
   }
 
   .qChip
@@ -834,6 +834,15 @@ p.hypnoDrone
   table.table2 tbody td[id].highlighted
   {
     background-color: #333;
+  }
+
+  .projectButton
+  {
+    background-color: #999;
+  }
+
+  .projectButton:hover {
+    background-color: #bbb;
   }
 
   .button2

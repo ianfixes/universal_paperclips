@@ -2501,6 +2501,12 @@ function lowerPrice() {
   }
 }
 
+function setPrice(price) {
+  margin = Math.round(price*100) / 100;
+  document.getElementById("demand").innerHTML = demand.toFixed(2);
+  document.getElementById("margin").innerHTML = margin.toFixed(2);
+}
+
 function updateStats() {
 
   if (wire == 1) {
@@ -2664,9 +2670,13 @@ function resetPrestige() {
 
 }
 
-function cheatPrestigeU() {
+function cheatPrestigeU(amount) {
 
-  prestigeU++;
+  if (isNaN(amount)) {
+    prestigeU++;
+  } else {
+    prestigeU = amount;
+  }
   var savePrestige = {
     prestigeU: prestigeU,
     prestigeS: prestigeS,
@@ -2675,9 +2685,13 @@ function cheatPrestigeU() {
 
 }
 
-function cheatPrestigeS() {
+function cheatPrestigeS(amount) {
 
-  prestigeS++;
+  if (isNaN(amount)) {
+    prestigeS++;
+  } else {
+    prestigeS = amount;
+  }
   var savePrestige = {
     prestigeU: prestigeU,
     prestigeS: prestigeS,
@@ -2690,36 +2704,61 @@ function setB() {
   battleNumbers[1] = 7;
 }
 
-function cheatClips() {
-  clips = clips + 100000000;
-  unusedClips = unusedClips + 100000000;
+function cheatClips(amount) {
+  if (isNaN(amount)) {
+    clips = clips + 100000000;
+    unusedClips = unusedClips + 100000000;
+  } else {
+    clips = amount;
+    unusedClips = amount;
+  }
   displayMessage("you just cheated");
 }
 
-function cheatMoney() {
-  funds = funds + 10000000;
+function cheatMoney(amount) {
+  if (isNaN(amount)) {
+    funds = funds + 10000000;
+  } else {
+    funds = amount;
+  }
   document.getElementById("funds").innerHTML = funds.toFixed(2);
   displayMessage("LIZA just cheated");
 }
 
-function cheatTrust() {
-  trust = trust + 1;
+function cheatTrust(amount) {
+  if (isNaN(amount)) {
+    trust = trust + 1;
+  } else {
+    trust = amount;
+  }
   displayMessage("Hilary is nice. Also, Liza just cheated");
 }
 
-function cheatOps() {
-  standardOps = standardOps + 10000;
+function cheatOps(amount) {
+  if (isNaN(amount)) {
+    standardOps = standardOps + 10000;
+  } else {
+    standardOps = amount;
+  }
   displayMessage("you just cheated, Liza");
 }
 
-function cheatCreat() {
+function cheatCreat(amount) {
   creativityOn = 1;
-  creativity = creativity + 1000;
+  if (isNaN(amount)) {
+    creativity = creativity + 1000;
+  } else {
+    creativity = amount;
+  }
   displayMessage("Liza just cheated. Very creative!");
 }
 
-function cheatYomi() {
-  yomi = yomi + 1000000;
+function cheatYomi(amount) {
+  if (isNaN(amount)) {
+    yomi = yomi + 1000000;
+  } else {
+    yomi = amount;
+  }
   document.getElementById("yomiDisplay").innerHTML = yomi.toLocaleString();
   displayMessage("you just cheated");
 }
