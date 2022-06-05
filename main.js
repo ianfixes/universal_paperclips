@@ -1769,14 +1769,8 @@ function makeClipper(amount) {
     if (funds >= clippperCost) {
       clipmakerLevel = clipmakerLevel + 1;
       funds = funds - clipperCost;
-      document.getElementById('clipmakerLevel2').innerHTML = clipmakerLevel;
+      clipperCost = (Math.pow(1.1, clipmakerLevel) + 5);
     }
-
-    clipperCost = (Math.pow(1.1, clipmakerLevel) + 5);
-    document.getElementById('clipperCost').innerHTML = clipperCost.toLocaleString(undefined, {
-      minimumFractionDigits: 2,
-      maximumFractionDigits: 2
-    });
   } else {
     var counter = 0;
     while (funds >= clippperCost && counter < amount) {
@@ -1786,28 +1780,40 @@ function makeClipper(amount) {
 
       counter++;
     }
-
-    document.getElementById('clipmakerLevel2').innerHTML = clipmakerLevel;
-    document.getElementById('clipperCost').innerHTML = clipperCost.toLocaleString(undefined, {
-      minimumFractionDigits: 2,
-      maximumFractionDigits: 2
-    });
   }
 
+  document.getElementById('clipmakerLevel2').innerHTML = clipmakerLevel;
+  
+  document.getElementById('clipperCost').innerHTML = clipperCost.toLocaleString(undefined, {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2
+  });
 }
 
-function makeMegaClipper() {
-  if (funds >= megaClipperCost) {
-    megaClipperLevel = megaClipperLevel + 1;
-    funds = funds - megaClipperCost;
-    document.getElementById('megaClipperLevel').innerHTML = megaClipperLevel;
-    document.getElementById('funds').innerHTML = funds.toLocaleString(undefined, {
-      minimumFractionDigits: 2,
-      maximumFractionDigits: 2
-    });
-  }
+function makeMegaClipper(amount) {
+  if (isNaN(amount)) {
+    if (funds >= megaClipperCost) {
+      megaClipperLevel = megaClipperLevel + 1;
+      funds = funds - megaClipperCost;
+      megaClipperCost = (Math.pow(1.07, megaClipperLevel) * 1000);
+    }
+  } else {
+    var counter = 0;
+    while (funds >= megaClipperCost && counter < amount) {
+      megaClipperLevel++;
+      funds -= megaClipperCost;
+      megaClipperCost = (Math.pow(1.07, megaClipperLevel) * 1000);
 
-  megaClipperCost = (Math.pow(1.07, megaClipperLevel) * 1000);
+      counter++;
+    }
+  }
+  document.getElementById('megaClipperLevel').innerHTML = megaClipperLevel;
+  document.getElementById('funds').innerHTML = funds.toLocaleString(undefined, {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2
+  });
+
+  
   document.getElementById('megaClipperCost').innerHTML = megaClipperCost.toLocaleString(undefined, {
     minimumFractionDigits: 2,
     maximumFractionDigits: 2
