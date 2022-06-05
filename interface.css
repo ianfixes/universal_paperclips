@@ -1,3 +1,7 @@
+body {
+  margin: 8px;
+}
+
 #btnMakeProbe
 {
   margin-bottom: 2px;
@@ -539,17 +543,6 @@ canvas
   vertical-align: bottom;
 }
 
-hr
-{
-  display: block;
-  margin-top: .05em;
-  margin-bottom: 0.2em;
-  margin-left: auto;
-  margin-right: auto;
-  border-style: inset;
-  border-width: 1px;
-}
-
 hr.short
 {
   width: 225px;
@@ -780,7 +773,7 @@ p.hypnoDrone
 
 @media (prefers-color-scheme: dark)
 {
-  body
+  body, html
   {
     background-color: #111;
     color: #ccc;
