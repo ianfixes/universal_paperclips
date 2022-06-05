@@ -1,74 +1,84 @@
-#btnMakeProbe {
+#btnMakeProbe
+{
   margin-bottom: 2px;
 }
 
-#btnAddProc {
+#btnAddProc
+{
   width: 70px;
   margin-bottom: 1px;
 }
 
-#btnAddMem {
+#btnAddMem
+{
   width: 70px;
 }
 
-#btnEntertainSwarm {
+#btnEntertainSwarm
+{
   margin-top: 4px;
   margin-bottom: 4px;
 }
 
-#btnSynchSwarm {
+#btnSynchSwarm
+{
   margin-top: 4px;
   margin-bottom: 4px;
 }
 
-
-#qCompDisplay {
+#qCompDisplay
+{
   margin-left: 3px;
-  
 }
 
-#swarmSliderDiv {
+#swarmSliderDiv
+{
   position: relative;
   display: inline-block;
-  margin-bottom: 10px;  
+  margin-bottom: 10px;
 }
 
-#sliderLabelWork {
+#sliderLabelWork
+{
   position: relative;
   display: inline-block;
 }
 
-#swarmSlider {
+#swarmSlider
+{
   position: absolute;
   display: inline-block;
   width: 180px;
   top: 0px;
   margin-left: 2px;
   margin-right: 4px;
-
 }
 
-#sliderLabelThink {
+#sliderLabelThink
+{
   position: relative;
   display: inline-block;
   left: 190px;
 }
 
-.slider {
+.slider
+{
   width: 100%;
-  
 }
 
-h2 {
+h2
+{
   line-height: 70%;
 }
 
-.toolTip {
+.toolTip
+{
   position: relative;
   display: inline-block;
 }
 
-.toolTip .toolTipText {
+.toolTip .toolTipText
+{
   visibility: hidden;
   width: 160px;
   background-color: #c8c8c8;
@@ -76,32 +86,32 @@ h2 {
   text-align: center;
   padding: 5px 0;
   border-radius: 3px;
-  
   position: absolute;
   z-index: 1;
   bottom: 75%;
   left: 50%;
   margin-left: -19px;
-  
   opacity: 0;
   transition: opacity 1s;
 }
 
-.toolTip:hover .toolTipText {
+.toolTip:hover .toolTipText
+{
   visibility: visible;
   opacity: 1;
 }
 
-.toolTip2 {
+.toolTip2
+{
   margin-left: 2px;
   position: relative;
   display: inline-block;
   height: 20px;
   margin-top: 5px;
-
 }
 
-.toolTip2 .toolTipText2 {
+.toolTip2 .toolTipText2
+{
   visibility: hidden;
   width: 200px;
   background-color: #c8c8c8;
@@ -109,32 +119,32 @@ h2 {
   text-align: center;
   padding: 5px 0;
   border-radius: 3px;
-  
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 11px;
-  
   position: absolute;
   z-index: 1;
   bottom: 125%;
   left: 50%;
   margin-left: -15px;
-  
   opacity: 0;
   transition: opacity 1s;
 }
 
-.toolTip2:hover .toolTipText2 {
+.toolTip2:hover .toolTipText2
+{
   visibility: visible;
   opacity: 1;
 }
 
-.toolTip3 {
+.toolTip3
+{
   position: relative;
   display: inline-block;
   margin-bottom: 5px;
 }
 
-.toolTip3 .toolTipText3 {
+.toolTip3 .toolTipText3
+{
   visibility: hidden;
   width: 180px;
   background-color: #c8c8c8;
@@ -142,127 +152,144 @@ h2 {
   text-align: center;
   padding: 5px 0;
   border-radius: 3px;
-  
   position: absolute;
   z-index: 1;
   bottom: 27px;
   left: 80px;
   margin-left: 0px;
-  
   opacity: 0;
   transition: opacity 1s;
 }
 
-.toolTip3:hover .toolTipText3 {
+.toolTip3:hover .toolTipText3
+{
   visibility: visible;
   opacity: 1;
 }
 
-
-#cover {
-  position:fixed;
+#cover
+{
+  position: fixed;
   background-color: white;
-  top:0;
-  left:0;
-  height:100%;
-  width:100%;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
   z-index: 10;
 }
 
-#tournamentStuff {
+#tournamentStuff
+{
   height: 58px;
-
 }
 
-#tournamentLabel {
+#tournamentLabel
+{
   margin-bottom: 5px;
 }
 
-#wireBuyerDiv {
+#wireBuyerDiv
+{
   margin-bottom: 3px;
 }
 
-#processorDisplay {
+#processorDisplay
+{
   display: inline-block;
   vertical-align: baseline;
   height: 22px;
 }
 
-#memoryDisplay {
+#memoryDisplay
+{
   display: inline-block;
   vertical-align: baseline;
   height: 22px;
 }
 
-#harvesterMultiButtons {
-  margin-bottom: 2; 
-}
-
-#wireDroneMultiButtons {
+#harvesterMultiButtons
+{
   margin-bottom: 2;
 }
 
-#farmMultiButtons {
+#wireDroneMultiButtons
+{
   margin-bottom: 2;
 }
 
-#batteryMultiButtons {
+#farmMultiButtons
+{
   margin-bottom: 2;
 }
 
-#autoTourneyStatusDiv {
+#batteryMultiButtons
+{
+  margin-bottom: 2;
+}
+
+#autoTourneyStatusDiv
+{
   float: left;
   width: 30px;
 }
 
-#tourneyButton {
+#tourneyButton
+{
   float: left;
   width: 120px;
 }
 
-#autoTourneyControl {
+#autoTourneyControl
+{
   float: left;
   width: 78px;
 }
 
-#victoryDiv {
+#victoryDiv
+{
   margin-top: 10px;
   width: 289px;
   text-align: center;
 }
 
-#increaseProbeTrustDiv {
+#increaseProbeTrustDiv
+{
   float: left;
-  width: 130px;  
+  width: 130px;
   margin-left: 5;
   border: 0;
 }
 
-#increaseMaxTrustDiv {
-  float: left;    
-  width: 150px;  
+#increaseMaxTrustDiv
+{
+  float: left;
+  width: 150px;
   margin: 0;
-  border: 0;    
+  border: 0;
 }
 
-#combatButtonDiv {
-  margin-top: 0;    
+#combatButtonDiv
+{
+  margin-top: 0;
 }
 
-#battleCanvasDiv {
+#battleCanvasDiv
+{
   position: relative;
 }
 
-#battleInterfaceDiv {
+#battleInterfaceDiv
+{
   position: absolute;
   left: 15px;
   top: 8px;
 }
 
-canvas {
+canvas
+{
   display: block;
   margin-top: 0;
-  margin-bottom: 10;    
+  margin-bottom: 10;
   width: 310px;
   height: 150px;
   margin-left: auto;
@@ -270,144 +297,160 @@ canvas {
   background-color: #808080;
 }
 
-#hypnoDroneEventDiv {
-  
+#hypnoDroneEventDiv
+{
   float: left;
-  background: black;    
+  background: black;
   width: 100%;
-
 }
 
-#prestigeDiv {
+#prestigeDiv
+{
   background-color: lightgrey;
 }
 
-#consoleDiv {
-  
+#consoleDiv
+{
   float: left;
-  background: black;    
+  background: black;
   width: 100%;
 }
-#topDIv {
+
+#topDIv
+{
   float: left;
   width: 100%;
 }
-#leftColumn {
-  float: left ;
+
+#leftColumn
+{
+  float: left;
   width: 275px;
 }
-#middleColumn {
+
+#middleColumn
+{
   float: left;
   width: 275px;
   margin-left: 10px;
 }
-#rightColumn {
+
+#rightColumn
+{
   float: left;
   width: 320px;
-  margin-left: 10px;    
+  margin-left: 10px;
 }
 
-#investmentDiv1 {
+#investmentDiv1
+{
   float: left;
-  width: 64px; 
-  line-height: 20%;    
+  width: 64px;
+  line-height: 20%;
 }
 
-#investmentDiv2 {
+#investmentDiv2
+{
   float: left;
-  width: 65%; 
+  width: 65%;
   text-align: top;
-  margin-top: 0; 
-  margin-left: 5px;    
-}
-
-#stratDiv1 {
-  float: left;
-  width: 95px; 
-  line-height: 20%; 
-}
-
-#stratDiv2 {
-  float: left;
-  width: 60%; 
-  text-align: top;
-  margin-top: 0; 
+  margin-top: 0;
   margin-left: 5px;
 }
 
-#vertPad {
+#stratDiv1
+{
   float: left;
-  width: 35%;    
+  width: 95px;
+  line-height: 20%;
+}
+
+#stratDiv2
+{
+  float: left;
+  width: 60%;
+  text-align: top;
+  margin-top: 0;
+  margin-left: 5px;
+}
+
+#vertPad
+{
+  float: left;
+  width: 35%;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 11px;
 }
 
-#vertStrat {
+#vertStrat
+{
   float: right;
   text-align: center;
   width: 65%;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 11;
-
+  font-size: 11px;
 }
 
-#horizStrat {
-  float: left; 
-
-  display: flex;    
+#horizStrat
+{
+  float: left;
+  display: flex;
   align-items: center;
-
-  justify-content: center;    
-  width: 25%;  
-  height: 56px;    
+  justify-content: center;
+  width: 25%;
+  height: 56px;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 11;     
+  font-size: 11px;
 }
 
-#investmentEngineUpgrade {
+#investmentEngineUpgrade
+{
   margin: 5px;
   margin-bottom: 10px;
 }
 
-#tournamentManagement {
+#tournamentManagement
+{
   margin: 5px;
   margin-bottom: 10px;
 }
 
-#feedButtonDiv {
+#feedButtonDiv
+{
   margin-top: 5;
 }
 
-
-
-
-.engine {
+.engine
+{
   margin: 5;
   border: 1px solid grey;
-  padding: 5; 
+  padding: 5;
 }
 
-.engine2 {
+.engine2
+{
   margin: 5;
   border: 1px solid grey;
-  padding: 5; 
+  padding: 5;
 }
 
-.swarmEngine {
+.swarmEngine
+{
   margin-bottom: 5;
   border: 1px solid grey;
-  padding: 5; 
+  padding: 5;
 }
 
-.qEngine {
+.qEngine
+{
   margin-bottom: 10;
   border: 1px solid grey;
-  padding: 5; 
+  padding: 5;
   height: 70px;
-  
 }
 
-.qChip {
+.qChip
+{
   width: 22px;
   height: 22px;
   margin-left: 2px;
@@ -416,79 +459,88 @@ canvas {
   margin-bottom: 7px;
   background-color: black;
   float: left;
-  
 }
 
-.engineText {
+.engineText
+{
   margin-bottom: 0;
   margin-top: 0;
   line-height: 150%;
 }
 
-.engineText1 {
+.engineText1
+{
   margin-left: 5;
   margin-bottom: 0;
   margin-top: 0;
 }
 
-.engineText2 {
+.engineText2
+{
   margin-bottom: 0;
   margin-top: 0;
   line-height: 150%;
 }
 
-.engineText3 {
-  margin-left: 5;
-  margin-top: 10;
-  line-height: 150%;
-}
-
-.engineText4 {
+.engineText3
+{
   margin-left: 5;
   margin-top: 10;
-  margin-bottom: 0;
-  
+  line-height: 150%;
 }
 
-.engineText5 {
+.engineText4
+{
+  margin-left: 5;
+  margin-top: 10;
+  margin-bottom: 0;
+}
+
+.engineText5
+{
   margin-left: 0;
   margin-top: 0;
   margin-bottom: 3;
 }
 
-.engineText6 {
+.engineText6
+{
   margin-left: 0;
   margin-top: 0;
   margin-bottom: 0;
   vertical-align: bottom;
 }
 
-.engineText7 {
+.engineText7
+{
   margin-left: 0;
   margin-top: 0;
   margin-bottom: 0;
   vertical-align: bottom;
 }
 
-.engineText8 {
+.engineText8
+{
   margin-left: 0;
   margin-top: 3px;
   margin-bottom: 0;
 }
 
-.engineText9 {
+.engineText9
+{
   display: inline-block;
   margin-top: 1px;
-
 }
 
-.engineText10 {
+.engineText10
+{
   display: inline-block;
   line-height: 18px;
   vertical-align: bottom;
 }
 
-hr {
+hr
+{
   display: block;
   margin-top: .05em;
   margin-bottom: 0.2em;
@@ -496,153 +548,163 @@ hr {
   margin-right: auto;
   border-style: inset;
   border-width: 1px;
-  
 }
 
-hr.short {
-  
+hr.short
+{
   width: 225px;
   margin-left: 0;
 }
 
-
-table.table1 {
+table.table1
+{
   table-layout: fixed;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 11;
+  font-size: 11px;
   margin-bottom: 0;
   margin-top: 0;
   width: 100%;
   border: none;
 }
 
-table.table1 tr:nth-child(even) {
+table.table1 tr:nth-child(even)
+{
   background-color: #dddddd;
 }
 
-table.table2 {
+table.table2
+{
   border-collapse: collapse;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 11;
+  font-size: 11px;
   margin-bottom: 0;
   margin-top: 0;
   margin-right: 0px;
   margin-left: 0px;
   width: 70%;
-
 }
 
-table.table3 {
+table.table3
+{
   border-collapse: collapse;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 11;
+  font-size: 11px;
   margin-bottom: 0;
   margin-top: 0;
   margin-right: 0px;
   margin-left: 0px;
   width: 100%;
-
 }
 
-table.table2 td:nth-child(1) {
+table.table2 td:nth-child(1)
+{
   width: 45px;
   text-align: right;
   padding-right: 4px;
   border-left: none;
   border-top: none;
-  border-bottom:none;
+  border-bottom: none;
   font-weight: bold;
 }
 
-table.table2 td:nth-child(n>1) {
+table.table2 td:nth-child(n>1)
+{
   table-layout: fixed;
-  
 }
 
-table.table2 td {
+table.table2 td
+{
   border: 1px solid black;
   text-align: center;
 }
 
-table.table2 tbody td[id] {
+table.table2 tbody td[id]
+{
   background-color: white;
 }
 
-table.table2 tbody td[id].highlighted {
+table.table2 tbody td[id].highlighted
+{
   background-color: lightgray;
 }
 
-
-p.clean {
+p.clean
+{
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 11;
+  font-size: 11px;
   margin-bottom: 0;
   margin-top: 1px;
-  
 }
 
-p.clean2 {
+p.clean2
+{
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 11;
+  font-size: 11px;
   margin-bottom: 0;
   margin-top: 0px;
-  
 }
 
-p.clean3 {
+p.clean3
+{
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 11;
+  font-size: 11px;
   margin-bottom: 5px;
   margin-top: 2px;
-  
 }
 
-
-p.console {
+p.console
+{
   font-family: "Lucida Sans Typewriter", "Lucida Console", Monaco, "Bitstream Vera Sans Mono", monospace;
-  font-size: 12;
+  font-size: 12px;
   color: white;
   margin-top: 0;
 }
 
-p.consoleOld {
+p.consoleOld
+{
   font-family: "Lucida Sans Typewriter", "Lucida Console", Monaco, "Bitstream Vera Sans Mono", monospace;
-  font-size: 12;
+  font-size: 12px;
   color: grey;
   margin-bottom: 0;
 }
 
-p.hypnoDrone {
-  
+p.hypnoDrone
+{
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 150;
+  font-size: 150px;
   color: white;
   line-height: 115px;
   margin-bottom: 0px;
   margin-top: 0px;
-  
 }
 
-.pulsate {
+.pulsate
+{
   -webkit-animation: pulsate .5s ease-out;
-  -webkit-animation-iteration-count: infinite; 
+  -webkit-animation-iteration-count: infinite;
   opacity: 0.0;
 }
 
-@-webkit-keyframes pulsate {
-  0% { 
+@-webkit-keyframes pulsate
+{
+  0%
+  {
     opacity: 0.0;
   }
-  50% { 
+
+  50%
+  {
     opacity: 1.0;
   }
-  100% { 
+
+  100%
+  {
     opacity: 0.0;
   }
 }
 
-
-.projectButton {
+.projectButton
+{
   display: block;
   height: 60px;
   width: 275px;
@@ -652,7 +714,8 @@ p.hypnoDrone {
   margin-bottom: 6px;
 }
 
-.projectButton:hover {
+.projectButton:hover
+{
   display: block;
   height: 60px;
   width: 275px;
@@ -660,30 +723,30 @@ p.hypnoDrone {
   border: 1px solid rgba(0, 0, 0, 0.25);
 }
 
-.projectButton:active {
+.projectButton:active
+{
   display: block;
   height: 60px;
   width: 275px;
   background: #d1d1d1;
   border: 1px solid rgba(0, 0, 0, 1);
-  
 }
 
-.projectButton:disabled {
+.projectButton:disabled
+{
   border: none;
 }
 
-.button {
+.button
+{
   border: 1px solid #1a1a1a;
   background: #666666;
-
   background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#cccccc));
   background: -webkit-linear-gradient(top, #ffffff, #888888);
   background: -moz-linear-gradient(top, #ffffff, #888888);
   background: -ms-linear-gradient(top, #ffffff, #888888);
   background: -o-linear-gradient(top, #ffffff, #888888);
   background-image: -ms-linear-gradient(top, #ffffff 0%, #888888 100%);
-
   padding: 12.5px 25px;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
@@ -700,7 +763,8 @@ p.hypnoDrone {
   outline: none;
 }
 
-.button:hover {
+.button:hover
+{
   border: 1px solid #898989;
   text-shadow: #d4d4d4 0 1px 0;
   background: #666666;
@@ -713,10 +777,10 @@ p.hypnoDrone {
   color: #000000;
 }
 
-.button:active {
+.button:active
+{
   text-shadow: #bfbfbf 0 1px 0;
   border: 1px solid #2e2e2e;
-
   background: #d9d9d9;
   background: -webkit-gradient(linear, left top, left bottom, from(#595959), to(#616161));
   background: -webkit-linear-gradient(top, #595959, #d9d9d9);
@@ -724,26 +788,25 @@ p.hypnoDrone {
   background: -ms-linear-gradient(top, #595959, #d9d9d9);
   background: -o-linear-gradient(top, #595959, #d9d9d9);
   background-image: -ms-linear-gradient(top, #595959 0%, #d9d9d9 100%);
-
   color: #000000;
 }
 
-.button:disabled{
+.button:disabled
+{
   opacity: 0.6;
   border: 1px solid #ffffff;
 }
 
-.button2 {
+.button2
+{
   border: 1px solid #1a1a1a;
   background: #666666;
-
   background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#cccccc));
   background: -webkit-linear-gradient(top, #ffffff, #888888);
   background: -moz-linear-gradient(top, #ffffff, #888888);
   background: -ms-linear-gradient(top, #ffffff, #888888);
   background: -o-linear-gradient(top, #ffffff, #888888);
   background-image: -ms-linear-gradient(top, #ffffff 0%, #888888 100%);
-
   padding: 2px 4px;
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
@@ -760,25 +823,24 @@ p.hypnoDrone {
   outline: none;
 }
 
-.button2:hover {
+.button2:hover
+{
   border: 1px solid #898989;
   text-shadow: #d4d4d4 0 1px 0;
   background: #616161;
-
   background: -webkit-gradient(linear, left top, left bottom, from(#f7f7f7), to(#888888));
   background: -webkit-linear-gradient(top, #f7f7f7, #888888);
   background: -moz-linear-gradient(top, #f7f7f7, #888888);
   background: -ms-linear-gradient(top, #f7f7f7, #888888);
   background: -o-linear-gradient(top, #f7f7f7, #888888);
   background-image: -ms-linear-gradient(top, #f7f7f7 0%, #888888 100%);
-
   color: #000000;
 }
 
-.button2:active {
+.button2:active
+{
   text-shadow: #bfbfbf 0 1px 0;
   border: 1px solid #2e2e2e;
-
   background: #d9d9d9;
   background: -webkit-gradient(linear, left top, left bottom, from(#595959), to(#616161));
   background: -webkit-linear-gradient(top, #595959, #d9d9d9);
@@ -786,56 +848,70 @@ p.hypnoDrone {
   background: -ms-linear-gradient(top, #595959, #d9d9d9);
   background: -o-linear-gradient(top, #595959, #d9d9d9);
   background-image: -ms-linear-gradient(top, #595959 0%, #d9d9d9 100%);
-
   color: #444444;
 }
 
-.button2:disabled {
+.button2:disabled
+{
   opacity: 0.6;
   border: 1px solid #ffffff;
 }
 
-@media (prefers-color-scheme: dark) {
-  body {
+@media (prefers-color-scheme: dark)
+{
+  body
+  {
     background-color: black;
     color: #ccc;
   }
 
-  p.console {
-    color:  #ccc;
+  p.console
+  {
+    color: #ccc;
   }
 
-  #consoleDiv {
+  #consoleDiv
+  {
     background-color: #222;
   }
 
-  .projectButton {
+  .projectButton
+  {
     background-color: #aaa;
   }
-  .projectButton:disabled {
+
+  .projectButton:disabled
+  {
     color: #555;
   }
 
-  .qChip {
+  .qChip
+  {
     background-color: #ccc;
   }
 
-  table.table1 tr:nth-child(even) {
+  table.table1 tr:nth-child(even)
+  {
     background-color: #777;
   }
-  table.table1 tr:nth-child(odd) {
+
+  table.table1 tr:nth-child(odd)
+  {
     background-color: #333;
   }
 
-  table.table2 td {
+  table.table2 td
+  {
     border: 1px solid #ccc;
   }
 
-  table.table2 tbody td[id] {
+  table.table2 tbody td[id]
+  {
     background-color: black;
   }
 
-  table.table2 tbody td[id].highlighted {
+  table.table2 tbody td[id].highlighted
+  {
     background-color: #333;
   }
 }
