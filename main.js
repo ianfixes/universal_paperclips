@@ -1764,18 +1764,35 @@ function buyAndClipMax() {
   clipClick(Infinity);
 }
 
-function makeClipper() {
-  if (funds >= clippperCost) {
-    clipmakerLevel = clipmakerLevel + 1;
-    funds = funds - clipperCost;
-    document.getElementById('clipmakerLevel2').innerHTML = clipmakerLevel;
-  }
+function makeClipper(amount) {
+  if (isNaN(amount)) {
+    if (funds >= clippperCost) {
+      clipmakerLevel = clipmakerLevel + 1;
+      funds = funds - clipperCost;
+      document.getElementById('clipmakerLevel2').innerHTML = clipmakerLevel;
+    }
 
-  clipperCost = (Math.pow(1.1, clipmakerLevel) + 5);
-  document.getElementById('clipperCost').innerHTML = clipperCost.toLocaleString(undefined, {
-    minimumFractionDigits: 2,
-    maximumFractionDigits: 2
-  });
+    clipperCost = (Math.pow(1.1, clipmakerLevel) + 5);
+    document.getElementById('clipperCost').innerHTML = clipperCost.toLocaleString(undefined, {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    });
+  } else {
+    var counter = 0;
+    while (funds >= clippperCost && counter < amount) {
+      clipmakerLevel = clipmakerLevel + 1;
+      funds = funds - clipperCost;
+      clipperCost = (Math.pow(1.1, clipmakerLevel) + 5);
+
+      counter++;
+    }
+
+    document.getElementById('clipmakerLevel2').innerHTML = clipmakerLevel;
+    document.getElementById('clipperCost').innerHTML = clipperCost.toLocaleString(undefined, {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    });
+  }
 
 }
 
@@ -2809,30 +2826,52 @@ function calculateTrust() {
   }
 }
 
-function addProc() {
-  processors = processors + 1;
+function addProc(amount) {
+  if (isNaN(amount)) {
+    processors = processors + 1;
+    if (creativityOn == 1) {
+      displayMessage("Processor added, operations (or creativity) per sec increased")
+    } else {
+      displayMessage("Processor added, operations per sec increased")
+    }
+
+    if (humanFlag == 0) {
+      swarmGifts = swarmGifts - 1;
+    }
+  } else {
+    processors += amount;
+    if (creativityOn == 1) {
+      displayMessage(amount + " Processor(s) added, operations (or creativity) per sec increased")
+    } else {
+      displayMessage(amount + " Processor(s) added, operations per sec increased")
+    }
+
+    if (humanFlag == 0) {
+      swarmGifts -= amount;
+    }
+  }
+
   creativitySpeed = Math.log10(processors) * Math.pow(processors, 1.1) + processors - 1;
   document.getElementById("processors").innerHTML = processors;
-  if (creativityOn == 1) {
-    displayMessage("Processor added, operations (or creativity) per sec increased")
-  } else {
-    displayMessage("Processor added, operations per sec increased")
-  }
-
-  if (humanFlag == 0) {
-    swarmGifts = swarmGifts - 1;
-  }
-
 }
 
-function addMem() {
-  displayMessage("Memory added, max operations increased");
-  memory = memory + 1;
-  document.getElementById("memory").innerHTML = memory;
+function addMem(amount) {
+  if (isNaN(amount)) {
+    memory = memory + 1;
 
-  if (humanFlag == 0) {
-    swarmGifts = swarmGifts - 1;
+    if (humanFlag == 0) {
+      swarmGifts = swarmGifts - 1;
+    }
+  } else {
+    memory += amount;
+
+    if (humanFlag == 0) {
+      swarmGifts = swarmGifts - amount;
+    }
   }
+  
+  displayMessage("Memory added, max operations increased");
+  document.getElementById("memory").innerHTML = memory;
 }
 
 function calculateOperations() {
