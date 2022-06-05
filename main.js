@@ -36,18 +36,39 @@ function toggleWireBuyer() {
   }
 }
 
-function buyWire() {
-  if (funds >= wireCost) {
+function buyWire(times) {
+  if (isNaN(times)) {
+    if (funds >= wireCost) {
+      wirePriceTimer = 0;
+      wire = wire + wireSupply;
+      funds = funds - wireCost;
+      wirePurchase = wirePurchase + 1;
+      wireBasePrice = wireBasePrice + 0.05;
+      document.getElementById('wire').innerHTML = Math.floor(wire).toLocaleString();
+      document.getElementById('funds').innerHTML = funds.toLocaleString(undefined, {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+      });
+    }
+  } else {
+    // try to buy a specific amount
     wirePriceTimer = 0;
-    wire = wire + wireSupply;
-    funds = funds - wireCost;
-    wirePurchase = wirePurchase + 1;
-    wireBasePrice = wireBasePrice + 0.05;
+    var counter = 0;
+    while (funds >= wireCost && counter < times) {
+      wire += wireSupply;
+      funds -= wireCost;
+      wirePurchase++;
+      wireBasePrice += 0.05;
+      counter++;
+    }
+
     document.getElementById('wire').innerHTML = Math.floor(wire).toLocaleString();
-    document.getElementById('funds').innerHTML = funds.toLocaleString(undefined, {
-      minimumFractionDigits: 2,
-      maximumFractionDigits: 2
-    });
+      document.getElementById('funds').innerHTML = funds.toLocaleString(undefined, {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+      });
+
+    console.log("Force bought wire " + counter + " time(s).");
   }
 }
 
@@ -1735,8 +1756,12 @@ function clipClick(number) {
     document.getElementById("wire").innerHTML = Math.floor(wire).toLocaleString();
     document.getElementById("unsoldClips").innerHTML = Math.floor(unsoldClips).toLocaleString();
   }
+}
 
-
+// This is a cheat function
+function buyAndClipMax() {
+  buyWire(Infinity);
+  clipClick(Infinity);
 }
 
 function makeClipper() {
