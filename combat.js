@@ -1,5 +1,3 @@
-'use strict';
-
 var battleWIDTH = 310;
 var battleHEIGHT = 150;
 var battleGRID_WIDTH = 31; //number of grid cells
