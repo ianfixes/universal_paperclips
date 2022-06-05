@@ -14,6 +14,25 @@ var battleLEFTCOLOR = "#ffffff";
 var battleRIGHTCOLOR = "#000000";
 var battleEXPLODECOLOR = "#ffffff";
 
+window.matchMedia('(prefers-color-scheme: dark)').addListener(function(e) {
+  changeBattleColors(e.matches);
+});
+
+(function() {
+  var isDark = window.matchMedia('(prefers-color-scheme: dark)');
+  changeBattleColors(isDark);
+})();
+
+function changeBattleColors(isDark) {
+  if (isDark) {
+    battleLEFTCOLOR = "#ccc";
+    battleEXPLODECOLOR = "#ccc";
+  } else {
+    battleLEFTCOLOR = "#fff";
+    battleEXPLODECOLOR = "#fff";
+  }
+}
+
 var ships = [];
 var numShips = 0;
 var grid = [];
