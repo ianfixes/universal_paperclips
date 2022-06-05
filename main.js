@@ -3162,7 +3162,7 @@ var probeTrustCost = Math.floor(Math.pow(probeTrust + 1, 1.47) * 200);
 function increaseProbeTrust(amount) {
   if (isNaN(amount)) { amount = 1; }
   for (var i = 0; i < amount; i++) {
-    if (probeTrust == maxTrust) { break; }
+    if (probeTrust == maxTrust || yomi < probeTrustCost) { break; }
     yomi = yomi - probeTrustCost;
     probeTrust++;
     probeTrustCost = Math.floor(Math.pow(probeTrust + 1, 1.47) * 200);
@@ -3177,7 +3177,7 @@ function increaseProbeTrust(amount) {
 function increaseMaxTrust(amount) {
   if (isNaN(amount)) { amount = 1; }
 
-  var maxIncrease = Math.min(Math.floor(maxTrustCost / honor), amount);
+  var maxIncrease = Math.min(Math.floor(honor / maxTrustCost), amount);
 
   honor = honor - (maxTrustCost * maxIncrease);
   maxTrust += 10 * maxIncrease;
