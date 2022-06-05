@@ -166,16 +166,3 @@ var finalClips = 0;
 
 var resetFlag = 2;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
