@@ -740,9 +740,9 @@ p.hypnoDrone
 
 .button2
 {
-  border: 1px solid #1a1a1a;
+  border: 1px solid #777;
   background: #666666;
-  background: linear-gradient(0deg, #ffffff, #888888);
+  background: linear-gradient(180deg, white, #bbb);
   padding: 2px 4px;
   border-radius: 2px;
   box-shadow: rgba(255,255,255,0.4) 0 0px 0, inset rgba(255,255,255,0.4) 0 1px 0;
@@ -760,7 +760,7 @@ p.hypnoDrone
   border: 1px solid #898989;
   text-shadow: #d4d4d4 0 1px 0;
   background: #616161;
-  background: linear-gradient(0deg, #f7f7f7, #888888);
+  background: linear-gradient(180deg, #f7f7f7, #aaa);
   color: #000000;
 }
 
@@ -769,8 +769,8 @@ p.hypnoDrone
   text-shadow: #bfbfbf 0 1px 0;
   border: 1px solid #2e2e2e;
   background: #d9d9d9;
-  background: linear-gradient(0deg, #595959, #d9d9d9);
-  color: #444444;
+  background: linear-gradient(180deg, #999, #ddd);
+  color: #222;
 }
 
 .button2:disabled
