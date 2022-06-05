@@ -2,6 +2,10 @@ body {
   margin: 8px;
 }
 
+h2 {
+  word-break: break-all;
+}
+
 #btnMakeProbe
 {
   margin-bottom: 2px;
@@ -361,6 +365,7 @@ canvas
   text-align: top;
   margin-top: 0;
   margin-left: 5px;
+  word-break: break-all;
 }
 
 #stratDiv1
