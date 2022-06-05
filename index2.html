@@ -56,7 +56,7 @@
 
       <div id = "creationDiv">
 
-        <b>Manufacturing</b><br />
+        <strong>Manufacturing</strong><br />
         <hr>
         <div id = "factoryUpgradeDisplay">
           <p class = "clean">
@@ -108,7 +108,7 @@
 
       <div id="wireProductionDiv">
 
-        <b>Wire Production</b><br />
+        <strong>Wire Production</strong><br />
         <hr>
         <div id = droneUpgradeDisplay>
           <p class = "clean">
@@ -199,7 +199,7 @@
 
           <div id="spaceDiv">
 
-            <b>Space Exploration</b><br />
+            <strong>Space Exploration</strong><br />
             <hr>
 
             <span id="colonizedDisplay">0</span>% of universe explored<br />
@@ -236,7 +236,7 @@
 
             <div id="businessDiv">
 
-              <b>Business</b><br />
+              <strong>Business</strong><br />
               <hr>
 
 
@@ -268,7 +268,7 @@
             </div>
 
             <div id="manufacturingDiv">
-              <b>Manufacturing</b><br />
+              <strong>Manufacturing</strong><br />
               <hr>
 
               Clips per Second: <span id="clipmakerRate">0</span><br />
@@ -279,18 +279,20 @@
                 onclick="toggleWireBuyer()">WireBuyer</button> <span class = "engineText6" id = "wireBuyerStatus">ON</span>
               </div>
 
+              <div>
+                <button class = "button2" id ="btnBuyWire"
+                onclick="buyWire()">Wire</button>
+                <span class = "engineText6" id="wire">1000</span><span class = "engineText6"> inches</span><br />
+                Cost: $ <span id="wireCost">20</span><br />
+                <br />
+              </div>
 
-              <button class = "button2" id ="btnBuyWire"
-              onclick="buyWire()">Wire</button> <span class = "engineText6" id="wire">1000</span><span class = "engineText6"> inches</span><br />
-              Cost: $ <span id="wireCost">20</span><br />
-              <br />
-
-              <div id = "autoClipperDiv">
-                <p class = "engineText5">
-                  <button class = "button2" id = "btnMakeClipper"
-                  onclick="makeClipper()">AutoClippers</button> <span class = "engineText6" id="clipmakerLevel2">0</span></p>
-                  Cost: $ <span id="clipperCost">5.00</span><br />
-                  <br />
+              <div id="autoClipperDiv">
+                <button class = "button2" id = "btnMakeClipper"
+                onclick="makeClipper()">AutoClippers</button> 
+                <span class = "engineText6" id="clipmakerLevel2">0</span><br />
+                Cost: $ <span id="clipperCost">5.00</span><br />
+                <br />
                 </div>
 
                 <div id = "megaClipperDiv">
@@ -336,7 +338,7 @@
 
 
       <div id="compDiv">
-        <b>Computational Resources</b><br />
+        <strong>Computational Resources</strong><br />
         <hr>
 
         <div id="trustDiv">
@@ -377,7 +379,7 @@
 
         <div class = "swarmEngine" id = "swarmEngine">
 
-          <b>Swarm Computing</b><br />
+          <strong>Swarm Computing</strong><br />
           Drones: <span id="swarmSize">0</span><br />
           <div id ="swarmStatusDiv">Status: <span id="swarmStatus">x </span></div>
           <div id="giftTimer">Next gift in <span id="giftCountdown">17 seconds</span></div>
@@ -418,7 +420,7 @@
 
         <div class = "qEngine" id = "qComputing">
 
-          <b>Quantum Computing</b><br />
+          <strong>Quantum Computing</strong><br />
 
           <div class = "qChip" id = "qChip0"> </div>
           <div class = "qChip" id = "qChip1"> </div>
@@ -445,7 +447,7 @@
       </div>
 
       <div id="projectsDiv">
-        <b>Projects</b><br />
+        <strong>Projects</strong><br />
 
 
         <hr />
@@ -461,7 +463,7 @@
       <div class = "engine" id="investmentEngine">
 
         <p class = engineText>
-          <b>Investments</b>
+          <strong>Investments</strong>
 
           <select id = "investStrat">
             <option value="low">Low Risk</option>
@@ -482,7 +484,7 @@
             <p class = "clean">
               Cash: $<span id="investmentBankroll">0</span><br />
               Stocks: $<span id="secValue">0</span><br />
-              <b>Total: $<span id="portValue">0</span></b><br />
+              <strong>Total: $<span id="portValue">0</span></strong><br />
             </p>
           </div>
 
@@ -501,35 +503,35 @@
               <td id="stock1Amount">&nbsp;</td>
               <td id="stock1Price">&nbsp;</td>
               <td id="stock1Total">&nbsp;</td>
-              <td id="stock1Profit"><b>&nbsp;</b></td>
+              <td id="stock1Profit"><strong>&nbsp;</strong></td>
             </tr>
             <tr id = "stock2Display">
               <td id="stock2Symbol">&nbsp;</td>
               <td id="stock2Amount">&nbsp;</td>
               <td id="stock2Price">&nbsp;</td>
               <td id="stock2Total">&nbsp;</td>
-              <td id="stock2Profit"><b>&nbsp;</b></td>
+              <td id="stock2Profit"><strong>&nbsp;</strong></td>
             </tr>
             <tr id = "stock3Display">
               <td id="stock3Symbol">&nbsp;</td>
               <td id="stock3Amount">&nbsp;</td>
               <td id="stock3Price">&nbsp;</td>
               <td id="stock3Total">&nbsp;</td>
-              <td id="stock3Profit"><b>&nbsp;</b></td>
+              <td id="stock3Profit"><strong>&nbsp;</strong></td>
             </tr>
             <tr id = "stock4Display">
               <td id="stock4Symbol">&nbsp;</td>
               <td id="stock4Amount">&nbsp;</td>
               <td id="stock4Price">&nbsp;</td>
               <td id="stock4Total">&nbsp;</td>
-              <td id="stock4Profit"><b>&nbsp;</b></td>
+              <td id="stock4Profit"><strong>&nbsp;</strong></td>
             </tr>
             <tr id = "stock5Display">
               <td id="stock5Symbol">&nbsp;</td>
               <td id="stock5Amount">&nbsp;</td>
               <td id="stock5Price">&nbsp;</td>
               <td id="stock5Total">&nbsp;</td>
-              <td id="stock5Profit"><b>&nbsp;</b></td>
+              <td id="stock5Profit"><strong>&nbsp;</strong></td>
             </tr>
 
           </table>
@@ -545,7 +547,7 @@
 
         <div class=engine2 id="strategyEngine">
           <p class=engineText>
-           <b>Strategic Modeling</b>
+           <strong>Strategic Modeling</strong>
 
            <select id = "stratPicker">
             <option value="10">Pick a Strat</option>
@@ -657,7 +659,7 @@
         <div id = "battleCanvasDiv">
           <canvas id = "canvas"></canvas>
           <div id = "battleInterfaceDiv">
-            <b>Combat</b><br />
+            <strong>Combat</strong><br />
 
             <p class="clean2">
 
@@ -686,7 +688,7 @@
           <!--        POWER-->
 
           <div id="powerDiv">
-            <b>Power</b>
+            <strong>Power</strong>
             <hr>
             Factory/Drone Performance: <span id="performance">0</span>%<br />
             <br />
@@ -762,7 +764,7 @@
 
             <p class=engineText>
 
-              <b>Von Neumann Probe Design</b><br />
+              <strong>Von Neumann Probe Design</strong><br />
               Trust:
               <span id="probeTrustUsedDisplay">0</span> / <span id="probeTrustDisplay">0</span>
               (<span id="maxTrustDisplay">0</span> Max)<br />
@@ -770,8 +772,8 @@
             </p>
 
 
-            <button class="button2" id="btnLowerProbeSpeed" onclick="lowerProbeSpeed()"><b>-</b></button>
-            <button class="button2" id="btnRaiseProbeSpeed" onclick="raiseProbeSpeed()"><b>+</b></button>
+            <button class="button2" id="btnLowerProbeSpeed" onclick="lowerProbeSpeed()"><strong>-</strong></button>
+            <button class="button2" id="btnRaiseProbeSpeed" onclick="raiseProbeSpeed()"><strong>+</strong></button>
 
             <div class = "toolTip2">
 
@@ -783,8 +785,8 @@
 
 
 
-            <button class="button2" id="btnLowerProbeNav" onclick="lowerProbeNav()"><b>-</b></button>
-            <button class="button2" id="btnRaiseProbeNav" onclick="raiseProbeNav()"><b>+</b></button>
+            <button class="button2" id="btnLowerProbeNav" onclick="lowerProbeNav()"><strong>-</strong></button>
+            <button class="button2" id="btnRaiseProbeNav" onclick="raiseProbeNav()"><strong>+</strong></button>
 
             <div class = "toolTip2">
 
@@ -794,8 +796,8 @@
 
             </div><br />
 
-            <button class="button2" id="btnLowerProbeRep" onclick="lowerProbeRep()"><b>-</b></button>
-            <button class="button2" id="btnRaiseProbeRep" onclick="raiseProbeRep()"><b>+</b></button>
+            <button class="button2" id="btnLowerProbeRep" onclick="lowerProbeRep()"><strong>-</strong></button>
+            <button class="button2" id="btnRaiseProbeRep" onclick="raiseProbeRep()"><strong>+</strong></button>
 
             <div class = "toolTip2">
 
@@ -805,8 +807,8 @@
 
             </div><br />
 
-            <button class="button2" id="btnLowerProbeHaz" onclick="lowerProbeHaz()"><b>-</b></button>
-            <button class="button2" id="btnRaiseProbeHaz" onclick="raiseProbeHaz()"><b>+</b></button>
+            <button class="button2" id="btnLowerProbeHaz" onclick="lowerProbeHaz()"><strong>-</strong></button>
+            <button class="button2" id="btnRaiseProbeHaz" onclick="raiseProbeHaz()"><strong>+</strong></button>
 
             <div class = "toolTip2">
 
@@ -816,8 +818,8 @@
 
             </div>    <br />
 
-            <button class="button2" id="btnLowerProbeFac" onclick="lowerProbeFac()"><b>-</b></button>
-            <button class="button2" id="btnRaiseProbeFac" onclick="raiseProbeFac()"><b>+</b></button>
+            <button class="button2" id="btnLowerProbeFac" onclick="lowerProbeFac()"><strong>-</strong></button>
+            <button class="button2" id="btnRaiseProbeFac" onclick="raiseProbeFac()"><strong>+</strong></button>
 
             <div class = "toolTip2">
 
@@ -827,8 +829,8 @@
 
             </div>    <br />
 
-            <button class="button2" id="btnLowerProbeHarv" onclick="lowerProbeHarv()"><b>-</b></button>
-            <button class="button2" id="btnRaiseProbeHarv" onclick="raiseProbeHarv()"><b>+</b></button>
+            <button class="button2" id="btnLowerProbeHarv" onclick="lowerProbeHarv()"><strong>-</strong></button>
+            <button class="button2" id="btnRaiseProbeHarv" onclick="raiseProbeHarv()"><strong>+</strong></button>
 
             <div class = "toolTip2">
 
@@ -838,8 +840,8 @@
 
             </div>     <br />
 
-            <button class="button2" id="btnLowerProbeWire" onclick="lowerProbeWire()"><b>-</b></button>
-            <button class="button2" id="btnRaiseProbeWire" onclick="raiseProbeWire()"><b>+</b></button>
+            <button class="button2" id="btnLowerProbeWire" onclick="lowerProbeWire()"><strong>-</strong></button>
+            <button class="button2" id="btnRaiseProbeWire" onclick="raiseProbeWire()"><strong>+</strong></button>
 
             <div class = "toolTip2">
 
@@ -851,8 +853,8 @@
 
 
             <div id = "combatButtonDiv">
-              <button class="button2" id="btnLowerProbeCombat" onclick="lowerProbeCombat()"><b>-</b></button>
-              <button class="button2" id="btnRaiseProbeCombat" onclick="raiseProbeCombat()"><b>+</b></button>
+              <button class="button2" id="btnLowerProbeCombat" onclick="lowerProbeCombat()"><strong>-</strong></button>
+              <button class="button2" id="btnRaiseProbeCombat" onclick="raiseProbeCombat()"><strong>+</strong></button>
 
               <div class = "toolTip2">
 
@@ -884,7 +886,7 @@
 <!--
         <div class=engine2 id="battleReportsDiv">
         <p class=engineText>
-            <b>Battles</b><br />
+            <strong>Battles</strong><br />
 
             <div id="battleListTop"> </div>
 
