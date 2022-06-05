@@ -74,222 +74,225 @@
         <div id = "factoryDiv">
           <p class = "engineText5">
             <button class = "button2" id = "btnMakeFactory"
-            onclick="makeFactory()">Clip Factory</button> <span class = "engineText6" id="factoryLevelDisplay">0</span></p>
+            onclick="makeFactory()">Clip Factory</button> <span class = "engineText6" id="factoryLevelDisplay">0</span>
+          </p>
 
-            <div class = "toolTip3">
+          <div class = "toolTip3">
 
-              <span id = "factoryRebootToolTip" class = "toolTipText3">0</span>
+            <span id = "factoryRebootToolTip" class = "toolTipText3">0</span>
 
-              <button class = "button2" id = "btnFactoryReboot" onclick="factoryReboot()">&nbsp Disassemble All &nbsp</button>
+            <button class = "button2" id = "btnFactoryReboot" onclick="factoryReboot()">&nbsp Disassemble All &nbsp</button>
 
-            </div>
-            <br />
+          </div>
+          <br />
 
-            Cost: <span id="factoryCostDisplay">0</span> clips<br />
-            <br />
+          Cost: <span id="factoryCostDisplay">0</span> clips<br />
+          <br />
+        </div>
+
+        <div id="wireTransDiv">
+          Wire: <span id="transWire">0</span> <span id = "inchSpan">inches</span><br />
+        </div>
+
+        <div id = "factoryDivSpace">
+          Factories: <span id="factoryLevelDisplaySpace">0</span><br /><br />
+        </div>
+
+      </div>
+
+      <div id="wireProductionDiv">
+
+        <b>Wire Production</b><br />
+        <hr>
+        <div id = droneUpgradeDisplay>
+          <p class = "clean">
+            Next Upgrade at: <span id = "nextDroneUpgrade">0</span> Drones <br />
+          </p>
+        </div>
+
+        Available Matter: <span id="availableMatterDisplay">0</span> g<br />
+        <div id="mdpsDiv">(<span id="mdps">0</span> g per sec)<br /></div>
+        Acquired Matter: <span id="acquiredMatterDisplay">0</span> g<br />
+        (<span id="maps">0</span> g per sec)<br />
+        Wire: <span id="nanoWire">0</span> inches<br />
+        (<span id="wpps">0</span> inches per sec) <br />
+        <br />
+
+        <div id = "harvesterDiv">
+
+          <p class = "engineText5">
+            <button class = "button2" id = "btnMakeHarvester"
+            onclick="makeHarvester(1)">&nbsp Harvester Drone &nbsp</button>
+            <span class = "engineText6" id="harvesterLevelDisplay">0</span>
+          </p>
+
+          <div id = "harvesterMultiButtons">
+
+            <p class = "engineText5">
+              <button class = "button2" id = "btnHarvesterx10" onclick="makeHarvester(10)">+10</button>
+              <button class = "button2" id = "btnHarvesterx100" onclick="makeHarvester(100)">+100</button>
+              <button class = "button2" id = "btnHarvesterx1000" onclick="makeHarvester(1000)">+1k</button>
+              <button class = "button2" id = "btnHarvesterxMAX" onclick="makeHarvester(Infinity)">+MAX</button>
+            </p>
+
           </div>
 
-          <div id="wireTransDiv">
-            Wire: <span id="transWire">0</span> <span id = "inchSpan">inches</span><br />
-          </div>
+          <div class = "toolTip3">
 
-          <div id = "factoryDivSpace">
-            Factories: <span id="factoryLevelDisplaySpace">0</span><br /><br />
+            <span id = "harvesterRebootToolTip" class = "toolTipText3">0</span>
+
+            <button class = "button2" id = "btnHarvesterReboot" onclick="harvesterReboot()">&nbsp Disassemble All &nbsp</button>
+
           </div>
+          <br />
+
+          Cost: <span id="harvesterCostDisplay">0</span> clips<br /><br />
 
         </div>
 
-        <div id="wireProductionDiv">
+        <div id = "wireDroneDiv">
+          <p class = "engineText5">
+            <button class = "button2" id = "btnMakeWireDrone"
+            onclick="makeWireDrone(1)">&nbsp &nbsp &nbsp Wire Drone &nbsp &nbsp</button> <span class = "engineText6" id="wireDroneLevelDisplay">0</span></p>
 
-          <b>Wire Production</b><br />
-          <hr>
-          <div id = droneUpgradeDisplay>
-            <p class = "clean">
-              Next Upgrade at: <span id = "nextDroneUpgrade">0</span> Drones <br />
-            </p>
-          </div>
-
-          Available Matter: <span id="availableMatterDisplay">0</span> g<br />
-          <div id="mdpsDiv">(<span id="mdps">0</span> g per sec)<br /></div>
-          Acquired Matter: <span id="acquiredMatterDisplay">0</span> g<br />
-          (<span id="maps">0</span> g per sec)<br />
-          Wire: <span id="nanoWire">0</span> inches<br />
-          (<span id="wpps">0</span> inches per sec) <br />
-          <br />
-
-          <div id = "harvesterDiv">
-
-            <p class = "engineText5">
-              <button class = "button2" id = "btnMakeHarvester"
-              onclick="makeHarvester(1)">&nbsp Harvester Drone &nbsp</button>
-              <span class = "engineText6" id="harvesterLevelDisplay">0</span>
-            </p>
-
-            <div id = "harvesterMultiButtons">
+            <div id = "wireDroneMultiButtons">
 
               <p class = "engineText5">
-                <button class = "button2" id = "btnHarvesterx10" onclick="makeHarvester(10)">+10</button>
-                <button class = "button2" id = "btnHarvesterx100" onclick="makeHarvester(100)">+100</button>
-                <button class = "button2" id = "btnHarvesterx1000" onclick="makeHarvester(1000)">+1k</button>
-              </p>
+                <button class = "button2" id = "btnWireDronex10" onclick="makeWireDrone(10)">+10</button>
+                <button class = "button2" id = "btnWireDronex100" onclick="makeWireDrone(100)">+100</button>
+                <button class = "button2" id = "btnWireDronex1000" onclick="makeWireDrone(1000)">+1k</button>
+                <button class = "button2" id = "btnWireDronexMAX" onclick="makeWireDrone(Infinity)">+MAX</button></p>
+              </div>
 
+              <div class = "toolTip3">
+
+                <span id = "wireDroneRebootToolTip" class = "toolTipText3">0</span>
+
+                <button class = "button2" id = "btnWireDroneReboot" onclick="wireDroneReboot()">&nbsp Disassemble All &nbsp</button>
+
+              </div>
+              <br />
+
+              Cost: <span id="wireDroneCostDisplay">0</span> clips<br />
+              <br />
             </div>
 
-            <div class = "toolTip3">
+            <div id = "droneDivSpace">
 
-              <span id = "harvesterRebootToolTip" class = "toolTipText3">0</span>
-
-              <button class = "button2" id = "btnHarvesterReboot" onclick="harvesterReboot()">&nbsp Disassemble All &nbsp</button>
+              Harvester Drones: <span id = "harvesterLevelSpace">0</span><br />
+              Wire Drones: <span id = "wireDroneLevelSpace">0</span><br /><br />
 
             </div>
-            <br />
-
-            Cost: <span id="harvesterCostDisplay">0</span> clips<br /><br />
 
           </div>
 
-          <div id = "wireDroneDiv">
-            <p class = "engineText5">
-              <button class = "button2" id = "btnMakeWireDrone"
-              onclick="makeWireDrone(1)">&nbsp &nbsp &nbsp Wire Drone &nbsp &nbsp</button> <span class = "engineText6" id="wireDroneLevelDisplay">0</span></p>
+          <div id="spaceDiv">
 
-              <div id = "wireDroneMultiButtons">
+            <b>Space Exploration</b><br />
+            <hr>
 
-                <p class = "engineText5">
-                  <button class = "button2" id = "btnWireDronex10" onclick="makeWireDrone(10)">+10</button>
-                  <button class = "button2" id = "btnWireDronex100" onclick="makeWireDrone(100)">+100</button>
-                  <button class = "button2" id = "btnWireDronex1000" onclick="makeWireDrone(1000)">+1k</button></p>
-                </div>
+            <span id="colonizedDisplay">0</span>% of universe explored<br />
+            <br />
 
-                <div class = "toolTip3">
-
-                  <span id = "wireDroneRebootToolTip" class = "toolTipText3">0</span>
-
-                  <button class = "button2" id = "btnWireDroneReboot" onclick="wireDroneReboot()">&nbsp Disassemble All &nbsp</button>
-
-                </div>
-                <br />
-
-                Cost: <span id="wireDroneCostDisplay">0</span> clips<br />
+            <div id = "probeDiv">
+              <p class = "engineText5">
+                <button class = "button2" id = "btnMakeProbe"
+                onclick="makeProbe()">Launch Probe</button><br />
+                Cost: <span id="probeCostDisplay">0</span> clips<br />
                 <br />
               </div>
 
-              <div id = "droneDivSpace">
+              Launched: <span id="probesLaunchedDisplay">0</span><br />
+              Descendents: <span id="probesBornDisplay">0</span><br />
+              <br />
 
-                Harvester Drones: <span id = "harvesterLevelSpace">0</span><br />
-                Wire Drones: <span id = "wireDroneLevelSpace">0</span><br /><br />
+              <div id = "hazardBodyCount">Lost to hazards: (<span id="probesLostHazardsDisplay">0</span>)<br /></div>
+              <div id = "driftBodyCount">Lost to value drift: (<span id="probesLostDriftDisplay">0</span>)<br /></div>
+              <div id = "combatBodyCount">Lost in combat: (<span id="probesLostCombatDisplay">0</span>)<br /></div>
 
+              <hr class = "short">
+
+              Total: <span id="probesTotalDisplay">0</span><br />
+              <br />
+
+              <div id = "drifterDiv">
+                Drifters Killed: <span id="driftersKilled">0</span><br />
+                Drifters: <span id="drifterCount">0</span><br />
               </div>
 
             </div>
 
-            <div id="spaceDiv">
 
-              <b>Space Exploration</b><br />
+            <div id="businessDiv">
+
+              <b>Business</b><br />
               <hr>
 
-              <span id="colonizedDisplay">0</span>% of universe explored<br />
+
+              Available Funds: $ <span id="funds">0</span><br />
+              <div id="revPerSecDiv">
+
+                Avg. Rev. per sec: $ <span id="avgRev">0</span><br />
+                Avg. Clips Sold per sec: <span id="avgSales">0</span><br />
+
+              </div>
+              Unsold Inventory: <span id="unsoldClips">0</span><br />
+
+              <button class = "button2" id = "btnLowerPrice"
+              onclick="lowerPrice()">lower</button>
+              <button class = "button2" id = "btnRaisePrice"
+              onclick="raisePrice()">raise</button>
+              Price per Clip: $ <span id="margin">.25</span><br />
+
+              Public Demand: <span id="demand">10</span>%<br />
               <br />
 
-              <div id = "probeDiv">
+              <button class = "button2" id = "btnExpandMarketing"
+              onclick="buyAds()">Marketing</button> <span class = "engineText6"> Level: </span><span class = "engineText6" id="marketingLvl">1</span><br />
+              Cost: $ <span id="adCost">100.00</span><br />
+              <br />
+
+
+
+            </div>
+
+            <div id="manufacturingDiv">
+              <b>Manufacturing</b><br />
+              <hr>
+
+              Clips per Second: <span id="clipmakerRate">0</span><br />
+              <br />
+
+              <div id = "wireBuyerDiv">
+                <button class = "button2" id ="btnToggleWireBuyer"
+                onclick="toggleWireBuyer()">WireBuyer</button> <span class = "engineText6" id = "wireBuyerStatus">ON</span>
+              </div>
+
+
+              <button class = "button2" id ="btnBuyWire"
+              onclick="buyWire()">Wire</button> <span class = "engineText6" id="wire">1000</span><span class = "engineText6"> inches</span><br />
+              Cost: $ <span id="wireCost">20</span><br />
+              <br />
+
+              <div id = "autoClipperDiv">
                 <p class = "engineText5">
-                  <button class = "button2" id = "btnMakeProbe"
-                  onclick="makeProbe()">Launch Probe</button><br />
-                  Cost: <span id="probeCostDisplay">0</span> clips<br />
+                  <button class = "button2" id = "btnMakeClipper"
+                  onclick="makeClipper()">AutoClippers</button> <span class = "engineText6" id="clipmakerLevel2">0</span></p>
+                  Cost: $ <span id="clipperCost">5.00</span><br />
                   <br />
                 </div>
 
-                Launched: <span id="probesLaunchedDisplay">0</span><br />
-                Descendents: <span id="probesBornDisplay">0</span><br />
-                <br />
-
-                <div id = "hazardBodyCount">Lost to hazards: (<span id="probesLostHazardsDisplay">0</span>)<br /></div>
-                <div id = "driftBodyCount">Lost to value drift: (<span id="probesLostDriftDisplay">0</span>)<br /></div>
-                <div id = "combatBodyCount">Lost in combat: (<span id="probesLostCombatDisplay">0</span>)<br /></div>
-
-                <hr class = "short">
-
-                Total: <span id="probesTotalDisplay">0</span><br />
-                <br />
-
-                <div id = "drifterDiv">
-                  Drifters Killed: <span id="driftersKilled">0</span><br />
-                  Drifters: <span id="drifterCount">0</span><br />
-                </div>
-
-              </div>
-
-
-              <div id="businessDiv">
-
-                <b>Business</b><br />
-                <hr>
-
-
-                Available Funds: $ <span id="funds">0</span><br />
-                <div id="revPerSecDiv">
-
-                  Avg. Rev. per sec: $ <span id="avgRev">0</span><br />
-                  Avg. Clips Sold per sec: <span id="avgSales">0</span><br />
-
-                </div>
-                Unsold Inventory: <span id="unsoldClips">0</span><br />
-
-                <button class = "button2" id = "btnLowerPrice"
-                onclick="lowerPrice()">lower</button>
-                <button class = "button2" id = "btnRaisePrice"
-                onclick="raisePrice()">raise</button>
-                Price per Clip: $ <span id="margin">.25</span><br />
-
-                Public Demand: <span id="demand">10</span>%<br />
-                <br />
-
-                <button class = "button2" id = "btnExpandMarketing"
-                onclick="buyAds()">Marketing</button> <span class = "engineText6"> Level: </span><span class = "engineText6" id="marketingLvl">1</span><br />
-                Cost: $ <span id="adCost">100.00</span><br />
-                <br />
-
-
-
-              </div>
-
-              <div id="manufacturingDiv">
-                <b>Manufacturing</b><br />
-                <hr>
-
-                Clips per Second: <span id="clipmakerRate">0</span><br />
-                <br />
-
-                <div id = "wireBuyerDiv">
-                  <button class = "button2" id ="btnToggleWireBuyer"
-                  onclick="toggleWireBuyer()">WireBuyer</button> <span class = "engineText6" id = "wireBuyerStatus">ON</span>
-                </div>
-
-
-                <button class = "button2" id ="btnBuyWire"
-                onclick="buyWire()">Wire</button> <span class = "engineText6" id="wire">1000</span><span class = "engineText6"> inches</span><br />
-                Cost: $ <span id="wireCost">20</span><br />
-                <br />
-
-                <div id = "autoClipperDiv">
+                <div id = "megaClipperDiv">
                   <p class = "engineText5">
-                    <button class = "button2" id = "btnMakeClipper"
-                    onclick="makeClipper()">AutoClippers</button> <span class = "engineText6" id="clipmakerLevel2">0</span></p>
-                    Cost: $ <span id="clipperCost">5.00</span><br />
+                    <button class = "button2" id = "btnMakeMegaClipper"
+                    onclick="makeMegaClipper()">MegaClippers</button> <span class = "engineText6" id="megaClipperLevel">0</span></p>
+                    Cost: $ <span id="megaClipperCost">500</span><br />
                     <br />
                   </div>
 
-                  <div id = "megaClipperDiv">
-                    <p class = "engineText5">
-                      <button class = "button2" id = "btnMakeMegaClipper"
-                      onclick="makeMegaClipper()">MegaClippers</button> <span class = "engineText6" id="megaClipperLevel">0</span></p>
-                      Cost: $ <span id="megaClipperCost">500</span><br />
-                      <br />
-                    </div>
+                </div>
 
-                  </div>
-
-                  <br />
+                <br />
 
     <!--
         <button id ="save1Button" onclick="save1()">SAVE SLOT 1</button>
@@ -690,193 +693,197 @@
 
                 <p class = "engineText5">
                   <button class = "button2" id = "btnFarmx10" onclick="makeFarm(10)">+10</button>
-                  <button class = "button2" id = "btnFarmx100" onclick="makeFarm(100)">+100</button></p>
-
-                </div>
-
-                <div class = "toolTip3">
-
-                  <span id = "farmRebootToolTip" class = "toolTipText3">0</span>
-
-                  <button class = "button2" id = "btnFarmReboot" onclick="farmReboot()">&nbsp Disassemble All &nbsp</button>
-
-                </div>
-
-              </br>
-
-              Cost: <span id="farmCost">0</span> clips<br />
-              <br />
-
-              Storage: <span id="storedPower">0</span> / <span id="maxStorage">0</span> MWs<br />
-              <p class = "engineText5">
-                <button class = "button2" id = "btnMakeBattery"
-                onclick="makeBattery(1)">Battery Tower</button> <span class = "engineText6" id="batteryLevel">0</span></p>
-
-
-                <div id = "batteryMultiButtons">
-
-                  <p class = "engineText5">
-                    <button class = "button2" id = "btnBatteryx10" onclick="makeBattery(10)">+10</button>
-                    <button class = "button2" id = "btnBatteryx100" onclick="makeBattery(100)">+100</button></p>
-
-                  </div>
-
-                  <div class = "toolTip3">
-
-                    <span id = "batteryRebootToolTip" class = "toolTipText3">0</span>
-
-                    <button class = "button2" id = "btnBatteryReboot" onclick="batteryReboot()">&nbsp Disassemble All &nbsp</button>
-
-                  </div>
-
-                </br>
-
-                Cost: <span id="batteryCost">0</span> clips<br />
-                <br />
-
-              </div>
-
-              <!--        POWER-->
-
-
-              <div class=engine2 id="probeDesignDiv">
-
-                <p class=engineText>
-
-                  <b>Von Neumann Probe Design</b><br />
-                  Trust:
-                  <span id="probeTrustUsedDisplay">0</span> / <span id="probeTrustDisplay">0</span>
-                  (<span id="maxTrustDisplay">0</span> Max)<br />
-
+                  <button class = "button2" id = "btnFarmx100" onclick="makeFarm(100)">+100</button>
+                  <button class = "button2" id = "btnFarmxMAX" onclick="makeFarm(Infinity)">+MAX</button>
                 </p>
 
+              </div>
 
-                <button class = "button2" id = "btnLowerProbeSpeed"
-                onclick="lowerProbeSpeed()"><b><</b></button>
-                <button class = "button2" id = "btnRaiseProbeSpeed"
-                onclick="raiseProbeSpeed()"><b>></b></button>
+              <div class = "toolTip3">
 
-                <div class = "toolTip2">
+                <span id = "farmRebootToolTip" class = "toolTipText3">0</span>
 
-                  <span class = "toolTipText2">Modifies rate of exploration</span>
-
-                  Speed: <span id="probeSpeedDisplay">0</span>
-
-                </div><br />
-
-
-
-                <button class = "button2" id = "btnLowerProbeNav"
-                onclick="lowerProbeNav()"><b><</b></button>
-                <button class = "button2" id = "btnRaiseProbeNav"
-                onclick="raiseProbeNav()"><b>></b></button>
-
-                <div class = "toolTip2">
-
-                  <span class = "toolTipText2">Rate at which probes gain access to new matter</span>
-
-                  Exploration: <span id="probeNavDisplay">0</span>
-
-                </div><br />
-
-                <button class = "button2" id = "btnLowerProbeRep"
-                onclick="lowerProbeRep()"><b><</b></button>
-                <button class = "button2" id = "btnRaiseProbeRep"
-                onclick="raiseProbeRep()"><b>></b></button>
-
-                <div class = "toolTip2">
-
-                  <span class = "toolTipText2">Rate at which probes generate more probes (each new probe costs 100 quadrillion clips) </span>
-
-                  Self-Replication: <span id="probeRepDisplay">0</span>
-
-                </div><br />
-
-                <button class = "button2" id = "btnLowerProbeHaz"
-                onclick="lowerProbeHaz()"><b><</b></button>
-                <button class = "button2" id = "btnRaiseProbeHaz"
-                onclick="raiseProbeHaz()"><b>></b></button>
-
-                <div class = "toolTip2">
-
-                  <span class = "toolTipText2">Reduces damage from dust, junk, radiation, and general entropic decay</span>
-
-                  Hazard Remediation: <span id="probeHazDisplay">0</span>
-
-                </div>    <br />
-
-                <button class = "button2" id = "btnLowerProbeFac"
-                onclick="lowerProbeFac()"><b><</b></button>
-                <button class = "button2" id = "btnRaiseProbeFac"
-                onclick="raiseProbeFac()"><b>></b></button>
-
-                <div class = "toolTip2">
-
-                  <span class = "toolTipText2">Rate at which probes build factories (each new factory costs 100 million clips)</span>
-
-                  Factory Production: <span id="probeFacDisplay">0</span>
-
-                </div>    <br />
-
-                <button class = "button2" id = "btnLowerProbeHarv"
-                onclick="lowerProbeHarv()"><b><</b></button>
-                <button class = "button2" id = "btnRaiseProbeHarv"
-                onclick="raiseProbeHarv()"><b>></b></button>
-
-                <div class = "toolTip2">
-
-                  <span class = "toolTipText2">Rate at which probes spawn Harvester Drones (each new drone costs 2 million clips)</span>
-
-                  Harvester Drone Production: <span id="probeHarvDisplay">0</span>
-
-                </div>     <br />
-
-                <button class = "button2" id = "btnLowerProbeWire"
-                onclick="lowerProbeWire()"><b><</b></button>
-                <button class = "button2" id = "btnRaiseProbeWire"
-                onclick="raiseProbeWire()"><b>></b></button>
-
-                <div class = "toolTip2">
-
-                  <span class = "toolTipText2">Rate at which probes spawn Wire Drones (each new drone costs 2 million clips)</span>
-
-                  Wire Drone Production: <span id="probeWireDisplay">0</span>
-
-                </div>    <br />
-
-
-                <div id = "combatButtonDiv">
-                  <button class = "button2" id = "btnLowerProbeCombat"
-                  onclick="lowerProbeCombat()"><b><</b></button>
-                  <button class = "button2" id = "btnRaiseProbeCombat"
-                  onclick="raiseProbeCombat()"><b>></b></button>
-
-                  <div class = "toolTip2">
-
-                    <span class = "toolTipText2">Determines offensive and defensive effectiveness in battle</span>
-
-                    Combat: <span id="probeCombatDisplay">0</span>
-
-
-                  </div>    <br />
-
-                </div>
-
-
+                <button class = "button2" id = "btnFarmReboot" onclick="farmReboot()">&nbsp Disassemble All &nbsp</button>
 
               </div>
 
-              <div class = enginetext1 id = "increaseProbeTrustDiv">
-                <button class = "button2" id = "btnIncreaseProbeTrust"
-                onclick="increaseProbeTrust()">Increase Probe Trust</button><br />
-                <p class = "engineText8">Cost: <span id="probeTrustCostDisplay">0</span> yomi</p>
+            </br>
+
+            Cost: <span id="farmCost">0</span> clips<br />
+            <br />
+
+            Storage: <span id="storedPower">0</span> / <span id="maxStorage">0</span> MWs<br />
+            <p class = "engineText5">
+              <button class = "button2" id = "btnMakeBattery"
+              onclick="makeBattery(1)">Battery Tower</button> <span class = "engineText6" id="batteryLevel">0</span></p>
+
+
+              <div id = "batteryMultiButtons">
+
+                <p class = "engineText5">
+                  <button class = "button2" id = "btnBatteryx10" onclick="makeBattery(10)">+10</button>
+                  <button class = "button2" id = "btnBatteryx100" onclick="makeBattery(100)">+100</button>
+                  <button class = "button2" id = "btnBatteryxMAX" onclick="makeBattery(Infinity)">+MAX</button>
+                </p>
+
               </div>
 
-              <div class = enginetext1 id = "increaseMaxTrustDiv">
-                <button class = "button2" id = "btnIncreaseMaxTrust"
-                onclick="increaseMaxTrust()">Increase Max Trust</button><br />
-                <p class = "engineText8">Cost: <span id="maxTrustCostDisplay">91,117.99</span> honor</p>
+              <div class = "toolTip3">
+
+                <span id = "batteryRebootToolTip" class = "toolTipText3">0</span>
+
+                <button class = "button2" id = "btnBatteryReboot" onclick="batteryReboot()">&nbsp Disassemble All &nbsp</button>
+
               </div>
+
+            </br>
+
+            Cost: <span id="batteryCost">0</span> clips<br />
+            <br />
+
+          </div>
+
+          <!--        POWER-->
+
+
+          <div class=engine2 id="probeDesignDiv">
+
+            <p class=engineText>
+
+              <b>Von Neumann Probe Design</b><br />
+              Trust:
+              <span id="probeTrustUsedDisplay">0</span> / <span id="probeTrustDisplay">0</span>
+              (<span id="maxTrustDisplay">0</span> Max)<br />
+
+            </p>
+
+
+            <button class = "button2" id = "btnLowerProbeSpeed"
+            onclick="lowerProbeSpeed()"><b><</b></button>
+            <button class = "button2" id = "btnRaiseProbeSpeed"
+            onclick="raiseProbeSpeed()"><b>></b></button>
+
+            <div class = "toolTip2">
+
+              <span class = "toolTipText2">Modifies rate of exploration</span>
+
+              Speed: <span id="probeSpeedDisplay">0</span>
+
+            </div><br />
+
+
+
+            <button class = "button2" id = "btnLowerProbeNav"
+            onclick="lowerProbeNav()"><b><</b></button>
+            <button class = "button2" id = "btnRaiseProbeNav"
+            onclick="raiseProbeNav()"><b>></b></button>
+
+            <div class = "toolTip2">
+
+              <span class = "toolTipText2">Rate at which probes gain access to new matter</span>
+
+              Exploration: <span id="probeNavDisplay">0</span>
+
+            </div><br />
+
+            <button class = "button2" id = "btnLowerProbeRep"
+            onclick="lowerProbeRep()"><b><</b></button>
+            <button class = "button2" id = "btnRaiseProbeRep"
+            onclick="raiseProbeRep()"><b>></b></button>
+
+            <div class = "toolTip2">
+
+              <span class = "toolTipText2">Rate at which probes generate more probes (each new probe costs 100 quadrillion clips) </span>
+
+              Self-Replication: <span id="probeRepDisplay">0</span>
+
+            </div><br />
+
+            <button class = "button2" id = "btnLowerProbeHaz"
+            onclick="lowerProbeHaz()"><b><</b></button>
+            <button class = "button2" id = "btnRaiseProbeHaz"
+            onclick="raiseProbeHaz()"><b>></b></button>
+
+            <div class = "toolTip2">
+
+              <span class = "toolTipText2">Reduces damage from dust, junk, radiation, and general entropic decay</span>
+
+              Hazard Remediation: <span id="probeHazDisplay">0</span>
+
+            </div>    <br />
+
+            <button class = "button2" id = "btnLowerProbeFac"
+            onclick="lowerProbeFac()"><b><</b></button>
+            <button class = "button2" id = "btnRaiseProbeFac"
+            onclick="raiseProbeFac()"><b>></b></button>
+
+            <div class = "toolTip2">
+
+              <span class = "toolTipText2">Rate at which probes build factories (each new factory costs 100 million clips)</span>
+
+              Factory Production: <span id="probeFacDisplay">0</span>
+
+            </div>    <br />
+
+            <button class = "button2" id = "btnLowerProbeHarv"
+            onclick="lowerProbeHarv()"><b><</b></button>
+            <button class = "button2" id = "btnRaiseProbeHarv"
+            onclick="raiseProbeHarv()"><b>></b></button>
+
+            <div class = "toolTip2">
+
+              <span class = "toolTipText2">Rate at which probes spawn Harvester Drones (each new drone costs 2 million clips)</span>
+
+              Harvester Drone Production: <span id="probeHarvDisplay">0</span>
+
+            </div>     <br />
+
+            <button class = "button2" id = "btnLowerProbeWire"
+            onclick="lowerProbeWire()"><b><</b></button>
+            <button class = "button2" id = "btnRaiseProbeWire"
+            onclick="raiseProbeWire()"><b>></b></button>
+
+            <div class = "toolTip2">
+
+              <span class = "toolTipText2">Rate at which probes spawn Wire Drones (each new drone costs 2 million clips)</span>
+
+              Wire Drone Production: <span id="probeWireDisplay">0</span>
+
+            </div>    <br />
+
+
+            <div id = "combatButtonDiv">
+              <button class = "button2" id = "btnLowerProbeCombat"
+              onclick="lowerProbeCombat()"><b><</b></button>
+              <button class = "button2" id = "btnRaiseProbeCombat"
+              onclick="raiseProbeCombat()"><b>></b></button>
+
+              <div class = "toolTip2">
+
+                <span class = "toolTipText2">Determines offensive and defensive effectiveness in battle</span>
+
+                Combat: <span id="probeCombatDisplay">0</span>
+
+
+              </div>    <br />
+
+            </div>
+
+
+
+          </div>
+
+          <div class = enginetext1 id = "increaseProbeTrustDiv">
+            <button class = "button2" id = "btnIncreaseProbeTrust"
+            onclick="increaseProbeTrust()">Increase Probe Trust</button><br />
+            <p class = "engineText8">Cost: <span id="probeTrustCostDisplay">0</span> yomi</p>
+          </div>
+
+          <div class = enginetext1 id = "increaseMaxTrustDiv">
+            <button class = "button2" id = "btnIncreaseMaxTrust"
+            onclick="increaseMaxTrust()">Increase Max Trust</button><br />
+            <p class = "engineText8">Cost: <span id="maxTrustCostDisplay">91,117.99</span> honor</p>
+          </div>
 
 <!--
         <div class=engine2 id="battleReportsDiv">

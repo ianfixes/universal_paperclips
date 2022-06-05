@@ -1888,6 +1888,7 @@ function makeFactory() {
 function makeHarvester(amount) {
 
   for (x = 0; x < amount; x++) {
+    if (unusedClips < harvesterCost) { break; }
     unusedClips = unusedClips - harvesterCost;
     harvesterBill = harvesterBill + harvesterCost;
     harvesterLevel++;
@@ -1910,6 +1911,7 @@ function makeHarvester(amount) {
 function makeWireDrone(amount) {
 
   for (x = 0; x < amount; x++) {
+    if (unusedClips < wireDroneCost) { break; }
     unusedClips = unusedClips - wireDroneCost;
     wireDroneBill = wireDroneBill + wireDroneCost;
     wireDroneLevel++;
@@ -1987,8 +1989,10 @@ function updateDroneButtons() {
 
   if (unusedClips < harvesterCost) {
     document.getElementById("btnMakeHarvester").disabled = true;
+    document.getElementById("btnHarvesterxMAX").disabled = true;
   } else {
     document.getElementById("btnMakeHarvester").disabled = false;
+    document.getElementById("btnHarvesterxMAX").disabled = false;
   }
 
   if (unusedClips < p10h) {
@@ -2011,8 +2015,10 @@ function updateDroneButtons() {
 
   if (unusedClips < wireDroneCost) {
     document.getElementById("btnMakeWireDrone").disabled = true;
+    document.getElementById("btnWireDronexMAX").disabled = true;
   } else {
     document.getElementById("btnMakeWireDrone").disabled = false;
+    document.getElementById("btnWireDronexMAX").disabled = false;
   }
 
   if (unusedClips < p10w) {
@@ -2317,6 +2323,7 @@ function updatePowPrices() {
 function makeFarm(amount) {
 
   for (x = 0; x < amount; x++) {
+    if (unusedClips < farmCost) { break; }
     unusedClips = unusedClips - farmCost;
     farmBill = farmBill + farmCost;
     farmLevel++;
@@ -2345,6 +2352,7 @@ function farmReboot() {
 function makeBattery(amount) {
 
   for (x = 0; x < amount; x++) {
+    if (unusedClips < batteryCost) { break; }
     unusedClips = unusedClips - batteryCost;
     batteryBill = batteryBill + batteryCost;
     batteryLevel++;
@@ -2439,14 +2447,18 @@ function updatePower() {
 
     if (unusedClips < farmCost) {
       document.getElementById("btnMakeFarm").disabled = true;
+      document.getElementById("btnFarmxMAX").disabled = true;
     } else {
       document.getElementById("btnMakeFarm").disabled = false;
+      document.getElementById("btnFarmxMAX").disabled = false;
     }
 
     if (unusedClips < batteryCost) {
       document.getElementById("btnMakeBattery").disabled = true;
+      document.getElementById("btnBatteryxMAX").disabled = true;
     } else {
       document.getElementById("btnMakeBattery").disabled = false;
+      document.getElementById("btnBatteryxMAX").disabled = false;
     }
 
     if (farmLevel < 1) {
