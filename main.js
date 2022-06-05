@@ -447,8 +447,10 @@ function buttonUpdate() {
 
   if (honor < maxTrustCost) {
     document.getElementById("btnIncreaseMaxTrust").disabled = true;
+    document.getElementById("btnMaxOutMaxTrust").disabled = true;
   } else {
     document.getElementById("btnIncreaseMaxTrust").disabled = false;
+    document.getElementById("btnMaxOutMaxTrust").disabled = false;
   }
 
   if (unusedClips < probeCost) {
@@ -712,8 +714,10 @@ function buttonUpdate() {
 
   if (yomi < probeTrustCost || probeTrust >= maxTrust) {
     document.getElementById("btnIncreaseProbeTrust").disabled = true;
+    document.getElementById("btnMaxOutProbeTrust").disabled = true;
   } else {
     document.getElementById("btnIncreaseProbeTrust").disabled = false;
+    document.getElementById("btnMaxOutProbeTrust").disabled = false;
   }
 
   if (probeTrust - probeUsedTrust < 1) {
@@ -1761,9 +1765,10 @@ function clipClick(number) {
 }
 
 // This is a cheat function
-function buyAndClipMax() {
-  buyWire(Infinity);
-  clipClick(Infinity);
+function buyAndClipMax(amount) {
+  if (isNaN(amount)) { amount = Infinity; }
+  buyWire(amount);
+  clipClick(amount);
 }
 
 function makeClipper(amount) {
@@ -2522,21 +2527,26 @@ function updatePower() {
 
 
 
-function buyAds() {
-  if (funds >= adCost) {
+function buyAds(amount) {
+  if (isNaN(amount)) { amount = 1; }
+
+  var counter = 0;
+  while (funds >= adCost && counter < amount) {
     marketingLvl = marketingLvl + 1;
     funds = funds - adCost;
     adCost = Math.floor(adCost * 2);
-    document.getElementById('adCost').innerHTML = adCost.toLocaleString(undefined, {
-      minimumFractionDigits: 2,
-      maximumFractionDigits: 2
-    });
-    document.getElementById('funds').innerHTML = funds.toLocaleString(undefined, {
-      minimumFractionDigits: 2,
-      maximumFractionDigits: 2
-    });
-    document.getElementById('marketingLvl').innerHTML = marketingLvl;
+    counter++;
   }
+
+  document.getElementById('adCost').innerHTML = adCost.toLocaleString(undefined, {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2
+  });
+  document.getElementById('funds').innerHTML = funds.toLocaleString(undefined, {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2
+  });
+  document.getElementById('marketingLvl').innerHTML = marketingLvl;
 }
 
 function sellClips(number) {
@@ -3149,20 +3159,30 @@ var probeTrustCost = Math.floor(Math.pow(probeTrust + 1, 1.47) * 200);
 
 //var probeCost = Math.pow((probeLaunchLevel+1), 1.44)*Math.pow(10, 24);
 
-function increaseProbeTrust() {
-  yomi = yomi - probeTrustCost;
+function increaseProbeTrust(amount) {
+  if (isNaN(amount)) { amount = 1; }
+  for (var i = 0; i < amount; i++) {
+    if (probeTrust == maxTrust) { break; }
+    yomi = yomi - probeTrustCost;
+    probeTrust++;
+    probeTrustCost = Math.floor(Math.pow(probeTrust + 1, 1.47) * 200);
+  }
+
   document.getElementById('yomiDisplay').innerHTML = yomi.toLocaleString();
-  probeTrust++;
-  probeTrustCost = Math.floor(Math.pow(probeTrust + 1, 1.47) * 200);
   document.getElementById('probeTrustDisplay').innerHTML = probeTrust;
   document.getElementById('probeTrustCostDisplay').innerHTML = Math.floor(probeTrustCost).toLocaleString();
   displayMessage("WARNING: Risk of value drift increased");
 }
 
-function increaseMaxTrust() {
-  honor = honor - maxTrustCost;
+function increaseMaxTrust(amount) {
+  if (isNaN(amount)) { amount = 1; }
+
+  var maxIncrease = Math.min(Math.floor(maxTrustCost / honor), amount);
+
+  honor = honor - (maxTrustCost * maxIncrease);
+  maxTrust += 10 * maxIncrease;
+
   document.getElementById("honorDisplay").innerHTML = Math.round(honor).toLocaleString();
-  maxTrust = maxTrust + 10;
   // maxTrustCost = Math.floor(Math.pow(maxTrust, 1.17)*1000);
   document.getElementById('maxTrustDisplay').innerHTML = maxTrust.toLocaleString();
   // document.getElementById('maxTrustCostDisplay').innerHTML = Math.floor(maxTrustCost).toLocaleString();

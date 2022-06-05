@@ -761,10 +761,8 @@
             </p>
 
 
-            <button class = "button2" id = "btnLowerProbeSpeed"
-            onclick="lowerProbeSpeed()"><b><</b></button>
-            <button class = "button2" id = "btnRaiseProbeSpeed"
-            onclick="raiseProbeSpeed()"><b>></b></button>
+            <button class="button2" id="btnLowerProbeSpeed" onclick="lowerProbeSpeed()"><b>-</b></button>
+            <button class="button2" id="btnRaiseProbeSpeed" onclick="raiseProbeSpeed()"><b>+</b></button>
 
             <div class = "toolTip2">
 
@@ -776,10 +774,8 @@
 
 
 
-            <button class = "button2" id = "btnLowerProbeNav"
-            onclick="lowerProbeNav()"><b><</b></button>
-            <button class = "button2" id = "btnRaiseProbeNav"
-            onclick="raiseProbeNav()"><b>></b></button>
+            <button class="button2" id="btnLowerProbeNav" onclick="lowerProbeNav()"><b>-</b></button>
+            <button class="button2" id="btnRaiseProbeNav" onclick="raiseProbeNav()"><b>+</b></button>
 
             <div class = "toolTip2">
 
@@ -789,10 +785,8 @@
 
             </div><br />
 
-            <button class = "button2" id = "btnLowerProbeRep"
-            onclick="lowerProbeRep()"><b><</b></button>
-            <button class = "button2" id = "btnRaiseProbeRep"
-            onclick="raiseProbeRep()"><b>></b></button>
+            <button class="button2" id="btnLowerProbeRep" onclick="lowerProbeRep()"><b>-</b></button>
+            <button class="button2" id="btnRaiseProbeRep" onclick="raiseProbeRep()"><b>+</b></button>
 
             <div class = "toolTip2">
 
@@ -802,10 +796,8 @@
 
             </div><br />
 
-            <button class = "button2" id = "btnLowerProbeHaz"
-            onclick="lowerProbeHaz()"><b><</b></button>
-            <button class = "button2" id = "btnRaiseProbeHaz"
-            onclick="raiseProbeHaz()"><b>></b></button>
+            <button class="button2" id="btnLowerProbeHaz" onclick="lowerProbeHaz()"><b>-</b></button>
+            <button class="button2" id="btnRaiseProbeHaz" onclick="raiseProbeHaz()"><b>+</b></button>
 
             <div class = "toolTip2">
 
@@ -815,10 +807,8 @@
 
             </div>    <br />
 
-            <button class = "button2" id = "btnLowerProbeFac"
-            onclick="lowerProbeFac()"><b><</b></button>
-            <button class = "button2" id = "btnRaiseProbeFac"
-            onclick="raiseProbeFac()"><b>></b></button>
+            <button class="button2" id="btnLowerProbeFac" onclick="lowerProbeFac()"><b>-</b></button>
+            <button class="button2" id="btnRaiseProbeFac" onclick="raiseProbeFac()"><b>+</b></button>
 
             <div class = "toolTip2">
 
@@ -828,10 +818,8 @@
 
             </div>    <br />
 
-            <button class = "button2" id = "btnLowerProbeHarv"
-            onclick="lowerProbeHarv()"><b><</b></button>
-            <button class = "button2" id = "btnRaiseProbeHarv"
-            onclick="raiseProbeHarv()"><b>></b></button>
+            <button class="button2" id="btnLowerProbeHarv" onclick="lowerProbeHarv()"><b>-</b></button>
+            <button class="button2" id="btnRaiseProbeHarv" onclick="raiseProbeHarv()"><b>+</b></button>
 
             <div class = "toolTip2">
 
@@ -841,10 +829,8 @@
 
             </div>     <br />
 
-            <button class = "button2" id = "btnLowerProbeWire"
-            onclick="lowerProbeWire()"><b><</b></button>
-            <button class = "button2" id = "btnRaiseProbeWire"
-            onclick="raiseProbeWire()"><b>></b></button>
+            <button class="button2" id="btnLowerProbeWire" onclick="lowerProbeWire()"><b>-</b></button>
+            <button class="button2" id="btnRaiseProbeWire" onclick="raiseProbeWire()"><b>+</b></button>
 
             <div class = "toolTip2">
 
@@ -856,10 +842,8 @@
 
 
             <div id = "combatButtonDiv">
-              <button class = "button2" id = "btnLowerProbeCombat"
-              onclick="lowerProbeCombat()"><b><</b></button>
-              <button class = "button2" id = "btnRaiseProbeCombat"
-              onclick="raiseProbeCombat()"><b>></b></button>
+              <button class="button2" id="btnLowerProbeCombat" onclick="lowerProbeCombat()"><b>-</b></button>
+              <button class="button2" id="btnRaiseProbeCombat" onclick="raiseProbeCombat()"><b>+</b></button>
 
               <div class = "toolTip2">
 
@@ -877,14 +861,14 @@
           </div>
 
           <div class = enginetext1 id = "increaseProbeTrustDiv">
-            <button class = "button2" id = "btnIncreaseProbeTrust"
-            onclick="increaseProbeTrust()">Increase Probe Trust</button><br />
+            <button class="button2" id="btnIncreaseProbeTrust" onclick="increaseProbeTrust()">Increase Probe Trust</button><br />
+            <button class="button2" id="btnMaxOutProbeTrust" onclick="increaseProbeTrust(Infinity)">Max-out Probe Trust</button><br />
             <p class = "engineText8">Cost: <span id="probeTrustCostDisplay">0</span> yomi</p>
           </div>
 
           <div class = enginetext1 id = "increaseMaxTrustDiv">
-            <button class = "button2" id = "btnIncreaseMaxTrust"
-            onclick="increaseMaxTrust()">Increase Max Trust</button><br />
+            <button class="button2" id="btnIncreaseMaxTrust" onclick="increaseMaxTrust()">Increase Max Trust</button><br />
+            <button class="button2" id="btnMaxOutMaxTrust" onclick="increaseMaxTrust(Infinity)">Max-out Max Trust</button><br />
             <p class = "engineText8">Cost: <span id="maxTrustCostDisplay">91,117.99</span> honor</p>
           </div>
 
