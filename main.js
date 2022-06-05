@@ -1592,7 +1592,8 @@ function calcPayoff(hm, vm) {
   if (hm == 1 && vm == 1) {
 
     var w = document.getElementById("payoffCellAA");
-    w.style.backgroundColor = "LightGrey";
+    w.classList.add("highlighted");
+    // w.style.backgroundColor = "LightGrey";
 
     strats[h].currentScore = strats[h].currentScore + payoffGrid.valueAA;
     strats[v].currentScore = strats[v].currentScore + payoffGrid.valueAA;
@@ -1600,7 +1601,8 @@ function calcPayoff(hm, vm) {
   } else if (hm == 1 && vm == 2) {
 
     var w = document.getElementById("payoffCellAB");
-    w.style.backgroundColor = "LightGrey";
+    w.classList.add("highlighted");
+    // w.style.backgroundColor = "LightGrey";
 
     strats[h].currentScore = strats[h].currentScore + payoffGrid.valueAB;
     strats[v].currentScore = strats[v].currentScore + payoffGrid.valueBA;
@@ -1608,7 +1610,8 @@ function calcPayoff(hm, vm) {
   } else if (hm == 2 && vm == 1) {
 
     var w = document.getElementById("payoffCellBA");
-    w.style.backgroundColor = "LightGrey";
+    w.classList.add("highlighted");
+    // w.style.backgroundColor = "LightGrey";
 
     strats[h].currentScore = strats[h].currentScore + payoffGrid.valueBA;
     strats[v].currentScore = strats[v].currentScore + payoffGrid.valueAB;
@@ -1616,7 +1619,8 @@ function calcPayoff(hm, vm) {
   } else if (hm == 2 && vm == 2) {
 
     var w = document.getElementById("payoffCellBB");
-    w.style.backgroundColor = "LightGrey";
+    w.classList.add("highlighted");
+    // w.style.backgroundColor = "LightGrey";
 
     strats[h].currentScore = strats[h].currentScore + payoffGrid.valueBB;
     strats[v].currentScore = strats[v].currentScore + payoffGrid.valueBB;
@@ -1654,16 +1658,20 @@ function round(roundNum) {
   function clearGrid() {
 
     var w = document.getElementById("payoffCellAA");
-    w.style.backgroundColor = "white";
+    w.classList.remove("highlighted");
+    // w.style.backgroundColor = "white";
 
     var x = document.getElementById("payoffCellAB");
-    x.style.backgroundColor = "white";
+    x.classList.remove("highlighted");
+    // x.style.backgroundColor = "white";
 
     var y = document.getElementById("payoffCellBA");
-    y.style.backgroundColor = "white";
+    y.classList.remove("highlighted");
+    // y.style.backgroundColor = "white";
 
     var z = document.getElementById("payoffCellBB");
-    z.style.backgroundColor = "white";
+    z.classList.remove("highlighted");
+    // z.style.backgroundColor = "white";
 
 
     setTimeout(function() {
@@ -2588,7 +2596,7 @@ function calculateRev() {
 
   for (i = 0; i < incomeTracker.length; i++) {
     sum = Math.round((sum + incomeTracker[i]) * 100) / 100;
-    console.log("sum = " + sum);
+    // console.log("sum = " + sum);
   }
 
   trueAvgRev = sum / incomeTracker.length;

@@ -111,7 +111,7 @@ h2 {
   border-radius: 3px;
   
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 11;
+  font-size: 11px;
   
   position: absolute;
   z-index: 1;
@@ -332,22 +332,22 @@ canvas {
   width: 60%; 
   text-align: top;
   margin-top: 0; 
-  margin-left: 5px;   
+  margin-left: 5px;
 }
 
 #vertPad {
   float: left;
   width: 35%;    
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 11;     
+  font-size: 11px;
 }
 
 #vertStrat {
   float: right;
   text-align: center;
-  width: 65%;    
+  width: 65%;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 11;     
+  font-size: 11;
 
 }
 
@@ -410,10 +410,10 @@ canvas {
 .qChip {
   width: 22px;
   height: 22px;
-  margin-left: 2;
-  margin-right: 2;
-  margin-top: 2;
-  margin-bottom: 7;
+  margin-left: 2px;
+  margin-right: 2px;
+  margin-top: 2px;
+  margin-bottom: 7px;
   background-color: black;
   float: left;
   
@@ -559,9 +559,17 @@ table.table2 td:nth-child(n>1) {
   
 }
 
-table.table2 td{
+table.table2 td {
   border: 1px solid black;
   text-align: center;
+}
+
+table.table2 tbody td[id] {
+  background-color: white;
+}
+
+table.table2 tbody td[id].highlighted {
+  background-color: lightgray;
 }
 
 
@@ -787,3 +795,47 @@ p.hypnoDrone {
   border: 1px solid #ffffff;
 }
 
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: black;
+    color: #ccc;
+  }
+
+  p.console {
+    color:  #ccc;
+  }
+
+  #consoleDiv {
+    background-color: #222;
+  }
+
+  .projectButton {
+    background-color: #aaa;
+  }
+  .projectButton:disabled {
+    color: #555;
+  }
+
+  .qChip {
+    background-color: #ccc;
+  }
+
+  table.table1 tr:nth-child(even) {
+    background-color: #777;
+  }
+  table.table1 tr:nth-child(odd) {
+    background-color: #333;
+  }
+
+  table.table2 td {
+    border: 1px solid #ccc;
+  }
+
+  table.table2 tbody td[id] {
+    background-color: black;
+  }
+
+  table.table2 tbody td[id].highlighted {
+    background-color: #333;
+  }
+}
