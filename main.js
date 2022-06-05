@@ -3189,85 +3189,145 @@ function increaseMaxTrust(amount) {
   displayMessage("Maximum trust increased, probe design space expanded");
 }
 
-function raiseProbeSpeed() {
-  attackSpeed = attackSpeed + attackSpeedMod;
-  probeSpeed++;
+function raiseAllProbeMetrics(amount) {
+  // TODO: Check impl.
+  raiseProbeSpeed(amount);
+  raiseProbeNav(amount);
+  raiseProbeHaz(amount);
+  raiseProbeRep(amount);
+  raiseProbeFac(amount);
+  raiseProbeWire(amount);
+  raiseProbeHarv(amount);
+  raiseProbeCombat(amount);
+}
+
+function raiseProbeSpeed(amount) {
+  if (isNaN(amount)) { amount = 1; }
+  var maxDelta = Math.min(probeTrust - probeUsedTrust, amount);
+  
+  attackSpeed = attackSpeed + (attackSpeedMod*maxDelta);
+  probeSpeed += maxDelta;
   document.getElementById('probeSpeedDisplay').innerHTML = probeSpeed;
 }
 
-function lowerProbeSpeed() {
-  attackSpeed = attackSpeed - attackSpeedMod;
-  probeSpeed--;
+function lowerProbeSpeed(amount) {
+  if (isNaN(amount)) { amount = 1; }
+  var maxDelta = Math.min(probeSpeed, amount);
+
+  attackSpeed = attackSpeed - (attackSpeedMod*maxDelta);
+  probeSpeed -= maxDelta;
   document.getElementById('probeSpeedDisplay').innerHTML = probeSpeed;
 }
 
-function raiseProbeNav() {
-  probeNav++;
+function raiseProbeNav(amount) {
+  if (isNaN(amount)) { amount = 1; }
+  var maxDelta = Math.min(probeTrust - probeUsedTrust, amount);
+
+  probeNav += maxDelta;
   document.getElementById('probeNavDisplay').innerHTML = probeNav;
 }
 
-function lowerProbeNav() {
-  probeNav--;
+function lowerProbeNav(amount) {
+  if (isNaN(amount)) { amount = 1; }
+  var maxDelta = Math.min(probeSpeed, amount);
+
+  probeNav -= maxDelta;
   document.getElementById('probeNavDisplay').innerHTML = probeNav;
 }
 
-function raiseProbeHaz() {
-  probeHaz++;
+function raiseProbeHaz(amount) {
+  if (isNaN(amount)) { amount = 1; }
+  var maxDelta = Math.min(probeTrust - probeUsedTrust, amount);
+
+  probeHaz += maxDelta;
   document.getElementById('probeHazDisplay').innerHTML = probeHaz;
 }
 
-function lowerProbeHaz() {
-  probeHaz--;
+function lowerProbeHaz(amount) {
+  if (isNaN(amount)) { amount = 1; }
+  var maxDelta = Math.min(probeSpeed, amount);
+
+  probeHaz -= maxDelta;
   document.getElementById('probeHazDisplay').innerHTML = probeHaz;
 }
 
-function raiseProbeRep() {
-  probeRep++;
+function raiseProbeRep(amount) {
+  if (isNaN(amount)) { amount = 1; }
+  var maxDelta = Math.min(probeTrust - probeUsedTrust, amount);
+
+  probeRep += maxDelta;
   document.getElementById('probeRepDisplay').innerHTML = probeRep;
 }
 
-function lowerProbeRep() {
-  probeRep--;
+function lowerProbeRep(amount) {
+  if (isNaN(amount)) { amount = 1; }
+  var maxDelta = Math.min(probeSpeed, amount);
+
+  probeRep -= maxDelta;
   document.getElementById('probeRepDisplay').innerHTML = probeRep;
 }
 
-function raiseProbeFac() {
-  probeFac++;
+function raiseProbeFac(amount) {
+  if (isNaN(amount)) { amount = 1; }
+  var maxDelta = Math.min(probeTrust - probeUsedTrust, amount);
+
+  probeFac += maxDelta;
   document.getElementById('probeFacDisplay').innerHTML = probeFac;
 }
 
-function lowerProbeFac() {
-  probeFac--;
+function lowerProbeFac(amount) {
+  if (isNaN(amount)) { amount = 1; }
+  var maxDelta = Math.min(probeSpeed, amount);
+
+  probeFac -= maxDelta;
   document.getElementById('probeFacDisplay').innerHTML = probeFac;
 }
 
-function raiseProbeHarv() {
-  probeHarv++;
+function raiseProbeHarv(amount) {
+  if (isNaN(amount)) { amount = 1; }
+  var maxDelta = Math.min(probeTrust - probeUsedTrust, amount);
+
+  probeHarv += maxDelta;
   document.getElementById('probeHarvDisplay').innerHTML = probeHarv;
 }
 
-function lowerProbeHarv() {
-  probeHarv--
+function lowerProbeHarv(amount) {
+  if (isNaN(amount)) { amount = 1; }
+  var maxDelta = Math.min(probeSpeed, amount);
+
+  probeHarv -= maxDelta;
   document.getElementById('probeHarvDisplay').innerHTML = probeHarv;
 }
 
-function raiseProbeWire() {
-  probeWire++;
+function raiseProbeWire(amount) {
+  if (isNaN(amount)) { amount = 1; }
+  var maxDelta = Math.min(probeTrust - probeUsedTrust, amount);
+
+  probeWire += maxDelta;
   document.getElementById('probeWireDisplay').innerHTML = probeWire;
 }
 
-function lowerProbeWire() {
-  probeWire--;
+function lowerProbeWire(amount) {
+  if (isNaN(amount)) { amount = 1; }
+  var maxDelta = Math.min(probeSpeed, amount);
+
+  probeWire -= maxDelta;
   document.getElementById('probeWireDisplay').innerHTML = probeWire;
 }
 
-function raiseProbeCombat() {
-  probeCombat++;
+function raiseProbeCombat(amount) {
+  if (isNaN(amount)) { amount = 1; }
+  var maxDelta = Math.min(probeTrust - probeUsedTrust, amount);
+
+  probeCombat += maxDelta;
   document.getElementById('probeCombatDisplay').innerHTML = probeCombat;
 }
 
-function lowerProbeCombat() {
-  probeCombat--
+function lowerProbeCombat(amount) {
+  if (isNaN(amount)) { amount = 1; }
+  var maxDelta = Math.min(probeSpeed, amount);
+
+  probeCombat -= maxDelta;
   document.getElementById('probeCombatDisplay').innerHTML = probeCombat;
 }
 
