@@ -4035,9 +4035,9 @@ function refresh() {
     maximumFractionDigits: 2
   });
   document.getElementById('megaClipperLevel').innerHTML = megaClipperLevel;
-  document.getElementById('investmentBankroll').innerHTML = bankroll.toLocaleString();
+  document.getElementById('investmentBankroll').innerHTML = (bankroll == null ? 0 : bankroll).toLocaleString();
   document.getElementById('secValue').innerHTML = secTotal.toLocaleString();
-  document.getElementById('portValue').innerHTML = portTotal.toLocaleString();
+  document.getElementById('portValue').innerHTML = (portTotal == null ? 0 : portTotal).toLocaleString();
   document.getElementById("investUpgradeCost").innerHTML = investUpgradeCost.toLocaleString();
   document.getElementById("yomiDisplay").innerHTML = yomi.toLocaleString();
   document.getElementById("investmentLevel").innerHTML = investLevel;
@@ -5077,13 +5077,13 @@ function load() {
   clipRateTracker = loadGame.clipRateTracker;
   clipmakerRate = loadGame.clipmakerRate;
   clipmakerLevel = loadGame.clipmakerLevel;
-  clipperCost = loadGame.clipperCost;
+  clipperCost = loadGame.clipperCost == null ? 0 : loadGame.clipperCost;
   unsoldClips = loadGame.unsoldClips;
-  funds = loadGame.funds;
+  funds = loadGame.funds == null ? 0 : loadGame.funds;
   margin = loadGame.margin;
   wire = loadGame.wire;
   wireCost = loadGame.wireCost;
-  adCost = loadGame.adCost;
+  adCost = loadGame.adCost == null ? 0 : loadGame.adCost;
   demand = loadGame.demand;
   clipsSold = loadGame.clipsSold;
   avgRev = loadGame.avgRev;
@@ -5118,7 +5118,7 @@ function load() {
   projectsFlag = loadGame.projectsFlag;
   autoClipperFlag = loadGame.autoClipperFlag;
   megaClipperFlag = loadGame.megaClipperFlag;
-  megaClipperCost = loadGame.megaClipperCost;
+  megaClipperCost = loadGame.megaClipperCost == null ? 0 : loadGame.megaClipperCost;
   megaClipperLevel = loadGame.megaClipperLevel;
   megaClipperBoost = loadGame.megaClipperBoost;
   creativitySpeed = loadGame.creativitySpeed;
