@@ -18,19 +18,19 @@
     </div>
 
     <div id="hypnoDroneEventDiv">
-      <p class = "hypnoDrone"><span id = hypnoDroneText></span></p>
+      <p class="hypnoDrone"><span id=hypnoDroneText></span></p>
     </div>
 
     <div id="consoleDiv">
 
-      <p class = "consoleOld">
+      <p class="consoleOld">
         <span>&nbsp;.&nbsp;</span><span id="readout5"></span><br />
         <span>&nbsp;.&nbsp;</span><span id="readout4"></span><br />
         <span>&nbsp;.&nbsp;</span><span id="readout3"></span><br />
         <span>&nbsp;.&nbsp;</span><span id="readout2"></span><br />
       </p>
-      <p class = "console">
-        <span>&nbsp;>&nbsp;</span><span id="readout1">Welcome to Universal Paperclips</span><span id="cursor" class = "pulsate">|</span>
+      <p class="console">
+        <span>&nbsp;>&nbsp;</span><span id="readout1">Welcome to Universal Paperclips</span><span id="cursor" class="pulsate">|</span>
       </p>
 
     </div>
@@ -39,11 +39,11 @@
 
       <div id="prestigeDiv">
 
-        &nbsp;Universe: <span id = "prestigeUcounter">0</span> / Sim Level: <span id = "prestigeScounter">0</span>
+        &nbsp;Universe: <span id="prestigeUcounter">0</span> / Sim Level: <span id="prestigeScounter">0</span>
 
       </div>
-      <div class = "toolTip">
-        <span id = "clipCountCrunched" class = "toolTipText">total clips produced</span>
+      <div class="toolTip">
+        <span id="clipCountCrunched" class="toolTipText">total clips produced</span>
         <h2>Paperclips: <span id="clips">0</span></h2>
       </div>
 
@@ -51,43 +51,43 @@
 
     <div id="leftColumn">
 
-      <button class = "button2" id ="btnMakePaperclip" onclick="clipClick(1)">Make Paperclip</button><br />
+      <button class="button2" id ="btnMakePaperclip" onclick="clipClick(1)">Make Paperclip</button><br />
       <br />
 
-      <div id = "creationDiv">
+      <div id="creationDiv">
 
         <strong>Manufacturing</strong><br />
         <hr>
-        <div id = "factoryUpgradeDisplay">
-          <p class = "clean">
-            Next Upgrade at: <span id = "nextFactoryUpgrade">0</span> Factories <br />
+        <div id="factoryUpgradeDisplay">
+          <p class="clean">
+            Next Upgrade at: <span id="nextFactoryUpgrade">0</span> Factories <br />
           </p>
         </div>
 
-        <div id = "clipsPerSecDiv">
+        <div id="clipsPerSecDiv">
           Clips per Second: <span id="clipmakerRate2">0</span><br />
         </div>
 
-        <div id = "tothDiv">
+        <div id="tothDiv">
           Unused Clips: <span id="unusedClipsDisplay">0</span><br />
         </div>
         <br />
 
 
-        <div id = "factoryDiv">
-          <p class = "engineText5">
-            <button class = "button2" id = "btnMakeFactory" onclick="makeFactory()">Clip Factory</button> <span class = "engineText6" id="factoryLevelDisplay">0</span>
+        <div id="factoryDiv">
+          <p class="engineText5">
+            <button class="button2" id="btnMakeFactory" onclick="makeFactory()">Clip Factory</button> <span class="engineText6" id="factoryLevelDisplay">0</span>
           </p>
 
           <p class="engineText5">
             <button class="button2" id="btnFactoryxMAX" onclick="makeFactory(Infinity)">+MAX</button>
           </p>
 
-          <div class = "toolTip3">
+          <div class="toolTip3">
 
-            <span id = "factoryRebootToolTip" class = "toolTipText3">0</span>
+            <span id="factoryRebootToolTip" class="toolTipText3">0</span>
 
-            <button class = "button2" id = "btnFactoryReboot" onclick="factoryReboot()">&nbsp Disassemble All &nbsp</button>
+            <button class="button2" id="btnFactoryReboot" onclick="factoryReboot()">&nbsp Disassemble All &nbsp</button>
 
           </div>
           <br />
@@ -97,10 +97,10 @@
         </div>
 
         <div id="wireTransDiv">
-          Wire: <span id="transWire">0</span> <span id = "inchSpan">inches</span><br />
+          Wire: <span id="transWire">0</span> <span id="inchSpan">inches</span><br />
         </div>
 
-        <div id = "factoryDivSpace">
+        <div id="factoryDivSpace">
           Factories: <span id="factoryLevelDisplaySpace">0</span><br /><br />
         </div>
 
@@ -110,9 +110,9 @@
 
         <strong>Wire Production</strong><br />
         <hr>
-        <div id = droneUpgradeDisplay>
-          <p class = "clean">
-            Next Upgrade at: <span id = "nextDroneUpgrade">0</span> Drones <br />
+        <div id=droneUpgradeDisplay>
+          <p class="clean">
+            Next Upgrade at: <span id="nextDroneUpgrade">0</span> Drones <br />
           </p>
         </div>
 
@@ -124,17 +124,17 @@
         (<span id="wpps">0</span> inches per sec) <br />
         <br />
 
-        <div id = "harvesterDiv">
+        <div id="harvesterDiv">
 
-          <p class = "engineText5">
-            <button class = "button2" id = "btnMakeHarvester"
+          <p class="engineText5">
+            <button class="button2" id="btnMakeHarvester"
             onclick="makeHarvester(1)">&nbsp Harvester Drone &nbsp</button>
-            <span class = "engineText6" id="harvesterLevelDisplay">0</span>
+            <span class="engineText6" id="harvesterLevelDisplay">0</span>
           </p>
 
-          <div id = "harvesterMultiButtons">
+          <div id="harvesterMultiButtons">
 
-            <p class = "engineText5">
+            <p class="engineText5">
               <button class="button2" id="btnHarvesterx10" onclick="makeHarvester(10)">+10</button>
               <button class="button2" id="btnHarvesterx100" onclick="makeHarvester(100)">+100</button>
               <button class="button2" id="btnHarvesterx1000" onclick="makeHarvester(1000)">+1k</button>
@@ -148,11 +148,11 @@
 
           </div>
 
-          <div class = "toolTip3">
+          <div class="toolTip3">
 
-            <span id = "harvesterRebootToolTip" class = "toolTipText3">0</span>
+            <span id="harvesterRebootToolTip" class="toolTipText3">0</span>
 
-            <button class = "button2" id = "btnHarvesterReboot" onclick="harvesterReboot()">&nbsp Disassemble All &nbsp</button>
+            <button class="button2" id="btnHarvesterReboot" onclick="harvesterReboot()">&nbsp Disassemble All &nbsp</button>
 
           </div>
           <br />
@@ -161,25 +161,25 @@
 
         </div>
 
-        <div id = "wireDroneDiv">
-          <p class = "engineText5">
-            <button class = "button2" id = "btnMakeWireDrone"
-            onclick="makeWireDrone(1)">&nbsp &nbsp &nbsp Wire Drone &nbsp &nbsp</button> <span class = "engineText6" id="wireDroneLevelDisplay">0</span></p>
+        <div id="wireDroneDiv">
+          <p class="engineText5">
+            <button class="button2" id="btnMakeWireDrone"
+            onclick="makeWireDrone(1)">&nbsp &nbsp &nbsp Wire Drone &nbsp &nbsp</button> <span class="engineText6" id="wireDroneLevelDisplay">0</span></p>
 
-            <div id = "wireDroneMultiButtons">
+            <div id="wireDroneMultiButtons">
 
-              <p class = "engineText5">
-                <button class = "button2" id = "btnWireDronex10" onclick="makeWireDrone(10)">+10</button>
-                <button class = "button2" id = "btnWireDronex100" onclick="makeWireDrone(100)">+100</button>
-                <button class = "button2" id = "btnWireDronex1000" onclick="makeWireDrone(1000)">+1k</button>
-                <button class = "button2" id = "btnWireDronexMAX" onclick="makeWireDrone(Infinity)">+MAX</button></p>
+              <p class="engineText5">
+                <button class="button2" id="btnWireDronex10" onclick="makeWireDrone(10)">+10</button>
+                <button class="button2" id="btnWireDronex100" onclick="makeWireDrone(100)">+100</button>
+                <button class="button2" id="btnWireDronex1000" onclick="makeWireDrone(1000)">+1k</button>
+                <button class="button2" id="btnWireDronexMAX" onclick="makeWireDrone(Infinity)">+MAX</button></p>
               </div>
 
-              <div class = "toolTip3">
+              <div class="toolTip3">
 
-                <span id = "wireDroneRebootToolTip" class = "toolTipText3">0</span>
+                <span id="wireDroneRebootToolTip" class="toolTipText3">0</span>
 
-                <button class = "button2" id = "btnWireDroneReboot" onclick="wireDroneReboot()">&nbsp Disassemble All &nbsp</button>
+                <button class="button2" id="btnWireDroneReboot" onclick="wireDroneReboot()">&nbsp Disassemble All &nbsp</button>
 
               </div>
               <br />
@@ -188,10 +188,10 @@
               <br />
             </div>
 
-            <div id = "droneDivSpace">
+            <div id="droneDivSpace">
 
-              Harvester Drones: <span id = "harvesterLevelSpace">0</span><br />
-              Wire Drones: <span id = "wireDroneLevelSpace">0</span><br /><br />
+              Harvester Drones: <span id="harvesterLevelSpace">0</span><br />
+              Wire Drones: <span id="wireDroneLevelSpace">0</span><br /><br />
 
             </div>
 
@@ -205,9 +205,9 @@
             <span id="colonizedDisplay">0</span>% of universe explored<br />
             <br />
 
-            <div id = "probeDiv">
-              <p class = "engineText5">
-                <button class = "button2" id = "btnMakeProbe"
+            <div id="probeDiv">
+              <p class="engineText5">
+                <button class="button2" id="btnMakeProbe"
                 onclick="makeProbe()">Launch Probe</button><br />
                 Cost: <span id="probeCostDisplay">0</span> clips<br />
                 <br />
@@ -217,16 +217,16 @@
               Descendents: <span id="probesBornDisplay">0</span><br />
               <br />
 
-              <div id = "hazardBodyCount">Lost to hazards: (<span id="probesLostHazardsDisplay">0</span>)<br /></div>
-              <div id = "driftBodyCount">Lost to value drift: (<span id="probesLostDriftDisplay">0</span>)<br /></div>
-              <div id = "combatBodyCount">Lost in combat: (<span id="probesLostCombatDisplay">0</span>)<br /></div>
+              <div id="hazardBodyCount">Lost to hazards: (<span id="probesLostHazardsDisplay">0</span>)<br /></div>
+              <div id="driftBodyCount">Lost to value drift: (<span id="probesLostDriftDisplay">0</span>)<br /></div>
+              <div id="combatBodyCount">Lost in combat: (<span id="probesLostCombatDisplay">0</span>)<br /></div>
 
-              <hr class = "short">
+              <hr class="short">
 
               Total: <span id="probesTotalDisplay">0</span><br />
               <br />
 
-              <div id = "drifterDiv">
+              <div id="drifterDiv">
                 Drifters Killed: <span id="driftersKilled">0</span><br />
                 Drifters: <span id="drifterCount">0</span><br />
               </div>
@@ -249,17 +249,17 @@
               </div>
               Unsold Inventory: <span id="unsoldClips">0</span><br />
 
-              <button class = "button2" id = "btnLowerPrice"
+              <button class="button2" id="btnLowerPrice"
               onclick="lowerPrice()">lower</button>
-              <button class = "button2" id = "btnRaisePrice"
+              <button class="button2" id="btnRaisePrice"
               onclick="raisePrice()">raise</button>
               Price per Clip: $ <span id="margin">.25</span><br />
 
               Public Demand: <span id="demand">10</span>%<br />
               <br />
 
-              <button class = "button2" id = "btnExpandMarketing"
-              onclick="buyAds()">Marketing</button> <span class = "engineText6"> Level: </span><span class = "engineText6" id="marketingLvl">1</span><br />
+              <button class="button2" id="btnExpandMarketing"
+              onclick="buyAds()">Marketing</button> <span class="engineText6"> Level: </span><span class="engineText6" id="marketingLvl">1</span><br />
               Cost: $ <span id="adCost">100.00</span><br />
               <br />
 
@@ -274,31 +274,30 @@
               Clips per Second: <span id="clipmakerRate">0</span><br />
               <br />
 
-              <div id = "wireBuyerDiv">
-                <button class = "button2" id ="btnToggleWireBuyer"
-                onclick="toggleWireBuyer()">WireBuyer</button> <span class = "engineText6" id = "wireBuyerStatus">ON</span>
+              <div id="wireBuyerDiv">
+                <button class="button2" id ="btnToggleWireBuyer"
+                onclick="toggleWireBuyer()">WireBuyer</button> <span class="engineText6" id="wireBuyerStatus">ON</span>
               </div>
 
               <div>
-                <button class = "button2" id ="btnBuyWire"
+                <button class="button2" id ="btnBuyWire"
                 onclick="buyWire()">Wire</button>
-                <span class = "engineText6" id="wire">1000</span><span class = "engineText6"> inches</span><br />
+                <span class="engineText6" id="wire">1000</span><span class="engineText6"> inches</span><br />
                 Cost: $ <span id="wireCost">20</span><br />
                 <br />
               </div>
 
               <div id="autoClipperDiv">
-                <button class = "button2" id = "btnMakeClipper"
-                onclick="makeClipper()">AutoClippers</button> 
-                <span class = "engineText6" id="clipmakerLevel2">0</span><br />
+                <button class="button2" id="btnMakeClipper" onclick="makeClipper()">AutoClippers</button> 
+                <span class="engineText6" id="clipmakerLevel2">0</span><br />
                 Cost: $ <span id="clipperCost">5.00</span><br />
                 <br />
                 </div>
 
-                <div id = "megaClipperDiv">
-                  <p class = "engineText5">
-                    <button class = "button2" id = "btnMakeMegaClipper"
-                    onclick="makeMegaClipper()">MegaClippers</button> <span class = "engineText6" id="megaClipperLevel">0</span></p>
+                <div id="megaClipperDiv">
+                  <p class="engineText5">
+                    <button class="button2" id="btnMakeMegaClipper"
+                    onclick="makeMegaClipper()">MegaClippers</button> <span class="engineText6" id="megaClipperLevel">0</span></p>
                     Cost: $ <span id="megaClipperCost">500</span><br />
                     <br />
                   </div>
@@ -352,15 +351,15 @@
         </div>
 
 
-        <div id = "processorDisplay">
-          <button class = "button2" id="btnAddProc" onclick="addProc()">Processors</button>
+        <div id="processorDisplay">
+          <button class="button2" id="btnAddProc" onclick="addProc()">Processors</button>
           <span class="engineText10" id="processors">1</span>
         </div>
 
         <br />
 
-        <div id = "memoryDisplay">
-          <button class = "button2" id="btnAddMem" onclick="addMem()">&nbsp Memory &nbsp</button>
+        <div id="memoryDisplay">
+          <button class="button2" id="btnAddMem" onclick="addMem()">&nbsp Memory &nbsp</button>
           <span class="engineText10" id="memory">1</span>
         </div>
 
@@ -369,7 +368,7 @@
         <br />
         Operations: <span id="operations">0</span> / <span id="maxOps">1,000</span><br />
 
-        <div id = "creativityDiv">
+        <div id="creativityDiv">
 
           Creativity: <span id="creativity">0</span>
 
@@ -377,7 +376,7 @@
 
         <br />
 
-        <div class = "swarmEngine" id = "swarmEngine">
+        <div class="swarmEngine" id="swarmEngine">
 
           <strong>Swarm Computing</strong><br />
           Drones: <span id="swarmSize">0</span><br />
@@ -385,57 +384,57 @@
           <div id="giftTimer">Next gift in <span id="giftCountdown">17 seconds</span></div>
 
           <div id="feedButtonDiv">
-            <button class = "button2" id = "btnFeedSwarm" onclick = "feedSwarm()">Feed the Swarm</button><br />
+            <button class="button2" id="btnFeedSwarm" onclick="feedSwarm()">Feed the Swarm</button><br />
             Cost: <span id="swarmFeedCost">0</span> MWs
           </div>
 
           <div id="teachButtonDiv">
-            <button class = "button2" id = "btnTeachSwarm" onclick = "teachSwarm()">Teach the Swarm</button><br />
+            <button class="button2" id="btnTeachSwarm" onclick="teachSwarm()">Teach the Swarm</button><br />
             Cost: <span id="swarmFeedCost">0</span> MWs
           </div>
 
           <div id="entertainButtonDiv">
-            <button class = "button2" id = "btnEntertainSwarm" onclick = "entertainSwarm()">Entertain the Swarm</button><br />
+            <button class="button2" id="btnEntertainSwarm" onclick="entertainSwarm()">Entertain the Swarm</button><br />
             Cost: <span id="swarmEntertainCost">0</span> creat
           </div>
 
           <div id="cladButtonDiv">
-            <button class = "button2" id = "btnCladSwarm" onclick = "cladSwarm()">Clad the Swarm</button><br />
+            <button class="button2" id="btnCladSwarm" onclick="cladSwarm()">Clad the Swarm</button><br />
             Cost: <span id="swarmFeedCost">0</span> MWs
           </div>
 
           <div id="synchButtonDiv">
-            <button class = "button2" id = "btnSynchSwarm" onclick = "synchSwarm()">Synchronize the Swarm</button><br />
+            <button class="button2" id="btnSynchSwarm" onclick="synchSwarm()">Synchronize the Swarm</button><br />
             Cost: <span id="swarmFeedCost">5,000</span> yomi
           </div>
         </div>
 
-        <div id = "swarmSliderDiv">
-          <div id = "sliderLabelWork">Work</div>
-          <div id = "swarmSlider">
+        <div id="swarmSliderDiv">
+          <div id="sliderLabelWork">Work</div>
+          <div id="swarmSlider">
             <input type="range" min="0" max="200" value="0" class="slider" id="slider" />
           </div>
-          <div id = "sliderLabelThink">Think</div>
+          <div id="sliderLabelThink">Think</div>
         </div>
 
-        <div class = "qEngine" id = "qComputing">
+        <div class="qEngine" id="qComputing">
 
           <strong>Quantum Computing</strong><br />
 
-          <div class = "qChip" id = "qChip0"> </div>
-          <div class = "qChip" id = "qChip1"> </div>
-          <div class = "qChip" id = "qChip2"> </div>
-          <div class = "qChip" id = "qChip3"> </div>
-          <div class = "qChip" id = "qChip4"> </div>
-          <div class = "qChip" id = "qChip5"> </div>
-          <div class = "qChip" id = "qChip6"> </div>
-          <div class = "qChip" id = "qChip7"> </div>
-          <div class = "qChip" id = "qChip8"> </div>
-          <div class = "qChip" id = "qChip9"> </div>
+          <div class="qChip" id="qChip0"> </div>
+          <div class="qChip" id="qChip1"> </div>
+          <div class="qChip" id="qChip2"> </div>
+          <div class="qChip" id="qChip3"> </div>
+          <div class="qChip" id="qChip4"> </div>
+          <div class="qChip" id="qChip5"> </div>
+          <div class="qChip" id="qChip6"> </div>
+          <div class="qChip" id="qChip7"> </div>
+          <div class="qChip" id="qChip8"> </div>
+          <div class="qChip" id="qChip9"> </div>
 
           <br />
 
-          <button class = "button2" id = "btnQcompute" onclick = "qComp()">
+          <button class="button2" id="btnQcompute" onclick="qComp()">
             Compute
           </button>
           <span id="qCompDisplay">
@@ -460,19 +459,19 @@
 
     <div id="rightColumn">
 
-      <div class = "engine" id="investmentEngine">
+      <div class="engine" id="investmentEngine">
 
-        <p class = engineText>
+        <p class=engineText>
           <strong>Investments</strong>
 
-          <select id = "investStrat">
+          <select id="investStrat">
             <option value="low">Low Risk</option>
             <option value="med">Med Risk</option>
             <option value="hi">High Risk</option>
           </select>
 
           <br />
-          <div id = investmentDiv1>
+          <div id=investmentDiv1>
 
             <button class="button2" id="btnInvest" onclick="investDeposit()">&nbsp;Deposit&nbsp;</button><br /><br />
             <!--<button class="button2" id="btnStockBuy" onclick="investForceBuy()" style="display: inline-block;">&nbsp;Buy&nbsp;</button>
@@ -480,8 +479,8 @@
             <button class="button2" id="btnWithdraw" onclick="investWithdraw()">&nbsp;Withdraw&nbsp;</button>
 
           </div>
-          <div id = investmentDiv2>
-            <p class = "clean">
+          <div id=investmentDiv2>
+            <p class="clean">
               Cash: $<span id="investmentBankroll">0</span><br />
               Stocks: $<span id="secValue">0</span><br />
               <strong>Total: $<span id="portValue">0</span></strong><br />
@@ -498,35 +497,35 @@
               <th>P/L</th>
             </tr>
 
-            <tr id = "stock1Display">
+            <tr id="stock1Display">
               <td id="stock1Symbol">&nbsp;</td>
               <td id="stock1Amount">&nbsp;</td>
               <td id="stock1Price">&nbsp;</td>
               <td id="stock1Total">&nbsp;</td>
               <td id="stock1Profit"><strong>&nbsp;</strong></td>
             </tr>
-            <tr id = "stock2Display">
+            <tr id="stock2Display">
               <td id="stock2Symbol">&nbsp;</td>
               <td id="stock2Amount">&nbsp;</td>
               <td id="stock2Price">&nbsp;</td>
               <td id="stock2Total">&nbsp;</td>
               <td id="stock2Profit"><strong>&nbsp;</strong></td>
             </tr>
-            <tr id = "stock3Display">
+            <tr id="stock3Display">
               <td id="stock3Symbol">&nbsp;</td>
               <td id="stock3Amount">&nbsp;</td>
               <td id="stock3Price">&nbsp;</td>
               <td id="stock3Total">&nbsp;</td>
               <td id="stock3Profit"><strong>&nbsp;</strong></td>
             </tr>
-            <tr id = "stock4Display">
+            <tr id="stock4Display">
               <td id="stock4Symbol">&nbsp;</td>
               <td id="stock4Amount">&nbsp;</td>
               <td id="stock4Price">&nbsp;</td>
               <td id="stock4Total">&nbsp;</td>
               <td id="stock4Profit"><strong>&nbsp;</strong></td>
             </tr>
-            <tr id = "stock5Display">
+            <tr id="stock5Display">
               <td id="stock5Symbol">&nbsp;</td>
               <td id="stock5Amount">&nbsp;</td>
               <td id="stock5Price">&nbsp;</td>
@@ -539,44 +538,44 @@
 
         </div>
 
-        <div id = "investmentEngineUpgrade">
-          <button class = "button2" id = "btnImproveInvestments" onclick="investUpgrade()">Upgrade Investment Engine</button>
-          <span class = "engineText7"> Level: </span><span class = "engineText7" id = "investmentLevel">0</span><br />
-          <p class = "engineText8">Cost: <span id="investUpgradeCost">100</span> Yomi</p>
+        <div id="investmentEngineUpgrade">
+          <button class="button2" id="btnImproveInvestments" onclick="investUpgrade()">Upgrade Investment Engine</button>
+          <span class="engineText7"> Level: </span><span class="engineText7" id="investmentLevel">0</span><br />
+          <p class="engineText8">Cost: <span id="investUpgradeCost">100</span> Yomi</p>
         </div>
 
         <div class=engine2 id="strategyEngine">
           <p class=engineText>
            <strong>Strategic Modeling</strong>
 
-           <select id = "stratPicker">
+           <select id="stratPicker">
             <option value="10">Pick a Strat</option>
             <option value="0">RANDOM</option>
           </select>
-          <button class = "button2" id = "btnRunTournament"
+          <button class="button2" id="btnRunTournament"
           onclick="runTourney()">Run</button><br />
 
-          <div id = "tournamentLabel">
+          <div id="tournamentLabel">
             <p class="clean2">
               <span id="tourneyDisplay">Pick strategy, run tournament, gain yomi</span><br />
             </p>
           </div>
 
-          <div id = "tournamentStuff">
-            <div id = "tournamentTable">
-              <div id = "vertPad">
+          <div id="tournamentStuff">
+            <div id="tournamentTable">
+              <div id="vertPad">
 
                 &nbsp;
 
               </div>
 
-              <div id = "vertStrat">
+              <div id="vertStrat">
 
                 &nbsp;
 
               </div>
 
-              <div id = "horizStrat">
+              <div id="horizStrat">
 
                 &nbsp;
 
@@ -593,39 +592,39 @@
                 <tbody>
                   <tr>
                     <td><span id= hLabela>Move A</span></td>
-                    <td id = "payoffCellAA"><span id = aaPayoffH>0</span>,<span id = aaPayoffV>0</span></td>
-                    <td id = "payoffCellAB"><span id = abPayoffH>0</span>,<span id = abPayoffV>0</span></td>
+                    <td id="payoffCellAA"><span id=aaPayoffH>0</span>,<span id=aaPayoffV>0</span></td>
+                    <td id="payoffCellAB"><span id=abPayoffH>0</span>,<span id=abPayoffV>0</span></td>
                   </tr>
                   <tr>
                     <td><span id= hLabelb>Move B</span></td>
-                    <td id = "payoffCellBA"><span id = baPayoffH>0</span>,<span id = baPayoffV>0</span></td>
-                    <td id = "payoffCellBB"><span id = bbPayoffH>0</span>,<span id = bbPayoffV>0</span></td>
+                    <td id="payoffCellBA"><span id=baPayoffH>0</span>,<span id=baPayoffV>0</span></td>
+                    <td id="payoffCellBB"><span id=bbPayoffH>0</span>,<span id=bbPayoffV>0</span></td>
                   </tr>
                 </tbody>
               </table>
             </div>
 
-            <div id = "tournamentResultsTable">
+            <div id="tournamentResultsTable">
 
               <table class="table3">
                 <tr>
-                  <td><span id = results0>&nbsp;</span></td>
-                  <td><span id = results4>&nbsp;</span></td>
+                  <td><span id=results0>&nbsp;</span></td>
+                  <td><span id=results4>&nbsp;</span></td>
                 </tr>
 
                 <tr>
-                  <td><span id = results1>&nbsp;</span></td>
-                  <td><span id = results5>&nbsp;</span></td>
+                  <td><span id=results1>&nbsp;</span></td>
+                  <td><span id=results5>&nbsp;</span></td>
                 </tr>
 
                 <tr>
-                  <td><span id = results2>&nbsp;</span></td>
-                  <td><span id = results6>&nbsp;</span></td>
+                  <td><span id=results2>&nbsp;</span></td>
+                  <td><span id=results6>&nbsp;</span></td>
                 </tr>
 
                 <tr>
-                  <td><span id = results3>&nbsp;</span></td>
-                  <td><span id = results7>&nbsp;</span></td>
+                  <td><span id=results3>&nbsp;</span></td>
+                  <td><span id=results7>&nbsp;</span></td>
                 </tr>
               </table>
             </div>
@@ -634,38 +633,38 @@
           <p class="engineText4">Yomi: <span id="yomiDisplay">0</span></p>
         </div>
 
-        <div id = "tournamentManagement">
+        <div id="tournamentManagement">
 
-          <div id = "tourneyButton">
-            <button class = "button2" id = "btnNewTournament"
+          <div id="tourneyButton">
+            <button class="button2" id="btnNewTournament"
             onclick="newTourney()"> &nbsp; New Tournament &nbsp; </button>
           </div>
 
-          <div id = "autoTourneyControl">
-            <button class = "button2" id ="btnToggleAutoTourney"
+          <div id="autoTourneyControl">
+            <button class="button2" id ="btnToggleAutoTourney"
             onclick="toggleAutoTourney()">AutoTourney</button>
           </div>
 
-          <div id = autoTourneyStatusDiv>
-            <span class = "engineText9" id = "autoTourneyStatus">ON</span>
+          <div id=autoTourneyStatusDiv>
+            <span class="engineText9" id="autoTourneyStatus">ON</span>
           </div>
 
           <br />
-          <p class = "engineText8">Cost: <span id="newTourneyCost">1,000</span> ops</p>
+          <p class="engineText8">Cost: <span id="newTourneyCost">1,000</span> ops</p>
         </div>
 
         <!--       BATTLE-->
 
-        <div id = "battleCanvasDiv">
-          <canvas id = "canvas"></canvas>
-          <div id = "battleInterfaceDiv">
+        <div id="battleCanvasDiv">
+          <canvas id="canvas"></canvas>
+          <div id="battleInterfaceDiv">
             <strong>Combat</strong><br />
 
             <p class="clean2">
 
               <span id="battleName">Drifter Attack 1</span></p><br />
 
-              <div id = "victoryDiv">
+              <div id="victoryDiv">
 
                 <span id="battleResult">VICTORY</span>
                 <p class="clean2">
@@ -676,12 +675,12 @@
 
               <br /><br />
               <p class="clean2">
-                Scale = <span id="battleScale">1</span>:1<br />
+                Scale=<span id="battleScale">1</span>:1<br />
               </p>
             </div>
           </div>
 
-          <div id = "honorDiv">
+          <div id="honorDiv">
             <p class="engineText4">Honor: <span id="honorDisplay">0</span></p>
           </div>
 
@@ -693,31 +692,31 @@
             Factory/Drone Performance: <span id="performance">0</span>%<br />
             <br />
             Consumption: <span id="powerConsumptionRate">0</span> MWs/sec<br />
-            <p class = "clean">
+            <p class="clean">
               Factories: <span id="facPowConRate">0</span> MWs/sec<br />
               Drones: <span id="dronePowConRate">0</span> MWs/sec<br />
             </p> <br />
 
             Production: <span id="powerProductionRate">0</span> MWs/sec<br />
-            <p class = "engineText5">
-              <button class = "button2" id = "btnMakeFarm"
-              onclick="makeFarm(1)">Solar Farm</button> <span class = "engineText6" id="farmLevel">0</span></p>
+            <p class="engineText5">
+              <button class="button2" id="btnMakeFarm"
+              onclick="makeFarm(1)">Solar Farm</button> <span class="engineText6" id="farmLevel">0</span></p>
 
-              <div id = "farmMultiButtons">
+              <div id="farmMultiButtons">
 
-                <p class = "engineText5">
-                  <button class = "button2" id = "btnFarmx10" onclick="makeFarm(10)">+10</button>
-                  <button class = "button2" id = "btnFarmx100" onclick="makeFarm(100)">+100</button>
-                  <button class = "button2" id = "btnFarmxMAX" onclick="makeFarm(Infinity)">+MAX</button>
+                <p class="engineText5">
+                  <button class="button2" id="btnFarmx10" onclick="makeFarm(10)">+10</button>
+                  <button class="button2" id="btnFarmx100" onclick="makeFarm(100)">+100</button>
+                  <button class="button2" id="btnFarmxMAX" onclick="makeFarm(Infinity)">+MAX</button>
                 </p>
 
               </div>
 
-              <div class = "toolTip3">
+              <div class="toolTip3">
 
-                <span id = "farmRebootToolTip" class = "toolTipText3">0</span>
+                <span id="farmRebootToolTip" class="toolTipText3">0</span>
 
-                <button class = "button2" id = "btnFarmReboot" onclick="farmReboot()">&nbsp; Disassemble All &nbsp;</button>
+                <button class="button2" id="btnFarmReboot" onclick="farmReboot()">&nbsp; Disassemble All &nbsp;</button>
 
               </div>
 
@@ -727,26 +726,26 @@
             <br />
 
             Storage: <span id="storedPower">0</span> / <span id="maxStorage">0</span> MWs<br />
-            <p class = "engineText5">
-              <button class = "button2" id = "btnMakeBattery"
-              onclick="makeBattery(1)">Battery Tower</button> <span class = "engineText6" id="batteryLevel">0</span></p>
+            <p class="engineText5">
+              <button class="button2" id="btnMakeBattery"
+              onclick="makeBattery(1)">Battery Tower</button> <span class="engineText6" id="batteryLevel">0</span></p>
 
 
-              <div id = "batteryMultiButtons">
+              <div id="batteryMultiButtons">
 
-                <p class = "engineText5">
-                  <button class = "button2" id = "btnBatteryx10" onclick="makeBattery(10)">+10</button>
-                  <button class = "button2" id = "btnBatteryx100" onclick="makeBattery(100)">+100</button>
-                  <button class = "button2" id = "btnBatteryxMAX" onclick="makeBattery(Infinity)">+MAX</button>
+                <p class="engineText5">
+                  <button class="button2" id="btnBatteryx10" onclick="makeBattery(10)">+10</button>
+                  <button class="button2" id="btnBatteryx100" onclick="makeBattery(100)">+100</button>
+                  <button class="button2" id="btnBatteryxMAX" onclick="makeBattery(Infinity)">+MAX</button>
                 </p>
 
               </div>
 
-              <div class = "toolTip3">
+              <div class="toolTip3">
 
-                <span id = "batteryRebootToolTip" class = "toolTipText3">0</span>
+                <span id="batteryRebootToolTip" class="toolTipText3">0</span>
 
-                <button class = "button2" id = "btnBatteryReboot" onclick="batteryReboot()">&nbsp; Disassemble All &nbsp;</button>
+                <button class="button2" id="btnBatteryReboot" onclick="batteryReboot()">&nbsp; Disassemble All &nbsp;</button>
 
               </div>
 
@@ -775,9 +774,9 @@
             <button class="button2" id="btnLowerProbeSpeed" onclick="lowerProbeSpeed()"><strong>-</strong></button>
             <button class="button2" id="btnRaiseProbeSpeed" onclick="raiseProbeSpeed()"><strong>+</strong></button>
 
-            <div class = "toolTip2">
+            <div class="toolTip2">
 
-              <span class = "toolTipText2">Modifies rate of exploration</span>
+              <span class="toolTipText2">Modifies rate of exploration</span>
 
               Speed: <span id="probeSpeedDisplay">0</span>
 
@@ -788,9 +787,9 @@
             <button class="button2" id="btnLowerProbeNav" onclick="lowerProbeNav()"><strong>-</strong></button>
             <button class="button2" id="btnRaiseProbeNav" onclick="raiseProbeNav()"><strong>+</strong></button>
 
-            <div class = "toolTip2">
+            <div class="toolTip2">
 
-              <span class = "toolTipText2">Rate at which probes gain access to new matter</span>
+              <span class="toolTipText2">Rate at which probes gain access to new matter</span>
 
               Exploration: <span id="probeNavDisplay">0</span>
 
@@ -799,9 +798,9 @@
             <button class="button2" id="btnLowerProbeRep" onclick="lowerProbeRep()"><strong>-</strong></button>
             <button class="button2" id="btnRaiseProbeRep" onclick="raiseProbeRep()"><strong>+</strong></button>
 
-            <div class = "toolTip2">
+            <div class="toolTip2">
 
-              <span class = "toolTipText2">Rate at which probes generate more probes (each new probe costs 100 quadrillion clips) </span>
+              <span class="toolTipText2">Rate at which probes generate more probes (each new probe costs 100 quadrillion clips) </span>
 
               Self-Replication: <span id="probeRepDisplay">0</span>
 
@@ -810,9 +809,9 @@
             <button class="button2" id="btnLowerProbeHaz" onclick="lowerProbeHaz()"><strong>-</strong></button>
             <button class="button2" id="btnRaiseProbeHaz" onclick="raiseProbeHaz()"><strong>+</strong></button>
 
-            <div class = "toolTip2">
+            <div class="toolTip2">
 
-              <span class = "toolTipText2">Reduces damage from dust, junk, radiation, and general entropic decay</span>
+              <span class="toolTipText2">Reduces damage from dust, junk, radiation, and general entropic decay</span>
 
               Hazard Remediation: <span id="probeHazDisplay">0</span>
 
@@ -821,9 +820,9 @@
             <button class="button2" id="btnLowerProbeFac" onclick="lowerProbeFac()"><strong>-</strong></button>
             <button class="button2" id="btnRaiseProbeFac" onclick="raiseProbeFac()"><strong>+</strong></button>
 
-            <div class = "toolTip2">
+            <div class="toolTip2">
 
-              <span class = "toolTipText2">Rate at which probes build factories (each new factory costs 100 million clips)</span>
+              <span class="toolTipText2">Rate at which probes build factories (each new factory costs 100 million clips)</span>
 
               Factory Production: <span id="probeFacDisplay">0</span>
 
@@ -832,9 +831,9 @@
             <button class="button2" id="btnLowerProbeHarv" onclick="lowerProbeHarv()"><strong>-</strong></button>
             <button class="button2" id="btnRaiseProbeHarv" onclick="raiseProbeHarv()"><strong>+</strong></button>
 
-            <div class = "toolTip2">
+            <div class="toolTip2">
 
-              <span class = "toolTipText2">Rate at which probes spawn Harvester Drones (each new drone costs 2 million clips)</span>
+              <span class="toolTipText2">Rate at which probes spawn Harvester Drones (each new drone costs 2 million clips)</span>
 
               Harvester Drone Production: <span id="probeHarvDisplay">0</span>
 
@@ -843,22 +842,22 @@
             <button class="button2" id="btnLowerProbeWire" onclick="lowerProbeWire()"><strong>-</strong></button>
             <button class="button2" id="btnRaiseProbeWire" onclick="raiseProbeWire()"><strong>+</strong></button>
 
-            <div class = "toolTip2">
+            <div class="toolTip2">
 
-              <span class = "toolTipText2">Rate at which probes spawn Wire Drones (each new drone costs 2 million clips)</span>
+              <span class="toolTipText2">Rate at which probes spawn Wire Drones (each new drone costs 2 million clips)</span>
 
               Wire Drone Production: <span id="probeWireDisplay">0</span>
 
             </div>    <br />
 
 
-            <div id = "combatButtonDiv">
+            <div id="combatButtonDiv">
               <button class="button2" id="btnLowerProbeCombat" onclick="lowerProbeCombat()"><strong>-</strong></button>
               <button class="button2" id="btnRaiseProbeCombat" onclick="raiseProbeCombat()"><strong>+</strong></button>
 
-              <div class = "toolTip2">
+              <div class="toolTip2">
 
-                <span class = "toolTipText2">Determines offensive and defensive effectiveness in battle</span>
+                <span class="toolTipText2">Determines offensive and defensive effectiveness in battle</span>
 
                 Combat: <span id="probeCombatDisplay">0</span>
 
@@ -871,16 +870,16 @@
 
           </div>
 
-          <div class = enginetext1 id = "increaseProbeTrustDiv">
+          <div class=enginetext1 id="increaseProbeTrustDiv">
             <button class="button2" id="btnIncreaseProbeTrust" onclick="increaseProbeTrust()">Increase Probe Trust</button><br />
             <button class="button2" id="btnMaxOutProbeTrust" onclick="increaseProbeTrust(Infinity)">Max-out Probe Trust</button><br />
-            <p class = "engineText8">Cost: <span id="probeTrustCostDisplay">0</span> yomi</p>
+            <p class="engineText8">Cost: <span id="probeTrustCostDisplay">0</span> yomi</p>
           </div>
 
-          <div class = enginetext1 id = "increaseMaxTrustDiv">
+          <div class=enginetext1 id="increaseMaxTrustDiv">
             <button class="button2" id="btnIncreaseMaxTrust" onclick="increaseMaxTrust()">Increase Max Trust</button><br />
             <button class="button2" id="btnMaxOutMaxTrust" onclick="increaseMaxTrust(Infinity)">Max-out Max Trust</button><br />
-            <p class = "engineText8">Cost: <span id="maxTrustCostDisplay">91,117.99</span> honor</p>
+            <p class="engineText8">Cost: <span id="maxTrustCostDisplay">91,117.99</span> honor</p>
           </div>
 
 <!--
