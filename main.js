@@ -1891,8 +1891,8 @@ function makeFactory(amount) {
   updateUpgrades();
 
   document.getElementById("unusedClipsDisplay").innerHTML = numberCruncher(unusedClips);
-  document.getElementById('factoryLevelDisplay').innerHTML = factoryLevel;
-  document.getElementById('factoryCostDisplay').innerHTML = numberCruncher(factoryCost);
+  document.getElementById("factoryLevelDisplay").innerHTML = factoryLevel;
+  document.getElementById("factoryCostDisplay").innerHTML = numberCruncher(factoryCost);
 }
 
 function makeHarvester(amount) {
@@ -1906,8 +1906,8 @@ function makeHarvester(amount) {
   }
 
   document.getElementById("unusedClipsDisplay").innerHTML = numberCruncher(unusedClips);
-  document.getElementById('harvesterLevelDisplay').innerHTML = harvesterLevel.toLocaleString();
-  document.getElementById('harvesterCostDisplay').innerHTML = numberCruncher(harvesterCost);
+  document.getElementById("harvesterLevelDisplay").innerHTML = harvesterLevel.toLocaleString();
+  document.getElementById("harvesterCostDisplay").innerHTML = numberCruncher(harvesterCost);
 
 
   if (harvesterLevel + wireDroneLevel > maxDroneLevel) {
@@ -3252,16 +3252,19 @@ function lowerProbeCombat() {
 }
 
 
-function makeProbe() {
-  unusedClips = unusedClips - probeCost;
-  document.getElementById("unusedClipsDisplay").innerHTML = numberCruncher(unusedClips);
-  probeLaunchLevel++;
-  probeCount++;
-  document.getElementById('probesLaunchedDisplay').innerHTML = numberCruncher(probeLaunchLevel);
+function makeProbe(amount) {
+  if (isNaN(amount)) { amount = 1; }
+  var maxProbesAllowed = Math.min(amount, Math.floor(unusedClips / probeCost));
 
+  unusedClips = unusedClips - (probeCost*maxProbesAllowed);
+  
+  probeLaunchLevel += maxProbesAllowed;
+  probeCount += maxProbesAllowed;
+  
   // probeCost = Math.pow((probeLaunchLevel+1), 1.23)*Math.pow(10, 20);
   // probeCost = Math.pow(10, 20);
-
+  document.getElementById("unusedClipsDisplay").innerHTML = numberCruncher(unusedClips);
+  document.getElementById('probesLaunchedDisplay').innerHTML = numberCruncher(probeLaunchLevel);
   document.getElementById('probeCostDisplay').innerHTML = numberCruncher(probeCost);
 }
 

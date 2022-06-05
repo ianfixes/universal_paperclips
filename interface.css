@@ -828,7 +828,7 @@ p.hypnoDrone
 
   table.table2 tbody td[id]
   {
-    background-color: black;
+    background-color: #111;
   }
 
   table.table2 tbody td[id].highlighted
