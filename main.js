@@ -845,12 +845,18 @@ var stockGainThreshold = 0.5;
 var ledger = 0;
 var stockReportCounter = 0;
 
-function investUpgrade() {
-  yomi = yomi - investUpgradeCost;
-  investLevel++;
+function investUpgrade(amount) {
+  if (isNaN(amount)) { amount = 1; }
+  for (var i = 0; i < amount; i++) {
+    if (yomi < investUpgradeCost) { break; }
+    yomi = yomi - investUpgradeCost;
+    investLevel++;
+    
+    stockGainThreshold = stockGainThreshold + 0.01;
+    investUpgradeCost = Math.floor(Math.pow(investLevel + 1, Math.E) * 100);
+  }
+
   document.getElementById("investmentLevel").innerHTML = investLevel;
-  stockGainThreshold = stockGainThreshold + 0.01;
-  investUpgradeCost = Math.floor(Math.pow(investLevel + 1, Math.E) * 100);
   document.getElementById("investUpgradeCost").innerHTML = investUpgradeCost.toLocaleString();
   document.getElementById("yomiDisplay").innerHTML = yomi.toLocaleString();
   displayMessage("Investment engine upgraded, expected profit/loss ratio now " + stockGainThreshold);
@@ -1772,21 +1778,15 @@ function buyAndClipMax(amount) {
 }
 
 function makeClipper(amount) {
-  if (isNaN(amount)) {
-    if (funds >= clippperCost) {
-      clipmakerLevel = clipmakerLevel + 1;
-      funds = funds - clipperCost;
-      clipperCost = (Math.pow(1.1, clipmakerLevel) + 5);
-    }
-  } else {
-    var counter = 0;
-    while (funds >= clippperCost && counter < amount) {
-      clipmakerLevel = clipmakerLevel + 1;
-      funds = funds - clipperCost;
-      clipperCost = (Math.pow(1.1, clipmakerLevel) + 5);
+  if (isNaN(amount)) { amount = 1; }
 
-      counter++;
-    }
+  var counter = 0;
+  while (funds >= clippperCost && counter < amount) {
+    clipmakerLevel = clipmakerLevel + 1;
+    funds = funds - clipperCost;
+    clipperCost = (Math.pow(1.1, clipmakerLevel) + 5);
+
+    counter++;
   }
 
   document.getElementById('clipmakerLevel2').innerHTML = clipmakerLevel;
@@ -1798,21 +1798,15 @@ function makeClipper(amount) {
 }
 
 function makeMegaClipper(amount) {
-  if (isNaN(amount)) {
-    if (funds >= megaClipperCost) {
-      megaClipperLevel = megaClipperLevel + 1;
-      funds = funds - megaClipperCost;
-      megaClipperCost = (Math.pow(1.07, megaClipperLevel) * 1000);
-    }
-  } else {
-    var counter = 0;
-    while (funds >= megaClipperCost && counter < amount) {
-      megaClipperLevel++;
-      funds -= megaClipperCost;
-      megaClipperCost = (Math.pow(1.07, megaClipperLevel) * 1000);
+  if (isNaN(amount)) { amount = 1; }
 
-      counter++;
-    }
+  var counter = 0;
+  while (funds >= megaClipperCost && counter < amount) {
+    megaClipperLevel++;
+    funds -= megaClipperCost;
+    megaClipperCost = (Math.pow(1.07, megaClipperLevel) * 1000);
+
+    counter++;
   }
   document.getElementById('megaClipperLevel').innerHTML = megaClipperLevel;
   document.getElementById('funds').innerHTML = funds.toLocaleString(undefined, {

@@ -705,6 +705,8 @@ p.hypnoDrone
   border: 1px solid rgba(0, 0, 0, 1);
   outline: none;
   margin-bottom: 6px;
+  font-family: sans-serif;
+  font-size: 14px;
 }
 
 .projectButton:hover
@@ -806,12 +808,12 @@ p.hypnoDrone
 
   table.table1 tr:nth-child(even)
   {
-    background-color: #777;
+    background-color: #333;
   }
 
   table.table1 tr:nth-child(odd)
   {
-    background-color: #333;
+    background-color: #222;
   }
 
   table.table2 td
