@@ -111,4 +111,8 @@
     background-color: #111;
     color: #ccc;
   }
+
+  .frame img {
+    opacity: 0.8;
+  }
 }

@@ -3058,6 +3058,7 @@ function timeCruncher(t) {
 }
 
 function numberCruncher(number, decimals) {
+  if (number === null) { number = 0; }
   var suffix = "";
   if (decimals == undefined) {
     decimals = 2;

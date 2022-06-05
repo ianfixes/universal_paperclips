@@ -70,11 +70,6 @@ body {
   width: 100%;
 }
 
-h2
-{
-  line-height: 70%;
-}
-
 .toolTip
 {
   position: relative;
@@ -211,6 +206,11 @@ h2
   height: 22px;
 }
 
+#operations, #maxOps, #creativity, #yomiDisplay, #businessDiv, #manufacturingDiv, #compDiv
+{
+  word-break: break-all;
+}
+
 #harvesterMultiButtons
 {
   margin-bottom: 2;
@@ -337,6 +337,7 @@ canvas
   float: left;
   width: 275px;
   margin-left: 10px;
+  overflow: hidden;
 }
 
 #rightColumn
