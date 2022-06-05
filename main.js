@@ -1064,11 +1064,11 @@ window.setInterval(function() {
   var firstBlankSlot = portfolioSize + 1;
 
   for (var i = firstBlankSlot; i <= 5; i++) {
-    document.getElementById("stock" + i + "Symbol").innerHTML = "&nbsp";
-    document.getElementById("stock" + i + "Amount").innerHTML = "&nbsp";
-    document.getElementById("stock" + i + "Price").innerHTML = "&nbsp";
-    document.getElementById("stock" + i + "Total").innerHTML = "&nbsp";
-    document.getElementById("stock" + i + "Profit").innerHTML = "&nbsp";
+    document.getElementById("stock" + i + "Symbol").innerHTML = "&nbsp;"
+    document.getElementById("stock" + i + "Amount").innerHTML = "&nbsp;"
+    document.getElementById("stock" + i + "Price").innerHTML = "&nbsp;"
+    document.getElementById("stock" + i + "Total").innerHTML = "&nbsp;"
+    document.getElementById("stock" + i + "Profit").innerHTML = "&nbsp;"
   }
 
 }, 100);
@@ -1411,8 +1411,8 @@ function newTourney() {
 
   document.getElementById("btnRunTournament").disabled = false;
 
-  document.getElementById("vertStrat").innerHTML = "&nbsp";
-  document.getElementById("horizStrat").innerHTML = "&nbsp";
+  document.getElementById("vertStrat").innerHTML = "&nbsp;"
+  document.getElementById("horizStrat").innerHTML = "&nbsp;"
 
   document.getElementById("tourneyDisplay").innerHTML = "Pick strategy, run tournament, gain yomi";
 
@@ -1590,8 +1590,8 @@ function displayTourneyReport() {
 
   resultsFlag = 1;
 
-  document.getElementById("vertStrat").innerHTML = "&nbsp";
-  document.getElementById("horizStrat").innerHTML = "&nbsp";
+  document.getElementById("vertStrat").innerHTML = "&nbsp;"
+  document.getElementById("horizStrat").innerHTML = "&nbsp;"
 
   document.getElementById("tournamentTable").style.display = "none";
   document.getElementById("tournamentResultsTable").style.display = "";
