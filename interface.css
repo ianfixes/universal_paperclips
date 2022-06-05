@@ -680,12 +680,12 @@ p.hypnoDrone
 
 .pulsate
 {
-  -webkit-animation: pulsate .5s ease-out;
-  -webkit-animation-iteration-count: infinite;
+  animation: pulsate .5s ease-out;
+  animation-iteration-count: infinite;
   opacity: 0.0;
 }
 
-@-webkit-keyframes pulsate
+@keyframes pulsate
 {
   0%
   {
@@ -737,82 +737,13 @@ p.hypnoDrone
   border: none;
 }
 
-.button
-{
-  border: 1px solid #1a1a1a;
-  background: #666666;
-  background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#cccccc));
-  background: -webkit-linear-gradient(top, #ffffff, #888888);
-  background: -moz-linear-gradient(top, #ffffff, #888888);
-  background: -ms-linear-gradient(top, #ffffff, #888888);
-  background: -o-linear-gradient(top, #ffffff, #888888);
-  background-image: -ms-linear-gradient(top, #ffffff 0%, #888888 100%);
-  padding: 12.5px 25px;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-  -webkit-box-shadow: rgba(255,255,255,0.4) 0 1px 0, inset rgba(255,255,255,0.4) 0 1px 0;
-  -moz-box-shadow: rgba(255,255,255,0.4) 0 1px 0, inset rgba(255,255,255,0.4) 0 1px 0;
-  box-shadow: rgba(255,255,255,0.4) 0 1px 0, inset rgba(255,255,255,0.4) 0 1px 0;
-  text-shadow: #cccccc 0 1px 0;
-  color: #000000;
-  font-size: 16px;
-  font-family: helvetica, serif;
-  text-decoration: none;
-  vertical-align: middle;
-  outline: none;
-}
-
-.button:hover
-{
-  border: 1px solid #898989;
-  text-shadow: #d4d4d4 0 1px 0;
-  background: #666666;
-  background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#666666));
-  background: -webkit-linear-gradient(top, #ffffff, #666666);
-  background: -moz-linear-gradient(top, #ffffff, #666666);
-  background: -ms-linear-gradient(top, #ffffff, #666666);
-  background: -o-linear-gradient(top, #ffffff, #666666);
-  background-image: -ms-linear-gradient(top, #ffffff 0%, #666666 100%);
-  color: #000000;
-}
-
-.button:active
-{
-  text-shadow: #bfbfbf 0 1px 0;
-  border: 1px solid #2e2e2e;
-  background: #d9d9d9;
-  background: -webkit-gradient(linear, left top, left bottom, from(#595959), to(#616161));
-  background: -webkit-linear-gradient(top, #595959, #d9d9d9);
-  background: -moz-linear-gradient(top, #595959, #d9d9d9);
-  background: -ms-linear-gradient(top, #595959, #d9d9d9);
-  background: -o-linear-gradient(top, #595959, #d9d9d9);
-  background-image: -ms-linear-gradient(top, #595959 0%, #d9d9d9 100%);
-  color: #000000;
-}
-
-.button:disabled
-{
-  opacity: 0.6;
-  border: 1px solid #ffffff;
-}
-
 .button2
 {
   border: 1px solid #1a1a1a;
   background: #666666;
-  background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#cccccc));
-  background: -webkit-linear-gradient(top, #ffffff, #888888);
-  background: -moz-linear-gradient(top, #ffffff, #888888);
-  background: -ms-linear-gradient(top, #ffffff, #888888);
-  background: -o-linear-gradient(top, #ffffff, #888888);
-  background-image: -ms-linear-gradient(top, #ffffff 0%, #888888 100%);
+  background: linear-gradient(0deg, #ffffff, #888888);
   padding: 2px 4px;
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
   border-radius: 2px;
-  -webkit-box-shadow: rgba(255,255,255,0.4) 0 0px 0, inset rgba(255,255,255,0.4) 0 1px 0;
-  -moz-box-shadow: rgba(255,255,255,0.4) 0 0px 0, inset rgba(255,255,255,0.4) 0 1px 0;
   box-shadow: rgba(255,255,255,0.4) 0 0px 0, inset rgba(255,255,255,0.4) 0 1px 0;
   text-shadow: #cccccc 0 1px 0;
   color: #000000;
@@ -828,12 +759,7 @@ p.hypnoDrone
   border: 1px solid #898989;
   text-shadow: #d4d4d4 0 1px 0;
   background: #616161;
-  background: -webkit-gradient(linear, left top, left bottom, from(#f7f7f7), to(#888888));
-  background: -webkit-linear-gradient(top, #f7f7f7, #888888);
-  background: -moz-linear-gradient(top, #f7f7f7, #888888);
-  background: -ms-linear-gradient(top, #f7f7f7, #888888);
-  background: -o-linear-gradient(top, #f7f7f7, #888888);
-  background-image: -ms-linear-gradient(top, #f7f7f7 0%, #888888 100%);
+  background: linear-gradient(0deg, #f7f7f7, #888888);
   color: #000000;
 }
 
@@ -842,12 +768,7 @@ p.hypnoDrone
   text-shadow: #bfbfbf 0 1px 0;
   border: 1px solid #2e2e2e;
   background: #d9d9d9;
-  background: -webkit-gradient(linear, left top, left bottom, from(#595959), to(#616161));
-  background: -webkit-linear-gradient(top, #595959, #d9d9d9);
-  background: -moz-linear-gradient(top, #595959, #d9d9d9);
-  background: -ms-linear-gradient(top, #595959, #d9d9d9);
-  background: -o-linear-gradient(top, #595959, #d9d9d9);
-  background-image: -ms-linear-gradient(top, #595959 0%, #d9d9d9 100%);
+  background: linear-gradient(0deg, #595959, #d9d9d9);
   color: #444444;
 }
 
@@ -913,5 +834,41 @@ p.hypnoDrone
   table.table2 tbody td[id].highlighted
   {
     background-color: #333;
+  }
+
+  .button2
+  {
+    border: 1px solid #444;
+    background: #666666;
+    background: linear-gradient(0deg, #222, #777);
+    box-shadow: rgba(66,66,66,0.4) 0 0px 0, inset rgba(66,66,66,0.4) 0 1px 0;
+    text-shadow: #333 0 1px 0;
+    color: #ccc;
+  }
+
+  .button2:hover
+  {
+    border: 1px solid #444;
+    text-shadow: #333 0 1px 0;
+    background: linear-gradient(0deg, #333, #888);
+    color:  #ccc;
+  }
+
+  .button2:not([disabled]):active
+  {
+    text-shadow: #bfbfbf 0 1px 0;
+    border: 1px solid #2e2e2e;
+    background: #d9d9d9;
+    background: linear-gradient(0deg, #595959, #d9d9d9);
+    color: #444444;
+  }
+
+  .button2:disabled {
+    border: 1px solid #333;
+    background: #333;
+  }
+
+  #prestigeDiv {
+    background-color: #444;
   }
 }
