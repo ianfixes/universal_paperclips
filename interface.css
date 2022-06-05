@@ -880,4 +880,9 @@ p.hypnoDrone
   #prestigeDiv {
     background-color: #444;
   }
+
+  select, option {
+    background-color: #111;
+    color: #ccc;
+  }
 }
