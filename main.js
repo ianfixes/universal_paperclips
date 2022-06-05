@@ -677,8 +677,10 @@ function buttonUpdate() {
 
   if (unusedClips < factoryCost) {
     document.getElementById("btnMakeFactory").disabled = true;
+    document.getElementById("btnFactoryxMAX").disabled = true;
   } else {
     document.getElementById("btnMakeFactory").disabled = false;
+    document.getElementById("btnFactoryxMAX").disabled = false;
   }
 
 
@@ -1850,38 +1852,46 @@ function updateUpgrades() {
 }
 
 
-function makeFactory() {
-  unusedClips = unusedClips - factoryCost;
-  factoryBill = factoryBill + factoryCost;
-  document.getElementById("unusedClipsDisplay").innerHTML = numberCruncher(unusedClips);
-  factoryLevel++;
-  document.getElementById('factoryLevelDisplay').innerHTML = factoryLevel;
-  var fcmod = 1;
-  if (factoryLevel > 0 && factoryLevel < 8) {
-    fcmod = 11 - factoryLevel;
-  } else if (factoryLevel > 7 && factoryLevel < 13) {
-    fcmod = 2;
-  } else if (factoryLevel > 12 && factoryLevel < 20) {
-    fcmod = 1.5;
-  } else if (factoryLevel > 19 && factoryLevel < 39) {
-    fcmod = 1.25;
-  } else if (factoryLevel > 38 && factoryLevel < 79) {
-    fcmod = 1.15;
-  } else if (factoryLevel > 78 && factoryLevel < 99) {
-    fcmod = 1.10;
-  } else if (factoryLevel > 98 && factoryLevel < 199) {
-    fcmod = 1.10;
-  } else if (factoryLevel > 198) {
-    fcmod = 1.10;
+function makeFactory(amount) {
+  if (isNaN(amount)) { amount = 1; }
+  for (var i = 0; i < amount; i++) {
+    if (unusedClips < factoryCost) { break; }
+    unusedClips = unusedClips - factoryCost;
+    factoryBill = factoryBill + factoryCost;
+    
+    factoryLevel++;
+    
+    var fcmod = 1;
+    if (factoryLevel > 0 && factoryLevel < 8) {
+      fcmod = 11 - factoryLevel;
+    } else if (factoryLevel > 7 && factoryLevel < 13) {
+      fcmod = 2;
+    } else if (factoryLevel > 12 && factoryLevel < 20) {
+      fcmod = 1.5;
+    } else if (factoryLevel > 19 && factoryLevel < 39) {
+      fcmod = 1.25;
+    } else if (factoryLevel > 38 && factoryLevel < 79) {
+      fcmod = 1.15;
+    } else if (factoryLevel > 78 && factoryLevel < 99) {
+      fcmod = 1.10;
+    } else if (factoryLevel > 98 && factoryLevel < 199) {
+      fcmod = 1.10;
+    } else if (factoryLevel > 198) {
+      fcmod = 1.10;
+    }
+
+    if (factoryLevel > maxFactoryLevel) {
+      maxFactoryLevel = factoryLevel;
+    }
+    
+    factoryCost = factoryCost * fcmod;
+    //   factoryCost = Math.log(1.25,(factoryLevel+1))*100000000;
   }
 
-  if (factoryLevel > maxFactoryLevel) {
-    maxFactoryLevel = factoryLevel;
-  }
   updateUpgrades();
 
-  factoryCost = factoryCost * fcmod;
-  //   factoryCost = Math.log(1.25,(factoryLevel+1))*100000000;
+  document.getElementById("unusedClipsDisplay").innerHTML = numberCruncher(unusedClips);
+  document.getElementById('factoryLevelDisplay').innerHTML = factoryLevel;
   document.getElementById('factoryCostDisplay').innerHTML = numberCruncher(factoryCost);
 }
 

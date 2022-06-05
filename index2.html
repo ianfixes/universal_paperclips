@@ -55,7 +55,7 @@
 
         <b>Manufacturing</b><br />
         <hr>
-        <div id = factoryUpgradeDisplay>
+        <div id = "factoryUpgradeDisplay">
           <p class = "clean">
             Next Upgrade at: <span id = "nextFactoryUpgrade">0</span> Factories <br />
           </p>
@@ -73,8 +73,11 @@
 
         <div id = "factoryDiv">
           <p class = "engineText5">
-            <button class = "button2" id = "btnMakeFactory"
-            onclick="makeFactory()">Clip Factory</button> <span class = "engineText6" id="factoryLevelDisplay">0</span>
+            <button class = "button2" id = "btnMakeFactory" onclick="makeFactory()">Clip Factory</button> <span class = "engineText6" id="factoryLevelDisplay">0</span>
+          </p>
+
+          <p class="engineText5">
+            <button class="button2" id="btnFactoryxMAX" onclick="makeFactory(Infinity)">+MAX</button>
           </p>
 
           <div class = "toolTip3">
