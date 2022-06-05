@@ -885,4 +885,8 @@ p.hypnoDrone
     background-color: #111;
     color: #ccc;
   }
+
+  #canvas {
+    background-color: #333;
+  }
 }
