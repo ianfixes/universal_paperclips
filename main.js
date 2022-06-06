@@ -1766,7 +1766,7 @@ function makeClipper(amount) {
   if (isNaN(amount)) { amount = 1; }
 
   var counter = 0;
-  while (funds >= clippperCost && counter < amount) {
+  while (funds >= clipperCost && counter < amount) {
     clipmakerLevel = clipmakerLevel + 1;
     funds = funds - clipperCost;
     clipperCost = (Math.pow(1.1, clipmakerLevel) + 5);
@@ -4208,7 +4208,6 @@ function save() {
     marketing: marketing,
     marketingLvl: marketingLvl,
     x: x,
-    clippperCost: clippperCost,
     processors: processors,
     memory: memory,
     operations: operations,
@@ -4497,7 +4496,6 @@ function save1() {
     marketing: marketing,
     marketingLvl: marketingLvl,
     x: x,
-    clippperCost: clippperCost,
     processors: processors,
     memory: memory,
     operations: operations,
@@ -4786,7 +4784,6 @@ function save2() {
     marketing: marketing,
     marketingLvl: marketingLvl,
     x: x,
-    clippperCost: clippperCost,
     processors: processors,
     memory: memory,
     operations: operations,
@@ -5076,7 +5073,6 @@ function load() {
   marketing = loadGame.marketing;
   marketingLvl = loadGame.marketingLvl;
   x = loadGame.x;
-  clippperCost = loadGame.clippperCost;
   processors = loadGame.processors;
   memory = loadGame.memory;
   operations = loadGame.operations;
@@ -5402,7 +5398,6 @@ function load1() {
   marketing = loadGame.marketing;
   marketingLvl = loadGame.marketingLvl;
   x = loadGame.x;
-  clippperCost = loadGame.clippperCost;
   processors = loadGame.processors;
   memory = loadGame.memory;
   operations = loadGame.operations;
@@ -5707,7 +5702,6 @@ function load2() {
   marketing = loadGame.marketing;
   marketingLvl = loadGame.marketingLvl;
   x = loadGame.x;
-  clippperCost = loadGame.clippperCost;
   processors = loadGame.processors;
   memory = loadGame.memory;
   operations = loadGame.operations;
