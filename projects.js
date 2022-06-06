@@ -17,7 +17,7 @@ var project1 = {
   flag: 0,
   effect: function() {
     project1.flag = 1;
-    displayMessage("AutoClippper performance boosted by 25%");
+    displayMessage("AutoClipper performance boosted by 25%");
     standardOps = standardOps - 750;
     clipperBoost = clipperBoost + 0.25;
     boostLvl = 1;
@@ -104,7 +104,7 @@ var project4 = {
   flag: 0,
   effect: function() {
     project4.flag = 1;
-    displayMessage("AutoClippper performance boosted by another 50%");
+    displayMessage("AutoClipper performance boosted by another 50%");
     standardOps = standardOps - 2500;
     clipperBoost = clipperBoost + 0.50;
     boostLvl = 2;
@@ -133,7 +133,7 @@ var project5 = {
   flag: 0,
   effect: function() {
     project5.flag = 1;
-    displayMessage("AutoClippper performance boosted by another 75%");
+    displayMessage("AutoClipper performance boosted by another 75%");
     standardOps = standardOps - 5000;
     clipperBoost = clipperBoost + 0.75;
     boostLvl = 3;
