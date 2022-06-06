@@ -1763,38 +1763,16 @@ function buyAndClipMax(amount) {
 }
 
 function makeClipper(amount) {
-  // Original formula: 
-  //  while (funds >= clippperCost && counter < amount) {
-  //     clipmakerLevel = clipmakerLevel + 1;
-  //     funds = funds - clipperCost;
-  //     clipperCost = (Math.pow(1.1, clipmakerLevel) + 5);
-  // 
-  //     counter++;
-  //  }
-  // This formula avoids the loop by calculating the summation of clipperCost
-  if (funds < clipperCost) { return; }
   if (isNaN(amount)) { amount = 1; }
 
-  // A special consideration must be made for the first clipmakerLevel
-  if (clipmakerLevel == 0) {
-    clipmakerLevel++;
-    funds -= clipperCost;
-    amount--;
-  } else {
-    // TODO: need to find the max increase in clipmaker levels such that we don't exceed funds
-    var endingClipmakerLevel = clipmakerLevel + amount - 1;
-    var totalCost = 11*(Math.pow(1.1, endingClipmakerLevel) - 1)+5*endingClipmakerLevel - (11*(Math.pow(1.1, clipmakerLevel-1) - 1)+5*(clipmakerLevel-1));
+  var counter = 0;
+  while (funds >= clippperCost && counter < amount) {
+    clipmakerLevel = clipmakerLevel + 1;
+    funds = funds - clipperCost;
+    clipperCost = (Math.pow(1.1, clipmakerLevel) + 5);
 
-    if (totalCost > funds) {
-      // Calculate the max increase in 
-      totalCost
-    }
-  
-    clipmakerLevel += amount;
-    funds -= totalCost;
+    counter++;
   }
-
-  clipperCost = Math.pow(1.1, clipmakerLevel) + 5;
 
   document.getElementById('clipmakerLevel2').innerHTML = clipmakerLevel;
 
