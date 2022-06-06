@@ -23,7 +23,6 @@ var ticks = 0;
 var marketing = 1;
 var marketingLvl = 1;
 var x = 0;
-var clippperCost = 5;
 var processors = 1;
 var memory = 1;
 var operations = 0;
