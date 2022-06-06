@@ -33,6 +33,13 @@ function toggleWireBuyer() {
   }
 }
 
+function cheatWire(amount) {
+  wire = amount;
+  document.getElementById('wire').innerHTML = Math.floor(wire).toLocaleString();
+
+  displayMessage("You cheater");
+}
+
 function buyWire(times) {
   if (isNaN(times)) { times = 1; }
   
@@ -1756,19 +1763,41 @@ function buyAndClipMax(amount) {
 }
 
 function makeClipper(amount) {
+  // Original formula: 
+  //  while (funds >= clippperCost && counter < amount) {
+  //     clipmakerLevel = clipmakerLevel + 1;
+  //     funds = funds - clipperCost;
+  //     clipperCost = (Math.pow(1.1, clipmakerLevel) + 5);
+  // 
+  //     counter++;
+  //  }
+  // This formula avoids the loop by calculating the summation of clipperCost
+  if (funds < clipperCost) { return; }
   if (isNaN(amount)) { amount = 1; }
 
-  var counter = 0;
-  while (funds >= clippperCost && counter < amount) {
-    clipmakerLevel = clipmakerLevel + 1;
-    funds = funds - clipperCost;
-    clipperCost = (Math.pow(1.1, clipmakerLevel) + 5);
+  // A special consideration must be made for the first clipmakerLevel
+  if (clipmakerLevel == 0) {
+    clipmakerLevel++;
+    funds -= clipperCost;
+    amount--;
+  } else {
+    // TODO: need to find the max increase in clipmaker levels such that we don't exceed funds
+    var endingClipmakerLevel = clipmakerLevel + amount - 1;
+    var totalCost = 11*(Math.pow(1.1, endingClipmakerLevel) - 1)+5*endingClipmakerLevel - (11*(Math.pow(1.1, clipmakerLevel-1) - 1)+5*(clipmakerLevel-1));
 
-    counter++;
+    if (totalCost > funds) {
+      // Calculate the max increase in 
+      totalCost
+    }
+  
+    clipmakerLevel += amount;
+    funds -= totalCost;
   }
 
+  clipperCost = Math.pow(1.1, clipmakerLevel) + 5;
+
   document.getElementById('clipmakerLevel2').innerHTML = clipmakerLevel;
-  
+
   document.getElementById('clipperCost').innerHTML = clipperCost.toLocaleString(undefined, {
     minimumFractionDigits: 2,
     maximumFractionDigits: 2
@@ -2553,7 +2582,7 @@ function lowerPrice() {
   }
 }
 
-function setPrice(price) {
+function setMargin(price) {
   margin = Math.round(price*100) / 100;
   document.getElementById("demand").innerHTML = demand.toFixed(2);
   document.getElementById("margin").innerHTML = margin.toFixed(2);
@@ -3995,7 +4024,7 @@ function refresh() {
   document.getElementById('probeTrustDisplay').innerHTML = probeTrust;
   document.getElementById("memory").innerHTML = memory;
   document.getElementById("processors").innerHTML = processors;
-  document.getElementById("margin").innerHTML = margin.toFixed(2);
+  document.getElementById("margin").innerHTML = margin == null ? 0 : margin.toFixed(2);
   document.getElementById('marketingLvl').innerHTML = marketingLvl;
   document.getElementById('adCost').innerHTML = adCost.toLocaleString(undefined, {
     minimumFractionDigits: 2,
