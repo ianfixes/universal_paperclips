@@ -22,13 +22,7 @@ h2 {
   width: 70px;
 }
 
-#btnEntertainSwarm
-{
-  margin-top: 4px;
-  margin-bottom: 4px;
-}
-
-#btnSynchSwarm
+#btnEntertainSwarm, #btnSynchSwarm
 {
   margin-top: 4px;
   margin-bottom: 4px;
@@ -43,7 +37,8 @@ h2 {
 {
   position: relative;
   display: inline-block;
-  margin-bottom: 10px;
+  margin-bottom: .5em;
+  display: block;
 }
 
 #sliderLabelWork
