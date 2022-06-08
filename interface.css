@@ -191,14 +191,7 @@ h2 {
   margin-bottom: 3px;
 }
 
-#processorDisplay
-{
-  display: inline-block;
-  vertical-align: baseline;
-  height: 22px;
-}
-
-#memoryDisplay
+#processorDisplay, #memoryDisplay
 {
   display: inline-block;
   vertical-align: baseline;
@@ -210,22 +203,7 @@ h2 {
   word-break: break-all;
 }
 
-#harvesterMultiButtons
-{
-  margin-bottom: 2;
-}
-
-#wireDroneMultiButtons
-{
-  margin-bottom: 2;
-}
-
-#farmMultiButtons
-{
-  margin-bottom: 2;
-}
-
-#batteryMultiButtons
+#harvesterMultiButtons, #wireDroneMultiButtons, #farmMultiButtons, #batteryMultiButtons
 {
   margin-bottom: 2;
 }
@@ -425,21 +403,7 @@ canvas
   margin-top: 5;
 }
 
-.engine
-{
-  margin: 5;
-  border: 1px solid grey;
-  padding: 5;
-}
-
-.engine2
-{
-  margin: 5;
-  border: 1px solid grey;
-  padding: 5;
-}
-
-.swarmEngine
+.engine, .engine2, .swarmEngine
 {
   margin-bottom: 5;
   border: 1px solid grey;
@@ -480,20 +444,6 @@ canvas
   margin-top: 0;
 }
 
-.engineText2
-{
-  margin-bottom: 0;
-  margin-top: 0;
-  line-height: 150%;
-}
-
-.engineText3
-{
-  margin-left: 5;
-  margin-top: 10;
-  line-height: 150%;
-}
-
 .engineText4
 {
   margin-left: 5;
@@ -508,15 +458,7 @@ canvas
   margin-bottom: 3;
 }
 
-.engineText6
-{
-  margin-left: 0;
-  margin-top: 0;
-  margin-bottom: 0;
-  vertical-align: bottom;
-}
-
-.engineText7
+.engineText6, .engineText7
 {
   margin-left: 0;
   margin-top: 0;
@@ -529,12 +471,6 @@ canvas
   margin-left: 0;
   margin-top: 3px;
   margin-bottom: 0;
-}
-
-.engineText9
-{
-  display: inline-block;
-  margin-top: 1px;
 }
 
 .engineText10
