@@ -3,6 +3,18 @@ function playThrenody() {
   document.getElementById("threnody1").play();
 }
 
+// Cheater ----------------------------------------------------
+
+function toggleCheatUi() {
+  document.querySelectorAll("[data-cheatUi]").forEach(function(el) {
+    if (el.style.display == "none") {
+      el.style.display = "";
+    } else {
+      el.style.display = "none";
+    }
+  });
+}
+
 
 // Wire --------------------------------------------------------
 
@@ -473,13 +485,17 @@ function buttonUpdate() {
 
   if (wire < 1) {
     document.getElementById("btnMakePaperclip").disabled = true;
+    document.getElementById("_cheatBtnMakeMaxPaperclip").disabled = true;
   } else {
     document.getElementById("btnMakePaperclip").disabled = false;
+    document.getElementById("_cheatBtnMakeMaxPaperclip").disabled = false;
   }
   if (funds < wireCost) {
     document.getElementById("btnBuyWire").disabled = true;
+    document.getElementById("_cheatBtnBuyMaxWire").disabled = true;
   } else {
     document.getElementById("btnBuyWire").disabled = false;
+    document.getElementById("_cheatBtnBuyMaxWire").disabled = false;
   }
   if (funds < clipperCost) {
     document.getElementById("btnMakeClipper").disabled = true;
@@ -1727,6 +1743,8 @@ function clipClick(number) {
     finalClips++;
   }
 
+  if (number <= 0) { return; }
+
   if (wire >= 1) {
     if (number > wire) {
       number = wire;
@@ -2891,6 +2909,11 @@ function addMem(amount) {
   document.getElementById("memory").innerHTML = memory;
 }
 
+function cheatGifts(amount) {
+  swarmGifts += amount;
+  document.getElementById("swarmGifts").innerHTML = numberCruncher(swarmGifts);
+}
+
 function calculateOperations() {
 
   if (tempOps > 0) {
@@ -3152,6 +3175,12 @@ function increaseProbeTrust(amount) {
   document.getElementById('probeTrustDisplay').innerHTML = probeTrust;
   document.getElementById('probeTrustCostDisplay').innerHTML = Math.floor(probeTrustCost).toLocaleString();
   displayMessage("WARNING: Risk of value drift increased");
+}
+
+function cheatHonor(amount) {
+  honor += amount;
+
+  document.getElementById("honorDisplay").innerHTML = Math.round(honor).toLocaleString();
 }
 
 function increaseMaxTrust(amount) {
@@ -5004,7 +5033,7 @@ function load() {
   resultsTimer = loadGame.resultsTimer;
   resultsFlag = loadGame.resultsFlag;
 
-  honor = loadGame.honor;
+  honor = loadGame.honor == null ? 0 : loadGame.honor;
   maxTrust = loadGame.maxTrust;
   maxTrustCost = loadGame.maxTrustCost;
   disorgCounter = loadGame.disorgCounter;
@@ -5062,7 +5091,7 @@ function load() {
   clipperCost = loadGame.clipperCost == null ? 0 : loadGame.clipperCost;
   unsoldClips = loadGame.unsoldClips;
   funds = loadGame.funds == null ? 0 : loadGame.funds;
-  margin = loadGame.margin;
+  margin = loadGame.margin == null ? 0.01 : loadGame.margin;
   wire = loadGame.wire;
   wireCost = loadGame.wireCost;
   adCost = loadGame.adCost == null ? 0 : loadGame.adCost;
@@ -5175,7 +5204,7 @@ function load() {
   winnerPtr = loadGame.winnerPtr;
   high = loadGame.high;
   pick = loadGame.pick;
-  yomi = loadGame.yomi;
+  yomi = loadGame.yomi == null ? 0 : loadGame.yomi;
   yomiBoost = loadGame.yomiBoost;
 
   probeSpeed = loadGame.probeSpeed;

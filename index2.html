@@ -51,7 +51,8 @@
 
     <div id="leftColumn">
 
-      <button class="button2" id ="btnMakePaperclip" onclick="clipClick(1)">Make Paperclip</button><br />
+      <button class="button2" id="btnMakePaperclip" onclick="clipClick(1)">Make Paperclip</button><br />
+      <button class="button2" style="display: none; margin-bottom:1em;" data-cheatUi id="_cheatBtnMakeMaxPaperclip" onclick="clipClick(Infinity)">Clip max</button>
       <br />
 
       <div id="creationDiv">
@@ -80,7 +81,7 @@
           </p>
 
           <p class="engineText5">
-            <button class="button2" id="btnFactoryxMAX" onclick="makeFactory(Infinity)">+MAX</button>
+            <button class="button2" id="btnFactoryxMAX" data-cheatUi style="display: none;" onclick="makeFactory(Infinity)">+MAX</button>
           </p>
 
           <div class="toolTip3">
@@ -138,7 +139,7 @@
               <button class="button2" id="btnHarvesterx10" onclick="makeHarvester(10)">+10</button>
               <button class="button2" id="btnHarvesterx100" onclick="makeHarvester(100)">+100</button>
               <button class="button2" id="btnHarvesterx1000" onclick="makeHarvester(1000)">+1k</button>
-              <button class="button2" id="btnHarvesterxMAX" onclick="makeHarvester(Infinity)">+MAX</button><!--
+              <button class="button2" id="btnHarvesterxMAX" onclick="makeHarvester(Infinity)" data-cheatUi style="display: none;">+MAX</button><!--
               <br />
               <button class="button2" id="btnHarvesterMinus10" onclick="harvesterReboot()">-10</button>
               <button class="button2" id="btnHarvesterMinus100" onclick="harvesterReboot()">-100</button>
@@ -172,7 +173,7 @@
                 <button class="button2" id="btnWireDronex10" onclick="makeWireDrone(10)">+10</button>
                 <button class="button2" id="btnWireDronex100" onclick="makeWireDrone(100)">+100</button>
                 <button class="button2" id="btnWireDronex1000" onclick="makeWireDrone(1000)">+1k</button>
-                <button class="button2" id="btnWireDronexMAX" onclick="makeWireDrone(Infinity)">+MAX</button></p>
+                <button class="button2" id="btnWireDronexMAX" onclick="makeWireDrone(Infinity)" data-cheatUi style="display: none;">+MAX</button></p>
               </div>
 
               <div class="toolTip3">
@@ -207,8 +208,10 @@
 
             <div id="probeDiv">
               <p class="engineText5">
-                <button class="button2" id="btnMakeProbe"
-                onclick="makeProbe()">Launch Probe</button><br />
+                <button class="button2" id="btnMakeProbe" onclick="makeProbe()">Launch Probe</button><br />
+                <span data-cheatUi style="display: none;">
+                  <button class="button2" data-cheatUi style="display: none;" id="_cheatBtnMakeMaxProbe" onclick="makeProbe(Infinity);">Launch max Probes</button><br />
+                </span>
                 Cost: <span id="probeCostDisplay">0</span> clips<br />
                 <br />
               </div>
@@ -280,8 +283,8 @@
               </div>
 
               <div>
-                <button class="button2" id ="btnBuyWire"
-                onclick="buyWire()">Wire</button>
+                <button class="button2" id="btnBuyWire" onclick="buyWire()">Wire</button>
+                <button class="button2" id="_cheatBtnBuyMaxWire" data-cheatUi style="display: none;" onclick="buyWire(Infinity);">Buy max</button>
                 <span class="engineText6" id="wire">1000</span><span class="engineText6"> inches</span><br />
                 Cost: $ <span id="wireCost">20</span><br />
                 <br />
@@ -306,27 +309,29 @@
 
                 <br />
 
-    <!--
-        <button id ="save1Button" onclick="save1()">SAVE SLOT 1</button>
-        <button id ="load1Button" onclick="load1()">LOAD SLOT 1</button><br />
-        <button id ="save2Button" onclick="save2()">SAVE SLOT 2</button>
-        <button id ="load2Button" onclick="load2()">LOAD SLOT 2</button><br />
-        <button id ="resetButton" onclick="reset()">RESET ALL PROGRESS</button><br />
+      <section id="og-cheats" data-cheatUi style="display: none;">
+        <button id="save1Button" onclick="save1()">SAVE SLOT 1</button>
+        <button id="load1Button" onclick="load1()">LOAD SLOT 1</button><br />
+        <button id="save2Button" onclick="save2()">SAVE SLOT 2</button>
+        <button id="load2Button" onclick="load2()">LOAD SLOT 2</button><br />
+        <button id="resetButton" onclick="reset()">RESET ALL PROGRESS</button><br />
 
-        <button id ="freeClipsButton" onclick="cheatClips()">Free Clips</button><br />
-        <button id ="freeMoneyButton" onclick="cheatMoney()">Free Money</button><br />
-        <button id ="freeTrustButton" onclick="cheatTrust()">Free Trust</button><br />
-        <button id ="freeOpsButton" onclick="cheatOps()">Free Ops</button><br />
-        <button id ="freeCreatButton" onclick="cheatCreat()">Free Creativity</button><br />
-        <button id ="freeYomiButton" onclick="cheatYomi()">Free Yomi</button><br />
-        <button id ="resetPrestige" onclick="resetPrestige()">Reset Prestige</button><br />
+        <button id="freeClipsButton" onclick="cheatClips()">Free Clips</button><br />
+        <button id="freeMoneyButton" onclick="cheatMoney()">Free Money</button><br />
+        <button id="freeTrustButton" onclick="cheatTrust()">Free Trust</button><br />
+        <button id="freeOpsButton" onclick="cheatOps()">Free Ops</button><br />
+        <button id="freeCreatButton" onclick="cheatCreat()">Free Creativity</button><br />
+        <button id="freeYomiButton" onclick="cheatYomi()">Free Yomi</button><br />
+        <button id="freeGiftsButton" onclick="cheatGifts(1E3)">Free Gifts</button><br />
+        <button id="freeHonorButton" onclick="cheatHonor(1E6)">Free Honor</button><br />
+        <button id="resetPrestige" onclick="resetPrestige()">Reset Prestige</button><br />
 
-        <button id ="destroyAllHumansButton" onclick="cheatHypno()">Destroy all Humans</button><br />
-        <button id ="freePrestigeU" onclick="cheatPrestigeU()">Free Prestige U</button>
-        <button id ="freePrestigeS" onclick="cheatPrestigeS()">Free Prestige S</button>
-        <button id ="debugBattleNumbers" onclick="setB()">Set Battle Number 1 to 7</button><br />
-        <button id ="availMatterZero" onclick="zeroMatter()">Set Avail Matter to 0</button><br />
-      -->
+        <button id="destroyAllHumansButton" onclick="cheatHypno()">Destroy all Humans</button><br />
+        <button id="freePrestigeU" onclick="cheatPrestigeU()">Free Prestige U</button>
+        <button id="freePrestigeS" onclick="cheatPrestigeS()">Free Prestige S</button>
+        <button id="debugBattleNumbers" onclick="setB()">Set Battle Number 1 to 7</button><br />
+        <button id="availMatterZero" onclick="zeroMatter()">Set Avail Matter to 0</button><br />
+      </section>
 
     </div>
 
@@ -707,7 +712,7 @@
                 <p class="engineText5">
                   <button class="button2" id="btnFarmx10" onclick="makeFarm(10)">+10</button>
                   <button class="button2" id="btnFarmx100" onclick="makeFarm(100)">+100</button>
-                  <button class="button2" id="btnFarmxMAX" onclick="makeFarm(Infinity)">+MAX</button>
+                  <button class="button2" id="btnFarmxMAX" onclick="makeFarm(Infinity)" data-cheatUi style="display: none;">+MAX</button>
                 </p>
 
               </div>
@@ -872,13 +877,13 @@
 
           <div class=enginetext1 id="increaseProbeTrustDiv">
             <button class="button2" id="btnIncreaseProbeTrust" onclick="increaseProbeTrust()">Increase Probe Trust</button><br />
-            <button class="button2" id="btnMaxOutProbeTrust" onclick="increaseProbeTrust(Infinity)">Max-out Probe Trust</button><br />
+            <button class="button2" id="btnMaxOutProbeTrust" onclick="increaseProbeTrust(Infinity)" data-cheatUi style="display:none;">Max-out Probe Trust</button><br />
             <p class="engineText8">Cost: <span id="probeTrustCostDisplay">0</span> yomi</p>
           </div>
 
           <div class=enginetext1 id="increaseMaxTrustDiv">
             <button class="button2" id="btnIncreaseMaxTrust" onclick="increaseMaxTrust()">Increase Max Trust</button><br />
-            <button class="button2" id="btnMaxOutMaxTrust" onclick="increaseMaxTrust(Infinity)">Max-out Max Trust</button><br />
+            <button class="button2" id="btnMaxOutMaxTrust" onclick="increaseMaxTrust(Infinity)" data-cheatUi style="display: none;">Max-out Max Trust</button><br />
             <p class="engineText8">Cost: <span id="maxTrustCostDisplay">91,117.99</span> honor</p>
           </div>
 
