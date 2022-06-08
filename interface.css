@@ -754,7 +754,7 @@ p.hypnoDrone
   text-shadow: #d4d4d4 0 1px 0;
   background: #616161;
   background: linear-gradient(180deg, #f7f7f7, #aaa);
-  color: #000000;
+  color: black;
 }
 
 .button2:active
@@ -903,5 +903,14 @@ p.hypnoDrone
   button[data-cheatUi]:active {
     background: linear-gradient(180deg, #620, #b64);
     color: #ccc;
+  }
+
+  #hypnoDroneEventDiv {
+    background-color: #ccc;
+  }
+
+  p.hypnoDrone
+  {
+    color: #111;
   }
 }
