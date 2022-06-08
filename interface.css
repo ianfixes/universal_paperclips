@@ -643,6 +643,7 @@ p.hypnoDrone
   margin-bottom: .5em;
   font-family: sans-serif;
   font-size: 14px;
+  width: 100%;
 }
 
 .projectButton:hover
