@@ -2917,6 +2917,17 @@ function balanceProcAndMem() {
   addMem(memIncreaseAmount);
 }
 
+function maxProcAndMem() {
+  var limit = (humanFlag == 0) ? swarmGifts : trust-processors-memory;
+  if (limit <= 0) { return; }
+
+  var memIncreaseAmount = Math.ceil(limit / 2);
+  var procIncreaseAmount = Math.floor(limit / 2);
+
+  addProc(procIncreaseAmount);
+  addMem(memIncreaseAmount);
+}
+
 function cheatGifts(amount) {
   swarmGifts += amount;
   document.getElementById("swarmGifts").innerHTML = numberCruncher(swarmGifts);
