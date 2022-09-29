@@ -2907,6 +2907,8 @@ function addMem(amount=1, safe=true) {
 // Attempts to make equal the number of processors and mem
 function balanceProcAndMem() {
   var limit = Math.max(0, (humanFlag == 0) ? swarmGifts : trust-processors-memory);
+  if (limit <= 0) { return; }
+  
   var procToMemDiff = processors - memory;
   var remainder = Math.max(0, limit-Math.abs(procToMemDiff));
 
