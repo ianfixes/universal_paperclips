@@ -2871,11 +2871,9 @@ function addProc(amount=1, safe=true) {
     amount = safe ? Math.min(amount, swarmGifts) : amount;
     processors += amount;
     swarmGifts -= amount;
-  } else if (processors + memory + amount <= trust) {
+  } else {
     amount = safe ? Math.min(amount, trust-processors-memory) : amount;
     processors += amount;
-  } else {
-    return;
   }
 
   if (amount > 0) {
@@ -2904,6 +2902,19 @@ function addMem(amount=1, safe=true) {
   }
 
   document.getElementById("memory").innerHTML = memory;
+}
+
+// Attempts to make equal the number of processors and mem
+function balanceProcAndMem() {
+  var limit = Math.max(0, (humanFlag == 0) ? swarmGifts : trust-processors-memory);
+  var procToMemDiff = processors - memory;
+  var remainder = Math.max(0, limit-Math.abs(procToMemDiff));
+
+  var memIncreaseAmount = Math.max(0, procToMemDiff) + Math.ceil(remainder / 2);
+  var processorIncreaseAmount = Math.max(0, -procToMemDiff) + Math.floor(remainder / 2);
+
+  addProc(processorIncreaseAmount);
+  addMem(memIncreaseAmount);
 }
 
 function cheatGifts(amount) {
