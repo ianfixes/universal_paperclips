@@ -592,7 +592,9 @@ var project20 = {
     displayMessage("Run tournament, pick strategy, earn Yomi equal to that strategy's points.");
     standardOps = standardOps - 12000;
     var element = document.getElementById("projectButton20");
-    element.parentNode.removeChild(element);
+    if (element != null && element.parentNode != null) {
+      element.parentNode.removeChild(element);
+    }
     var index = activeProjects.indexOf(project20);
     activeProjects.splice(index, 1);
     strategyEngineFlag = 1;
@@ -620,7 +622,9 @@ var project21 = {
     displayMessage("Investment engine unlocked");
     standardOps = standardOps - 10000;
     var element = document.getElementById("projectButton21");
-    element.parentNode.removeChild(element);
+    if (element != null && element.parentNode != null) {
+      element.parentNode.removeChild(element);
+    }
     var index = activeProjects.indexOf(project21);
     activeProjects.splice(index, 1);
     investmentEngineFlag = 1;
@@ -949,7 +953,9 @@ var project29 = {
     trust = trust + 12;
     stockGainThreshold = stockGainThreshold + 0.01;
     var element = document.getElementById("projectButton29");
-    element.parentNode.removeChild(element);
+    if (element != null && element.parentNode != null) {
+      element.parentNode.removeChild(element);
+    }
     var index = activeProjects.indexOf(project29);
     activeProjects.splice(index, 1);
   }
@@ -1337,7 +1343,9 @@ var project50 = {
     standardOps = standardOps - 10000;
     displayMessage("Quantum computing online");
     var element = document.getElementById("projectButton50");
-    element.parentNode.removeChild(element);
+    if (element != null && element.parentNode != null) {
+      element.parentNode.removeChild(element);
+    }
     var index = activeProjects.indexOf(project50);
     activeProjects.splice(index, 1);
   }
