@@ -320,8 +320,8 @@
         <button id="freeMoneyButton" onclick="cheatMoney()">Free Money</button><br />
         <button id="freeTrustButton" onclick="cheatTrust()">Free Trust</button><br />
         <button id="freeOpsButton" onclick="cheatOps()">Free Ops</button>
-        <button id="freeProcButton" onclick="addProc(1E4)">Free Proc</button>
-        <button id="freeMemButton" onclick="addMem(1E4)">Free Mem</button>
+        <button id="freeProcButton" onclick="addProc(1E4, false)">Free Proc</button>
+        <button id="freeMemButton" onclick="addMem(1E4, false)">Free Mem</button>
         <br />
         <button id="freeCreatButton" onclick="cheatCreat()">Free Creativity</button><br />
         <button id="freeYomiButton" onclick="cheatYomi()">Free Yomi</button><br />
@@ -369,6 +369,12 @@
         <div id="memoryDisplay">
           <button class="button2" id="btnAddMem" onclick="addMem()">&nbsp Memory &nbsp</button>
           <span class="engineText10" id="memory">1</span>
+        </div>
+
+        <div data-cheatUi style="display:none;">
+          <button class="button2" onclick="addProc(Infinity)">Max Proc</button>
+          <button class="button2" onclick="addMem(Infinity)">Max Mem</button>
+          <button class="button2" onclick="balanceProcAndMem()">Balance Proc/Mem</button>
         </div>
 
         <br />

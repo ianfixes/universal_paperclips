@@ -823,16 +823,18 @@ p.hypnoDrone
   }
 
   /* TODO: STYLES FOR LIGHT MODE TOO */
-  button[data-cheatUi] {
+  button[data-cheatUi], div[data-cheatUi] button {
     background: linear-gradient(0deg, #510, #a53);
     border: 1px solid #733;
   }
-  button[data-cheatUi]:hover {
+  button[data-cheatUi]:hover, div button[data-cheatUi]:hover {
     background: linear-gradient(0deg, #620, #b64);
     /* border: 1px solid #733; */
   }
   button[data-cheatUi]:hover:active,
-  button[data-cheatUi]:active {
+  button[data-cheatUi]:active,
+  div button[data-cheatUi]:hover:active,
+  div button[data-cheatUi]:active {
     background: linear-gradient(180deg, #620, #b64);
     color: #ccc;
   }

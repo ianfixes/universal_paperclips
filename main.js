@@ -2863,51 +2863,46 @@ function calculateTrust() {
   }
 }
 
-function addProc(amount) {
-  if (isNaN(amount)) {
-    processors = processors + 1;
-    if (creativityOn == 1) {
-      displayMessage("Processor added, operations (or creativity) per sec increased")
-    } else {
-      displayMessage("Processor added, operations per sec increased")
-    }
-
-    if (humanFlag == 0) {
-      swarmGifts = swarmGifts - 1;
-    }
-  } else {
+// If `safe`, will only add a processor up to the maximum allowed
+// Else, increments the processor count by the specified amount
+// If amount is not specified, defaults to 1
+function addProc(amount=1, safe=true) {
+  if (humanFlag == 0 && amount <= swarmGifts) {
+    amount = safe ? Math.min(amount, swarmGifts) : amount;
     processors += amount;
-    if (creativityOn == 1) {
-      displayMessage(amount + " Processor(s) added, operations (or creativity) per sec increased")
-    } else {
-      displayMessage(amount + " Processor(s) added, operations per sec increased")
-    }
+    swarmGifts -= amount;
+  } else if (processors + memory + amount <= trust) {
+    amount = safe ? Math.min(amount, trust-processors-memory) : amount;
+    processors += amount;
+  } else {
+    return;
+  }
 
-    if (humanFlag == 0) {
-      swarmGifts -= amount;
-    }
+  if (amount > 0) {
+    displayMessage(amount + " processor(s) added, operations" + (creativityOn == 1 ? " (or creativity) " : " ") + "per sec increased");
   }
 
   creativitySpeed = Math.log10(processors) * Math.pow(processors, 1.1) + processors - 1;
   document.getElementById("processors").innerHTML = processors;
 }
 
-function addMem(amount) {
-  if (isNaN(amount)) {
-    memory = memory + 1;
-
-    if (humanFlag == 0) {
-      swarmGifts = swarmGifts - 1;
-    }
-  } else {
+// If `safe`, will only add memory up to the maximum allowed
+// Else, increments the memory count by the specified amount
+// If amount is not specified, defaults to 1
+function addMem(amount=1, safe=true) {
+  if (humanFlag == 0) {
+    amount = safe ? Math.min(amount, swarmGifts) : amount;
     memory += amount;
-
-    if (humanFlag == 0) {
-      swarmGifts = swarmGifts - amount;
-    }
+    swarmGifts -= amount;
+  } else {
+    amount = safe ? Math.min(amount, trust-processors-memory) : amount;
+    memory += amount;
   }
-  
-  displayMessage("Memory added, max operations increased");
+
+  if (amount > 0) {
+    displayMessage(amount + " memory added, max operations increased");
+  }
+
   document.getElementById("memory").innerHTML = memory;
 }
 
