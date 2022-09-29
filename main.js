@@ -161,7 +161,9 @@ function quantumCompute() {
   }
 }
 
-function qComp() {
+function qComp(times) {
+
+  if (isNaN(times)) { times = 1; }
 
   qFade = 1;
 
@@ -180,13 +182,13 @@ function qComp() {
     var damper = (tempOps / 100) + 5;
 
     if (qq > buffer) {
-      tempOps = tempOps + Math.ceil(qq / damper) - buffer;
+      tempOps += (Math.ceil(qq / damper) - buffer) * times;
       qq = buffer;
       opFade = 0.01;
       opFadeTimer = 0;
     }
 
-    standardOps = standardOps + qq;
+    standardOps += qq * times;
     document.getElementById("qCompDisplay").innerHTML = "qOps: " + Math.ceil(q * 360).toLocaleString();
   }
 
