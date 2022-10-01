@@ -128,7 +128,7 @@
         <div id="harvesterDiv">
 
           <div data-cheatUi style="display: none; margin-bottom: 1em;">
-            <label>
+            <label title="Attempt to maintain the ratio of harvesters and drones for clip production">
               <input type="checkbox" onchange="toggleHarvesterDroneLock()" />
               Lock harvester-drone count
             </label>
@@ -724,6 +724,13 @@
               Factories: <span id="facPowConRate">0</span> MWs/sec<br />
               Drones: <span id="dronePowConRate">0</span> MWs/sec<br />
             </p> <br />
+
+            <div data-cheatUi style="display: none">
+              <label title="Automatically buy solar farms, if funds allow, to keep up with energy consumption of drones and factories">
+                <input type="checkbox" onchange="toggleAutoBuySolar()" />
+                Auto-buy solar farms
+              </label>
+            </div>
 
             Production: <span id="powerProductionRate">0</span> MWs/sec<br />
             <p class="engineText5">

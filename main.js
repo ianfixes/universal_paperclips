@@ -1043,6 +1043,14 @@ function toggleHarvesterDroneLock() {
   }
 }
 
+function toggleAutoBuySolar() {
+  isSolarLocked = !isSolarLocked;
+
+  if (!isSolarLocked) { return; }
+
+  alignFarmToConsumption();
+}
+
 // Stock List Display Routine
 
 window.setInterval(function() {
@@ -1944,6 +1952,10 @@ function makeHarvester(amount) {
     }
   }
 
+  if (isSolarLocked) {
+    alignFarmToConsumption();
+  }
+
 }
 
 function makeWireDrone(amount) {
@@ -1973,6 +1985,10 @@ function makeWireDrone(amount) {
     if (catchup > 0) {
       makeHarvester(catchup);
     }
+  }
+
+  if (isSolarLocked) {
+    alignFarmToConsumption();
   }
 
 }
@@ -2366,6 +2382,7 @@ function updatePowPrices() {
 }
 
 function makeFarm(amount) {
+  if (isNaN(amount)) { amount = 1; }
 
   for (x = 0; x < amount; x++) {
     if (unusedClips < farmCost) { break; }
@@ -2381,6 +2398,18 @@ function makeFarm(amount) {
 
   updatePowPrices();
 
+}
+
+function alignFarmToConsumption() {
+  var dpd = getDronePowerDemand();
+  var fpd = getFactoryPowerDemand();
+
+  var burnout = 1E6;
+  var i = 0;
+  while (i < burnout && getTotalPowerSupply() < dpd + fpd) {
+    makeFarm();
+    i++;
+  }
 }
 
 function farmReboot() {
@@ -2424,13 +2453,25 @@ function batteryReboot() {
   document.getElementById('batteryCost').innerHTML = numberCruncher(batteryCost);
 }
 
+function getFactoryPowerDemand() {
+  return factoryLevel * factoryPowerRate / 100;
+}
+
+function getDronePowerDemand() {
+  return (harvesterLevel * dronePowerRate / 100) + (wireDroneLevel * dronePowerRate / 100);
+}
+
+function getTotalPowerSupply() {
+  return farmLevel * farmRate / 100;
+}
+
 function updatePower() {
 
   if (spaceFlag == 0) {
 
-    var supply = farmLevel * farmRate / 100;
-    var dDemand = (harvesterLevel * dronePowerRate / 100) + (wireDroneLevel * dronePowerRate / 100);
-    var fDemand = (factoryLevel * factoryPowerRate / 100);
+    var supply = getTotalPowerSupply();
+    var dDemand = getDronePowerDemand();
+    var fDemand = getFactoryPowerDemand();
     var demand = dDemand + fDemand;
     var nuSupply = 0;
     var xsDemand = 0;
@@ -4181,6 +4222,7 @@ function save() {
 
     resetFlag: resetFlag,
     isHarvesterWireDroneCountLocked: isHarvesterWireDroneCountLocked,
+    isSolarLocked: isSolarLocked,
 
     dismantle: dismantle,
     endTimer1: endTimer1,
@@ -4469,6 +4511,7 @@ function save1() {
 
     resetFlag: resetFlag,
     isHarvesterWireDroneCountLocked: isHarvesterWireDroneCountLocked,
+    isSolarLocked: isSolarLocked,
 
     dismantle: dismantle,
     endTimer1: endTimer1,
@@ -4758,6 +4801,7 @@ function save2() {
 
     resetFlag: resetFlag,
     isHarvesterWireDroneCountLocked: isHarvesterWireDroneCountLocked,
+    isSolarLocked: isSolarLocked,
 
     dismantle: dismantle,
     endTimer1: endTimer1,
@@ -5049,6 +5093,7 @@ function load() {
 
   resetFlag = loadGame.resetFlag;
   isHarvesterWireDroneCountLocked = loadGame.isHarvesterWireDroneCountLocked;
+  isSolarLocked = loadGame.isSolarLocked;
 
   dismantle = loadGame.dismantle;
   endTimer1 = loadGame.endTimer1;
@@ -5374,7 +5419,8 @@ function load1() {
   }
 
   resetFlag = loadGame.resetFlag;
-  isHarvesterWireDroneCountLocked = loadGame.isHarvesterWireDroneCountLocked,
+  isHarvesterWireDroneCountLocked = loadGame.isHarvesterWireDroneCountLocked;
+  isSolarLocked = loadGame.isSolarLocked;
 
   dismantle = loadGame.dismantle;
   endTimer1 = loadGame.endTimer1;
@@ -5679,7 +5725,8 @@ function load2() {
   }
 
   resetFlag = loadGame.resetFlag;
-  isHarvesterWireDroneCountLocked = loadGame.isHarvesterWireDroneCountLocked,
+  isHarvesterWireDroneCountLocked = loadGame.isHarvesterWireDroneCountLocked;
+  isSolarLocked = loadGame.isSolarLocked;
 
   dismantle = loadGame.dismantle;
   endTimer1 = loadGame.endTimer1;

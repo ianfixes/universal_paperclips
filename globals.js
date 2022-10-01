@@ -170,3 +170,4 @@ var resetFlag = 2;
 // Added by @g-liu
 
 var isHarvesterWireDroneCountLocked = false;
+var isSolarLocked = false;
