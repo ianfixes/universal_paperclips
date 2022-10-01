@@ -2872,7 +2872,7 @@ function addProc(amount=1, safe=true) {
     processors += amount;
     swarmGifts -= amount;
   } else {
-    amount = safe ? Math.min(amount, trust-processors-memory) : amount;
+    amount = safe ? Math.max(0, Math.min(amount, trust-processors-memory)) : amount;
     processors += amount;
   }
 
@@ -2893,7 +2893,7 @@ function addMem(amount=1, safe=true) {
     memory += amount;
     swarmGifts -= amount;
   } else {
-    amount = safe ? Math.min(amount, trust-processors-memory) : amount;
+    amount = safe ? Math.max(0, Math.min(amount, trust-processors-memory)) : amount;
     memory += amount;
   }
 
