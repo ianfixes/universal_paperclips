@@ -822,6 +822,13 @@ p.hypnoDrone
     color: #ccc;
   }
 
+  div[data-cheatUi] label {
+    color: #b64;
+  }
+  div[data-cheatUi] input[type=checkbox] {
+    accent-color: #b64;
+  }
+
   /* TODO: STYLES FOR LIGHT MODE TOO */
   button[data-cheatUi], div[data-cheatUi] button {
     background: linear-gradient(0deg, #510, #a53);

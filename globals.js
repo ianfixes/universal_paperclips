@@ -1,3 +1,5 @@
+const PHI = 1.0/2.0 + Math.sqrt(5)/2.0;
+
 var clips = 0;
 var unusedClips = 0;
 var clipRate = 0;
@@ -165,3 +167,6 @@ var finalClips = 0;
 
 var resetFlag = 2;
 
+// Added by @g-liu
+
+var isHarvesterWireDroneCountLocked = false;

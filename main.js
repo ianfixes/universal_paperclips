@@ -1027,6 +1027,20 @@ function updateStocks() {
   }
 }
 
+function toggleHarvesterDroneLock() {
+  isHarvesterWireDroneCountLocked = !isHarvesterWireDroneCountLocked;
+
+  if (wireDroneLevel < Math.floor(harvesterLevel * PHI)) {
+    // increase the number of wire drones to match
+    var diff = Math.floor(harvesterLevel*PHI) - wireDroneLevel;
+    makeWireDrone(diff);
+  } else {
+    // increase the number of harvesters to match
+    var diff = wireDroneLevel - Math.floor(harvesterLevel*PHI);
+    makeHarvester(diff);
+  }
+}
+
 // Stock List Display Routine
 
 window.setInterval(function() {
@@ -2792,6 +2806,7 @@ function cheatClips(amount) {
     unusedClips = amount;
   }
   displayMessage("you just cheated");
+  document.getElementById("unusedClipsDisplay").innerText = numberCruncher(unusedClips);
 }
 
 function cheatMoney(amount) {
@@ -4148,6 +4163,7 @@ function save() {
   var saveGame = {
 
     resetFlag: resetFlag,
+    isHarvesterWireDroneCountLocked: isHarvesterWireDroneCountLocked,
 
     dismantle: dismantle,
     endTimer1: endTimer1,
@@ -4435,6 +4451,7 @@ function save1() {
   var saveGame = {
 
     resetFlag: resetFlag,
+    isHarvesterWireDroneCountLocked: isHarvesterWireDroneCountLocked,
 
     dismantle: dismantle,
     endTimer1: endTimer1,
@@ -4723,6 +4740,7 @@ function save2() {
   var saveGame = {
 
     resetFlag: resetFlag,
+    isHarvesterWireDroneCountLocked: isHarvesterWireDroneCountLocked,
 
     dismantle: dismantle,
     endTimer1: endTimer1,
@@ -5013,6 +5031,7 @@ function load() {
   }
 
   resetFlag = loadGame.resetFlag;
+  isHarvesterWireDroneCountLocked = loadGame.isHarvesterWireDroneCountLocked;
 
   dismantle = loadGame.dismantle;
   endTimer1 = loadGame.endTimer1;
@@ -5338,6 +5357,7 @@ function load1() {
   }
 
   resetFlag = loadGame.resetFlag;
+  isHarvesterWireDroneCountLocked = loadGame.isHarvesterWireDroneCountLocked,
 
   dismantle = loadGame.dismantle;
   endTimer1 = loadGame.endTimer1;
@@ -5642,6 +5662,7 @@ function load2() {
   }
 
   resetFlag = loadGame.resetFlag;
+  isHarvesterWireDroneCountLocked = loadGame.isHarvesterWireDroneCountLocked,
 
   dismantle = loadGame.dismantle;
   endTimer1 = loadGame.endTimer1;
