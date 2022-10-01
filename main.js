@@ -1030,6 +1030,8 @@ function updateStocks() {
 function toggleHarvesterDroneLock() {
   isHarvesterWireDroneCountLocked = !isHarvesterWireDroneCountLocked;
 
+  if (!isHarvesterWireDroneCountLocked) { return; }
+
   if (wireDroneLevel < Math.floor(harvesterLevel * PHI)) {
     // increase the number of wire drones to match
     var diff = Math.floor(harvesterLevel*PHI) - wireDroneLevel;
@@ -1934,6 +1936,14 @@ function makeHarvester(amount) {
   updateDronePrices();
   updateUpgrades();
 
+  if (isHarvesterWireDroneCountLocked) {
+    // Need to also `makeWireDrone` at a rate of 1.618:1
+    var catchup = Math.floor(harvesterLevel*PHI - wireDroneLevel);
+    if (catchup > 0) {
+      makeWireDrone(catchup);
+    }
+  }
+
 }
 
 function makeWireDrone(amount) {
@@ -1957,6 +1967,13 @@ function makeWireDrone(amount) {
 
   updateDronePrices();
   updateUpgrades();
+
+  if (isHarvesterWireDroneCountLocked) {
+    var catchup = Math.floor(wireDroneLevel/PHI - harvesterLevel);
+    if (catchup > 0) {
+      makeHarvester(catchup);
+    }
+  }
 
 }
 
