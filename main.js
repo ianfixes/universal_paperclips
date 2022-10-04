@@ -2428,9 +2428,10 @@ function alignFarmToConsumption() {
   var dpd = getDronePowerDemand();
   var fpd = getFactoryPowerDemand();
 
-  var burnout = 1E6;
+  var burnout = 1E5;
   var i = 0;
   while (i < burnout && getTotalPowerSupply() < dpd + fpd) {
+    // TODO: Address this - as this can run out of memory :(
     makeFarm();
     i++;
   }
