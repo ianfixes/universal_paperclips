@@ -1914,6 +1914,10 @@ function makeFactory(amount) {
     
     factoryCost = factoryCost * fcmod;
     //   factoryCost = Math.log(1.25,(factoryLevel+1))*100000000;
+
+    if (isSolarLocked) {
+      alignFarmToConsumption();
+    }
   }
 
   updateUpgrades();
@@ -2116,6 +2120,10 @@ function harvesterReboot() {
   if (isHarvesterWireDroneCountLocked) {
     wireDroneReboot();
   }
+
+  if (isSolarLocked) {
+    alignFarmToConsumption();
+  }
 }
 
 function wireDroneReboot() {
@@ -2131,6 +2139,10 @@ function wireDroneReboot() {
   if (isHarvesterWireDroneCountLocked) {
     harvesterReboot();
   }
+
+  if (isSolarLocked) {
+    alignFarmToConsumption();
+  }
 }
 
 function factoryReboot() {
@@ -2141,6 +2153,10 @@ function factoryReboot() {
   document.getElementById('factoryLevelDisplay').innerHTML = factoryLevel;
   factoryCost = 100000000;
   document.getElementById('factoryCostDisplay').innerHTML = numberCruncher(factoryCost);
+
+  if (isSolarLocked) {
+    alignFarmToConsumption();
+  }
 }
 
 // SWARM
@@ -4179,6 +4195,7 @@ function refresh() {
   document.getElementById('wireDroneCostDisplay').innerHTML = numberCruncher(wireDroneCost);
 
   document.getElementById('harvesterDroneLocked').checked = isHarvesterWireDroneCountLocked;
+  document.getElementById('autoBuySolar').checked = isSolarLocked;
 
   updateUpgrades();
   updatePower();
