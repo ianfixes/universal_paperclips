@@ -2112,6 +2112,10 @@ function harvesterReboot() {
   document.getElementById('harvesterLevelDisplay').innerHTML = harvesterLevel;
   harvesterCost = 2000000;
   document.getElementById('harvesterCostDisplay').innerHTML = numberCruncher(harvesterCost);
+
+  if (isHarvesterWireDroneCountLocked) {
+    wireDroneReboot();
+  }
 }
 
 function wireDroneReboot() {
@@ -2123,6 +2127,10 @@ function wireDroneReboot() {
   document.getElementById('wireDroneLevelDisplay').innerHTML = wireDroneLevel;
   wireDroneCost = 2000000;
   document.getElementById('wireDroneCostDisplay').innerHTML = numberCruncher(wireDroneCost);
+
+  if (isHarvesterWireDroneCountLocked) {
+    harvesterReboot();
+  }
 }
 
 function factoryReboot() {
@@ -4169,6 +4177,8 @@ function refresh() {
   updateDronePrices();
   document.getElementById('harvesterCostDisplay').innerHTML = numberCruncher(harvesterCost);
   document.getElementById('wireDroneCostDisplay').innerHTML = numberCruncher(wireDroneCost);
+
+  document.getElementById('harvesterDroneLocked').checked = isHarvesterWireDroneCountLocked;
 
   updateUpgrades();
   updatePower();
