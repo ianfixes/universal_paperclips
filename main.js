@@ -963,7 +963,9 @@ function createStock(dollars) {
 
 }
 
+// return: true if stock sold, false otherwise.
 function sellStock() {
+  if (stocks.length == 0) { return false; }
 
   bankroll = bankroll + stocks[0].total;
   document.getElementById('investmentBankroll').innerHTML = bankroll.toLocaleString();
@@ -971,6 +973,16 @@ function sellStock() {
   document.getElementById('portValue').innerHTML = portTotal.toLocaleString();
   stocks.splice(0, 1);
   portfolioSize = stocks.length;
+
+  return true;
+}
+
+function forceSellAllStock() {
+  while (sellStock()) { /* no-op */ }
+
+  document.getElementById('investmentBankroll').innerHTML = bankroll.toLocaleString();
+  document.getElementById('secValue').innerHTML = secTotal.toLocaleString();
+  document.getElementById('portValue').innerHTML = portTotal.toLocaleString();
 }
 
 
