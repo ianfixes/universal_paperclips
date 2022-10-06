@@ -856,6 +856,8 @@ var stockReportCounter = 0;
 
 function investUpgrade(amount) {
   if (isNaN(amount)) { amount = 1; }
+  var initialInvestLevel = investLevel;
+
   for (var i = 0; i < amount; i++) {
     if (yomi < investUpgradeCost) { break; }
     yomi = yomi - investUpgradeCost;
@@ -868,7 +870,10 @@ function investUpgrade(amount) {
   document.getElementById("investmentLevel").innerHTML = investLevel;
   document.getElementById("investUpgradeCost").innerHTML = investUpgradeCost.toLocaleString();
   document.getElementById("yomiDisplay").innerHTML = yomi.toLocaleString();
-  displayMessage("Investment engine upgraded, expected profit/loss ratio now " + stockGainThreshold);
+
+  if (investLevel > initialInvestLevel) {
+    displayMessage("Investment engine upgraded, expected profit/loss ratio now " + stockGainThreshold);
+  }
 }
 
 
