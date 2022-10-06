@@ -31,7 +31,10 @@ function adjustWirePrice() {
     wirePriceCounter++;
     var wireAdjust = 6 * (Math.sin(wirePriceCounter));
     wireCost = Math.ceil(wireBasePrice + wireAdjust);
-    document.getElementById("wireCost").innerHTML = wireCost;
+    document.getElementById("wireCost").innerHTML = wireCost.toLocaleString(undefined, {
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 0
+    });
   }
 }
 
@@ -509,6 +512,9 @@ function buttonUpdate() {
   } else {
     document.getElementById("btnExpandMarketing").disabled = false;
   }
+  
+  document.getElementById("btnLower10Price").disabled = (margin <= 0.10);
+  
   if (margin <= 0.01) {
     document.getElementById("btnLowerPrice").disabled = true;
   } else {
@@ -2663,13 +2669,24 @@ function sellClips(number) {
   }
 }
 
-function raisePrice() {
-  margin = (Math.round((margin + 0.01) * 100)) / 100;
+function modifyPrice(amount) {
+  var newMargin = margin + (amount / 100.0);
+  newMargin = Math.round(newMargin * 100) / 100;
+  margin = Math.max(0.01, newMargin);
+  document.getElementById("demand").innerHTML = demand.toFixed(2);
+  document.getElementById("margin").innerHTML = margin.toFixed(2);
+}
+
+/*
+function raisePrice(amount) {
+  if (isNaN(amount)) { amount = 1; }
+  margin = (Math.round((margin + (amount / 100.0)) * 100)) / 100;
   document.getElementById("demand").innerHTML = demand.toFixed(2);
   document.getElementById("margin").innerHTML = margin.toFixed(2);
 }
 
 function lowerPrice() {
+
   if (margin >= 0.01) {
     margin = (Math.round((margin - 0.01) * 100)) / 100;
     document.getElementById("demand").innerHTML = demand.toFixed(2);
@@ -2677,11 +2694,13 @@ function lowerPrice() {
   }
 }
 
+// Unused?
 function setMargin(price) {
   margin = Math.round(price*100) / 100;
   document.getElementById("demand").innerHTML = demand.toFixed(2);
   document.getElementById("margin").innerHTML = margin.toFixed(2);
 }
+*/
 
 function updateStats() {
 

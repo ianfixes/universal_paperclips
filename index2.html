@@ -259,17 +259,19 @@
               </div>
               Unsold Inventory: <span id="unsoldClips">0</span><br />
 
-              <button class="button2" id="btnLowerPrice"
-              onclick="lowerPrice()">lower</button>
-              <button class="button2" id="btnRaisePrice"
-              onclick="raisePrice()">raise</button>
+              <button class="button2" id="btnLower10Price" onclick="modifyPrice(-10)">-10￠</button>
+              <button class="button2" id="btnLowerPrice" onclick="modifyPrice(-1)">-1￠</button>
+              <button class="button2" id="btnRaisePrice" onclick="modifyPrice(1)">+1￠</button>
+              <button class="button2" id="btnRaise10Price" onclick="modifyPrice(10)">+10</button>
               Price per Clip: $ <span id="margin">.25</span><br />
 
               Public Demand: <span id="demand">10</span>%<br />
               <br />
 
-              <button class="button2" id="btnExpandMarketing"
-              onclick="buyAds()">Marketing</button> <span class="engineText6"> Level: </span><span class="engineText6" id="marketingLvl">1</span><br />
+              <button class="button2" id="btnExpandMarketing" onclick="buyAds()">Marketing</button>
+              <button class="button2" onclick="buyAds(Infinity);" data-cheatUi style="display: none;">+MAX</button>
+              
+              <span class="engineText6"> Level: </span><span class="engineText6" id="marketingLvl">1</span><br />
               Cost: $ <span id="adCost">100.00</span><br />
               <br />
 
@@ -298,7 +300,10 @@
               </div>
 
               <div id="autoClipperDiv">
-                <button class="button2" id="btnMakeClipper" onclick="makeClipper()">AutoClippers</button> 
+                <button class="button2" id="btnMakeClipper" onclick="makeClipper()">AutoClippers</button>
+                <button data-cheatUi class="button2" onclick="makeClipper(10);" style="display: none;">+10</button>
+                <button data-cheatUi class="button2" onclick="makeClipper(100);" style="display: none;">+100</button>
+                <button data-cheatUi class="button2" onclick="makeClipper(Infinity);" style="display: none;">+MAX</button>
                 <span class="engineText6" id="clipmakerLevel2">0</span><br />
                 Cost: $ <span id="clipperCost">5.00</span><br />
                 <br />
@@ -306,8 +311,11 @@
 
                 <div id="megaClipperDiv">
                   <p class="engineText5">
-                    <button class="button2" id="btnMakeMegaClipper"
-                    onclick="makeMegaClipper()">MegaClippers</button> <span class="engineText6" id="megaClipperLevel">0</span></p>
+                    <button class="button2" id="btnMakeMegaClipper" onclick="makeMegaClipper()">MegaClippers</button>
+                    <button class="button2" data-cheatUi onclick="makeMegaClipper(10);" style="display: none;">+10</button>
+                    <button class="button2" data-cheatUi onclick="makeMegaClipper(100);" style="display: none;">+100</button>
+                    <button class="button2" data-cheatUi onclick="makeMegaClipper(Infinity);" style="display: none;">+MAX</button>
+                    <span class="engineText6" id="megaClipperLevel">0</span></p>
                     Cost: $ <span id="megaClipperCost">500</span><br />
                     <br />
                   </div>
