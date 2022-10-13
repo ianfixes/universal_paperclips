@@ -3353,16 +3353,45 @@ function increaseMaxTrust(amount) {
   displayMessage("Maximum trust increased, probe design space expanded");
 }
 
-function raiseAllProbeMetrics(amount) {
-  // TODO: Check impl.
-  raiseProbeSpeed(amount);
-  raiseProbeNav(amount);
-  raiseProbeHaz(amount);
-  raiseProbeRep(amount);
-  raiseProbeFac(amount);
-  raiseProbeWire(amount);
-  raiseProbeHarv(amount);
-  raiseProbeCombat(amount);
+// function raiseAllProbeMetrics(amount) {
+//   // TODO: Check impl.
+//   raiseProbeSpeed(amount);
+//   raiseProbeNav(amount);
+//   raiseProbeHaz(amount);
+//   raiseProbeRep(amount);
+//   raiseProbeFac(amount);
+//   raiseProbeWire(amount);
+//   raiseProbeHarv(amount);
+//   raiseProbeCombat(amount); // only if
+// }
+
+function zeroProbeMetrics() {
+  lowerProbeCombat(Infinity);
+  lowerProbeSpeed(Infinity);
+  lowerProbeNav(Infinity);
+  lowerProbeHaz(Infinity);
+  lowerProbeRep(Infinity);
+  lowerProbeFac(Infinity);
+  lowerProbeWire(Infinity);
+  lowerProbeHarv(Infinity);
+}
+
+function balanceProbeMetrics() {
+  // first, reset all metrics
+  zeroProbeMetrics();
+  buttonUpdate();
+
+  // then, call the functions in order until is exhausted the probe trust
+  var funcsInOrder = [raiseProbeRep, raiseProbeHaz, raiseProbeSpeed, raiseProbeNav, raiseProbeFac, raiseProbeWire, raiseProbeHarv];
+  if (project131.flag == 1) {
+    funcsInOrder.splice(2, 0, raiseProbeCombat);
+  }
+
+  var idx = 0;
+  while (idx < probeTrust-probeUsedTrust) {
+    funcsInOrder[idx % funcsInOrder.length]();
+    idx++;
+  }
 }
 
 function raiseProbeSpeed(amount) {
