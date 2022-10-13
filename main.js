@@ -2454,8 +2454,9 @@ function alignFarmToConsumption() {
   var burnout = 1E5;
   var i = 0;
   while (i < burnout && getTotalPowerSupply() < dpd + fpd) {
-    // TODO: Address this - as this can run out of memory :(
+    var farmCount = farmLevel;
     makeFarm();
+    if (farmCount == farmLevel) { break; }
     i++;
   }
 }
@@ -3518,7 +3519,7 @@ function raiseProbeCombat(amount) {
 
 function lowerProbeCombat(amount) {
   if (isNaN(amount)) { amount = 1; }
-  var maxDelta = Math.min(probeCount, amount);
+  var maxDelta = Math.min(probeCombat, amount);
 
   probeCombat -= maxDelta;
   document.getElementById('probeCombatDisplay').innerHTML = probeCombat;
