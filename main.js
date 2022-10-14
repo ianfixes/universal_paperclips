@@ -3244,58 +3244,58 @@ function numberCruncher(number, decimals) {
     decimals = 2;
   }
   var precision = decimals;
-  if (number > 999999999999999999999999999999999999999999999999999) {
-    number = number / 1000000000000000000000000000000000000000000000000000;
+  if (number > 999_999_999_999_999_999_999_999_999_999_999_999_999_999_999_999_999) {
+    number = number / 1_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000;
     suffix = "sexdecillion";
-  } else if (number > 999999999999999999999999999999999999999999999999) {
-    number = number / 1000000000000000000000000000000000000000000000000;
+  } else if (number > 999_999_999_999_999_999_999_999_999_999_999_999_999_999_999_999) {
+    number = number / 1_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000;
     suffix = "quindecillion";
-  } else if (number > 999999999999999999999999999999999999999999999) {
-    number = number / 1000000000000000000000000000000000000000000000;
+  } else if (number > 999_999_999_999_999_999_999_999_999_999_999_999_999_999_999) {
+    number = number / 1_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000;
     suffix = "quattuordecillion";
-  } else if (number > 999999999999999999999999999999999999999999) {
-    number = number / 1000000000000000000000000000000000000000000;
+  } else if (number > 999_999_999_999_999_999_999_999_999_999_999_999_999_999) {
+    number = number / 1_000_000_000_000_000_000_000_000_000_000_000_000_000_000;
     suffix = "tredecillion";
-  } else if (number > 999999999999999999999999999999999999999) {
-    number = number / 1000000000000000000000000000000000000000;
+  } else if (number > 999_999_999_999_999_999_999_999_999_999_999_999_999) {
+    number = number / 1_000_000_000_000_000_000_000_000_000_000_000_000_000;
     suffix = "duodecillion";
-  } else if (number > 999999999999999999999999999999999999) {
-    number = number / 1000000000000000000000000000000000000;
+  } else if (number > 999_999_999_999_999_999_999_999_999_999_999_999) {
+    number = number / 1_000_000_000_000_000_000_000_000_000_000_000_000;
     suffix = "undecillion";
-  } else if (number > 999999999999999999999999999999999) {
-    number = number / 1000000000000000000000000000000000;
+  } else if (number > 999_999_999_999_999_999_999_999_999_999_999) {
+    number = number / 1_000_000_000_000_000_000_000_000_000_000_000;
     suffix = "decillion";
-  } else if (number > 999999999999999999999999999999) {
-    number = number / 1000000000000000000000000000000;
+  } else if (number > 999_999_999_999_999_999_999_999_999_999) {
+    number = number / 1_000_000_000_000_000_000_000_000_000_000;
     suffix = "nonillion";
-  } else if (number > 999999999999999999999999999) {
-    number = number / 1000000000000000000000000000;
+  } else if (number > 999_999_999_999_999_999_999_999_999) {
+    number = number / 1_000_000_000_000_000_000_000_000_000;
     suffix = "octillion";
-  } else if (number > 999999999999999999999999) {
-    number = number / 1000000000000000000000000;
+  } else if (number > 999_999_999_999_999_999_999_999) {
+    number = number / 1_000_000_000_000_000_000_000_000;
     suffix = "septillion";
-  } else if (number > 999999999999999999999) {
-    number = number / 1000000000000000000000;
+  } else if (number > 999_999_999_999_999_999_999) {
+    number = number / 1_000_000_000_000_000_000_000;
     suffix = "sextillion";
-  } else if (number > 999999999999999999) {
-    number = number / 1000000000000000000;
+  } else if (number > 999_999_999_999_999_999) {
+    number = number / 1_000_000_000_000_000_000;
     suffix = "quintillion";
-  } else if (number > 999999999999999) {
-    number = number / 1000000000000000;
+  } else if (number > 999_999_999_999_999) {
+    number = number / 1_000_000_000_000_000;
     suffix = "quadrillion";
-  } else if (number > 999999999999) {
-    number = number / 1000000000000;
+  } else if (number > 999_999_999_999) {
+    number = number / 1_000_000_000_000;
     suffix = "trillion";
-  } else if (number > 999999999) {
-    number = number / 1000000000;
+  } else if (number > 999_999_999) {
+    number = number / 1_000_000_000;
     suffix = "billion";
-  } else if (number > 999999) {
-    number = number / 1000000;
+  } else if (number > 999_999) {
+    number = number / 1_000_000;
     suffix = "million";
   } else if (number > 999) {
-    number = number / 1000;
+    number = number / 1_000;
     suffix = "thousand";
-  } else if (number < 1000) {
+  } else if (number < 1_000) {
     precision = 0;
   }
   return number.toFixed(precision) + " " + suffix;
