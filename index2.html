@@ -228,7 +228,7 @@
               </div>
 
               Launched: <span id="probesLaunchedDisplay">0</span><br />
-              Descendents: <span id="probesBornDisplay">0</span><br />
+              Descendants: <span id="probesBornDisplay">0</span><br />
               <br />
 
               <div id="hazardBodyCount">Lost to hazards: (<span id="probesLostHazardsDisplay">0</span>)<br /></div>
@@ -297,6 +297,9 @@
 
               <div>
                 <button class="button2" id="btnBuyWire" onclick="buyWire()">Wire</button>
+                <button class="button2" id="btnBuy10Wire" data-cheatUi style="display: none;" onclick="buyWire(10);">x10</button>
+                <button class="button2" id="btnBuy100Wire" data-cheatUi style="display: none;" onclick="buyWire(100);">x100</button>
+                <button class="button2" id="btnBuy1000Wire" data-cheatUi style="display: none;" onclick="buyWire(1000);">x1000</button>
                 <button class="button2" id="_cheatBtnBuyMaxWire" data-cheatUi style="display: none;" onclick="buyWire(Infinity);">Buy max</button>
                 <span class="engineText6" id="wire">1000</span><span class="engineText6"> inches</span><br />
                 Cost: $ <span id="wireCost">20</span><br />
