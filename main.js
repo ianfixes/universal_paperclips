@@ -2950,7 +2950,8 @@ function cheatMoney(amount) {
 
 function cheatTrust(amount) {
   if (isNaN(amount)) {
-    trust = trust + 1;
+    var trustIncrement = parseInt(document.getElementById("freeTrustIncrement").value, 10) || 1;
+    trust += trustIncrement
   } else {
     trust = amount;
   }
