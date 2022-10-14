@@ -3237,68 +3237,19 @@ function timeCruncher(t) {
   return hDisplay + mDisplay + sDisplay;
 }
 
-function numberCruncher(number, decimals) {
-  if (number === null) { number = 0; }
-  var suffix = "";
-  if (decimals == undefined) {
-    decimals = 2;
+function numberCruncher(num) {
+  if (Math.abs(num) < 1000) {
+    return `${num}`;
   }
-  var precision = decimals;
-  if (number > 999_999_999_999_999_999_999_999_999_999_999_999_999_999_999_999_999) {
-    number = number / 1_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000;
-    suffix = "sexdecillion";
-  } else if (number > 999_999_999_999_999_999_999_999_999_999_999_999_999_999_999_999) {
-    number = number / 1_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000;
-    suffix = "quindecillion";
-  } else if (number > 999_999_999_999_999_999_999_999_999_999_999_999_999_999_999) {
-    number = number / 1_000_000_000_000_000_000_000_000_000_000_000_000_000_000_000;
-    suffix = "quattuordecillion";
-  } else if (number > 999_999_999_999_999_999_999_999_999_999_999_999_999_999) {
-    number = number / 1_000_000_000_000_000_000_000_000_000_000_000_000_000_000;
-    suffix = "tredecillion";
-  } else if (number > 999_999_999_999_999_999_999_999_999_999_999_999_999) {
-    number = number / 1_000_000_000_000_000_000_000_000_000_000_000_000_000;
-    suffix = "duodecillion";
-  } else if (number > 999_999_999_999_999_999_999_999_999_999_999_999) {
-    number = number / 1_000_000_000_000_000_000_000_000_000_000_000_000;
-    suffix = "undecillion";
-  } else if (number > 999_999_999_999_999_999_999_999_999_999_999) {
-    number = number / 1_000_000_000_000_000_000_000_000_000_000_000;
-    suffix = "decillion";
-  } else if (number > 999_999_999_999_999_999_999_999_999_999) {
-    number = number / 1_000_000_000_000_000_000_000_000_000_000;
-    suffix = "nonillion";
-  } else if (number > 999_999_999_999_999_999_999_999_999) {
-    number = number / 1_000_000_000_000_000_000_000_000_000;
-    suffix = "octillion";
-  } else if (number > 999_999_999_999_999_999_999_999) {
-    number = number / 1_000_000_000_000_000_000_000_000;
-    suffix = "septillion";
-  } else if (number > 999_999_999_999_999_999_999) {
-    number = number / 1_000_000_000_000_000_000_000;
-    suffix = "sextillion";
-  } else if (number > 999_999_999_999_999_999) {
-    number = number / 1_000_000_000_000_000_000;
-    suffix = "quintillion";
-  } else if (number > 999_999_999_999_999) {
-    number = number / 1_000_000_000_000_000;
-    suffix = "quadrillion";
-  } else if (number > 999_999_999_999) {
-    number = number / 1_000_000_000_000;
-    suffix = "trillion";
-  } else if (number > 999_999_999) {
-    number = number / 1_000_000_000;
-    suffix = "billion";
-  } else if (number > 999_999) {
-    number = number / 1_000_000;
-    suffix = "million";
-  } else if (number > 999) {
-    number = number / 1_000;
-    suffix = "thousand";
-  } else if (number < 1_000) {
-    precision = 0;
+
+  var i = -1;
+  while (i < NUMBER_NAMES_LIST.length - 1 && Math.abs(Math.round(num/1000)*1000) >= NUMBER_NAMES_LIST[i+1][0]) {
+    i++;
   }
-  return number.toFixed(precision) + " " + suffix;
+
+  var nominalValue = num / NUMBER_NAMES_LIST[i][0];
+  var roundedNominalValue = Math.round(nominalValue * 1_000) / 1_000;
+  return roundedNominalValue + " " + NUMBER_NAMES_LIST[i][1];
 }
 
 
