@@ -3239,7 +3239,7 @@ function timeCruncher(t) {
 
 function numberCruncher(num) {
   if (Math.abs(num) < 1000) {
-    return `${num}`;
+    return `${Math.round(num)}`;
   }
 
   var i = -1;

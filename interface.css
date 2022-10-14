@@ -740,13 +740,14 @@ p.hypnoDrone
 
   .projectButton
   {
-    background-color: #aaa;
-    color: #222;
+    background-color: #333;
+    color: #bbb;
   }
 
   .projectButton:disabled
   {
-    color: #444;
+    background-color: #222;
+    color: #777;
   }
 
   .qChip
@@ -779,13 +780,12 @@ p.hypnoDrone
     background-color: #333;
   }
 
-  .projectButton
-  {
-    background-color: #999;
+  .projectButton:hover {
+    background-color: #444;
   }
 
-  .projectButton:hover {
-    background-color: #bbb;
+  .projectButton:disabled:hover {
+    background-color: #222;
   }
 
   .button2
