@@ -334,7 +334,9 @@
         <input id="freeClipsIncrement" type="number" min="0" max="1E99" value="100000000" data-default="100000000" onchange="enforceValue(this);" />
         <button id="freeClipsButton" onclick="cheatClips()">Free Clips</button><br />
         
+        $<input id="freeMoneyIncrement" type="number" pattern="^\d*(\.\d{0,2})?$" min="0" max="1E99" value="10000000" data-default="10000000" onchange="enforceValue(this);" />
         <button id="freeMoneyButton" onclick="cheatMoney()">Free Money</button><br />
+
         <button id="freeTrustButton" onclick="cheatTrust()">Free Trust</button><br />
         <button id="freeOpsButton" onclick="cheatOps()">Free Ops</button>
         <button id="freeProcButton" onclick="addProc(1E4, false)">Free Proc</button>

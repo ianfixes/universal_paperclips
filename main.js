@@ -2926,9 +2926,9 @@ function enforceValue(input) {
 
 function cheatClips(amount) {
   if (isNaN(amount)) {
-    var clipIncrement = parseInt(document.getElementById("freeClipsIncrement").value, 10);
-    clips = clips + clipIncrement;
-    unusedClips = unusedClips + clipIncrement;
+    var clipIncrement = parseInt(document.getElementById("freeClipsIncrement").value, 10) || 100_000_000;
+    clips += clipIncrement;
+    unusedClips += clipIncrement;
   } else {
     clips = amount;
     unusedClips = amount;
@@ -2939,7 +2939,8 @@ function cheatClips(amount) {
 
 function cheatMoney(amount) {
   if (isNaN(amount)) {
-    funds = funds + 10000000;
+    var fundsIncrement = parseInt(document.getElementById("freeMoneyIncrement").value, 10) || 10_000_000;
+    funds += fundsIncrement;
   } else {
     funds = amount;
   }
