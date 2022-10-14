@@ -331,7 +331,9 @@
         <button id="load2Button" onclick="load2()">LOAD SLOT 2</button><br />
         <button id="resetButton" onclick="reset()">RESET ALL PROGRESS</button><br />
 
+        <input id="freeClipsIncrement" type="number" min="0" max="1E99" value="100000000" data-default="100000000" onchange="enforceValue(this);" />
         <button id="freeClipsButton" onclick="cheatClips()">Free Clips</button><br />
+        
         <button id="freeMoneyButton" onclick="cheatMoney()">Free Money</button><br />
         <button id="freeTrustButton" onclick="cheatTrust()">Free Trust</button><br />
         <button id="freeOpsButton" onclick="cheatOps()">Free Ops</button>

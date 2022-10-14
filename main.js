@@ -2918,10 +2918,17 @@ function setB() {
   battleNumbers[1] = 7;
 }
 
+function enforceValue(input) {
+  if (input.value == null || input.value == "" || input.value == undefined) {
+    input.value = input.dataset.default;
+  }
+}
+
 function cheatClips(amount) {
   if (isNaN(amount)) {
-    clips = clips + 100000000;
-    unusedClips = unusedClips + 100000000;
+    var clipIncrement = parseInt(document.getElementById("freeClipsIncrement").value, 10);
+    clips = clips + clipIncrement;
+    unusedClips = unusedClips + clipIncrement;
   } else {
     clips = amount;
     unusedClips = amount;

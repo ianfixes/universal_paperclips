@@ -278,6 +278,16 @@ canvas
   background-color: #808080;
 }
 
+#og-cheats input[type=number] {
+  width: 10ch;
+  text-overflow: ellipsis;
+}
+
+#og-cheats input[type=number]::-webkit-outer-spin-button,
+#og-cheats input[type=number]::-webkit-inner-spin-button {
+  display: none;
+}
+
 #hypnoDroneEventDiv
 {
   float: left;
@@ -710,6 +720,12 @@ p.hypnoDrone
   {
     background-color: #111;
     color: #ccc;
+  }
+
+  input[type=text],
+  input[type=number] {
+    background-color: transparent;
+    color: white;
   }
 
   p.console
