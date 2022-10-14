@@ -339,7 +339,7 @@
 
         <input id="freeTrustIncrement" type="number" min="1" max="1E10" value="1" data-default="1" onchange="enforceValue(this);" />
         <button id="freeTrustButton" onclick="cheatTrust()">Free Trust</button><br />
-        
+
         <button id="freeOpsButton" onclick="cheatOps()">Free Ops</button>
         <button id="freeProcButton" onclick="addProc(1E4, false)">Free Proc</button>
         <button id="freeMemButton" onclick="addMem(1E4, false)">Free Mem</button>
@@ -387,6 +387,9 @@
 
         <div id="processorDisplay">
           <button class="button2" id="btnAddProc" onclick="addProc()">Processors</button>
+          <button class="button2" id="btnAddProc10" data-cheatUi style="display:none;" onclick="addProc(10);">+10</button>
+          <button class="button2" id="btnAddProc100" data-cheatUi style="display:none;" onclick="addProc(100);">+100</button>
+          <button class="button2" id="btnAddProcMax" data-cheatUi style="display:none;" onclick="addProc(Infinity)">+MAX</button>
           <span class="engineText10" id="processors">1</span>
         </div>
 
@@ -394,12 +397,14 @@
 
         <div id="memoryDisplay">
           <button class="button2" id="btnAddMem" onclick="addMem()">&nbsp Memory &nbsp</button>
+          <button class="button2" id="btnAddMem10" data-cheatUi style="display:none;" onclick="addMem(10);">+10</button>
+          <button class="button2" id="btnAddMem100" data-cheatUi style="display:none;" onclick="addMem(100);">+100</button>
+          <button class="button2" id="btnAddMemMax" data-cheatUi style="display:none;" onclick="addMem(Infinity)">+MAX</button>
           <span class="engineText10" id="memory">1</span>
         </div>
 
         <div data-cheatUi style="display:none;">
-          <button class="button2" onclick="addProc(Infinity)">Max Proc</button>
-          <button class="button2" onclick="addMem(Infinity)">Max Mem</button>
+          <button class="button2" onclick="addProc(-Infinity);addMem(-Infinity);">Zero Proc/Mem</button>
           <button class="button2" onclick="balanceProcAndMem()">Balance Proc/Mem</button>
           <button class="button2" onclick="maxProcAndMem()">Max Proc/Mem</button>
         </div>

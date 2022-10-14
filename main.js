@@ -528,6 +528,8 @@ function buttonUpdate() {
     document.getElementById("btnAddProc").disabled = false;
     document.getElementById("btnAddMem").disabled = false;
   }
+  // todo: toggle cheat buttons for +10 and +100 proc/mem
+  
   if (operations >= tourneyCost && tourneyInProg == 0) {
     document.getElementById("btnNewTournament").disabled = false;
   } else {
@@ -3015,14 +3017,16 @@ function addProc(amount=1, safe=true) {
   if (humanFlag == 0 && amount <= swarmGifts) {
     amount = safe ? Math.min(amount, swarmGifts) : amount;
     processors += amount;
-    swarmGifts -= amount;
+    swarmGifts -= Math.max(0, amount);
   } else {
-    amount = safe ? Math.max(0, Math.min(amount, trust-processors-memory)) : amount;
+    amount = safe ? Math.max(-processors, Math.min(amount, trust-processors-memory)) : amount;
     processors += amount;
   }
 
   if (amount > 0) {
     displayMessage(amount + " processor(s) added, operations" + (creativityOn == 1 ? " (or creativity) " : " ") + "per sec increased");
+  } else if (amount < 0) {
+    displayMessage(Math.abs(amount) + " processor(s) removed (cheater!!!), operations" + (creativityOn == 1 ? " (or creativity) " : " ") + "per sec decreased");
   }
 
   creativitySpeed = Math.log10(processors) * Math.pow(processors, 1.1) + processors - 1;
@@ -3036,14 +3040,16 @@ function addMem(amount=1, safe=true) {
   if (humanFlag == 0) {
     amount = safe ? Math.min(amount, swarmGifts) : amount;
     memory += amount;
-    swarmGifts -= amount;
+    swarmGifts -= Math.max(0, amount);
   } else {
-    amount = safe ? Math.max(0, Math.min(amount, trust-processors-memory)) : amount;
+    amount = safe ? Math.max(-memory, Math.min(amount, trust-processors-memory)) : amount;
     memory += amount;
   }
 
   if (amount > 0) {
     displayMessage(amount + " memory added, max operations increased");
+  } else if (amount < 0) {
+    displayMessage(Math.abs(amount) + " memory removed (cheater!!!), max operations decreased");
   }
 
   document.getElementById("memory").innerHTML = memory;
