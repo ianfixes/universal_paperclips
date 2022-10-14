@@ -2140,7 +2140,7 @@ function harvesterReboot() {
   harvesterCost = 2000000;
   document.getElementById('harvesterCostDisplay').innerHTML = numberCruncher(harvesterCost);
 
-  if (isHarvesterWireDroneCountLocked) {
+  if (isHarvesterWireDroneCountLocked && wireDroneLevel > 0) {
     wireDroneReboot();
   }
 
@@ -2159,7 +2159,7 @@ function wireDroneReboot() {
   wireDroneCost = 2000000;
   document.getElementById('wireDroneCostDisplay').innerHTML = numberCruncher(wireDroneCost);
 
-  if (isHarvesterWireDroneCountLocked) {
+  if (isHarvesterWireDroneCountLocked && harvesterLevel > 0) {
     harvesterReboot();
   }
 
@@ -2453,6 +2453,7 @@ function alignFarmToConsumption() {
 
   var burnout = 1E5;
   var i = 0;
+
   while (i < burnout && getTotalPowerSupply() < dpd + fpd) {
     var farmCount = farmLevel;
     makeFarm();
