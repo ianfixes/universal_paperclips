@@ -714,6 +714,24 @@ p.hypnoDrone
   border: 1px solid #ffffff;
 }
 
+button[data-cheatUi], div[data-cheatUi] button {
+  background: linear-gradient(0deg, #fc9, #fec);
+  border: 1px solid #fac;
+}
+
+button[data-cheatUi]:hover, div button[data-cheatUi]:hover {
+  background: linear-gradient(0deg, #fda, #ffd);
+  /* border: 1px solid #733; */
+}
+
+button[data-cheatUi]:hover:active,
+button[data-cheatUi]:active,
+div button[data-cheatUi]:hover:active,
+div button[data-cheatUi]:active {
+  background: linear-gradient(180deg, #fda, #ffd);
+  color: #333;
+}
+
 @media (prefers-color-scheme: dark)
 {
   body, html
