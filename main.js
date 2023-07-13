@@ -2017,18 +2017,26 @@ function makeWireDrone(amount) {
 var p10h = 0;
 var p100h = 0;
 var p1000h = 0;
+var p10000h = 0;
+var p100000h = 0;
 var p10w = 0;
 var p100w = 0;
 var p1000w = 0;
+var p10000w = 0;
+var p100000w = 0;
 
 function updateDronePrices() {
 
   p10h = 0;
   p100h = 0;
   p1000h = 0;
+  p10000h = 0;
+  p100000h = 0;
   p10w = 0;
   p100w = 0;
   p1000w = 0;
+  p10000w = 0;
+  p100000w = 0;
 
   var h = harvesterLevel + 1;
   for (x = 0; x < 10; x++) {
@@ -2045,6 +2053,18 @@ function updateDronePrices() {
   var h = harvesterLevel + 1;
   for (x = 0; x < 1000; x++) {
     p1000h = p1000h + Math.pow(h, 2.25) * 1000000;
+    h++
+  }
+
+  var h = harvesterLevel + 1;
+  for (x = 0; x < 10000; x++) {
+    p10000h = p10000h + Math.pow(h, 2.25) * 1000000;
+    h++
+  }
+
+  var h = harvesterLevel + 1;
+  for (x = 0; x < 100000; x++) {
+    p100000h = p100000h + Math.pow(h, 2.25) * 1000000;
     h++
   }
 
@@ -2065,62 +2085,38 @@ function updateDronePrices() {
     p1000w = p1000w + Math.pow(w, 2.25) * 1000000;
     w++
   }
+
+  var w = wireDroneLevel + 1;
+  for (x = 0; x < 10000; x++) {
+    p10000w = p10000w + Math.pow(w, 2.25) * 1000000;
+    w++
+  }
+
+  var w = wireDroneLevel + 1;
+  for (x = 0; x < 100000; x++) {
+    p100000w = p100000w + Math.pow(w, 2.25) * 1000000;
+    w++
+  }
 }
 
 function updateDroneButtons() {
+    document.getElementById("btnMakeHarvester").disabled = unusedClips < harvesterCost;
+    document.getElementById("btnHarvesterxMAX").disabled = unusedClips < harvesterCost;
 
-  if (unusedClips < harvesterCost) {
-    document.getElementById("btnMakeHarvester").disabled = true;
-    document.getElementById("btnHarvesterxMAX").disabled = true;
-  } else {
-    document.getElementById("btnMakeHarvester").disabled = false;
-    document.getElementById("btnHarvesterxMAX").disabled = false;
-  }
+    document.getElementById("btnHarvesterx10").disabled = unusedClips < p10h;
+    document.getElementById("btnHarvesterx100").disabled = unusedClips < p100h;
+    document.getElementById("btnHarvesterx1000").disabled = unusedClips < p1000h;
+    document.getElementById("btnHarvesterx10000").disabled = unusedClips < p10000h;
+    document.getElementById("btnHarvesterx100000").disabled = unusedClips < p100000h;
 
-  if (unusedClips < p10h) {
-    document.getElementById("btnHarvesterx10").disabled = true;
-  } else {
-    document.getElementById("btnHarvesterx10").disabled = false;
-  }
+    document.getElementById("btnMakeWireDrone").disabled = unusedClips < wireDroneCost;
+    document.getElementById("btnWireDronexMAX").disabled = unusedClips < wireDroneCost;
 
-  if (unusedClips < p100h) {
-    document.getElementById("btnHarvesterx100").disabled = true;
-  } else {
-    document.getElementById("btnHarvesterx100").disabled = false;
-  }
-
-  if (unusedClips < p1000h) {
-    document.getElementById("btnHarvesterx1000").disabled = true;
-  } else {
-    document.getElementById("btnHarvesterx1000").disabled = false;
-  }
-
-  if (unusedClips < wireDroneCost) {
-    document.getElementById("btnMakeWireDrone").disabled = true;
-    document.getElementById("btnWireDronexMAX").disabled = true;
-  } else {
-    document.getElementById("btnMakeWireDrone").disabled = false;
-    document.getElementById("btnWireDronexMAX").disabled = false;
-  }
-
-  if (unusedClips < p10w) {
-    document.getElementById("btnWireDronex10").disabled = true;
-  } else {
-    document.getElementById("btnWireDronex10").disabled = false;
-  }
-
-  if (unusedClips < p100w) {
-    document.getElementById("btnWireDronex100").disabled = true;
-  } else {
-    document.getElementById("btnWireDronex100").disabled = false;
-  }
-
-  if (unusedClips < p1000w) {
-    document.getElementById("btnWireDronex1000").disabled = true;
-  } else {
-    document.getElementById("btnWireDronex1000").disabled = false;
-  }
-
+    document.getElementById("btnWireDronex10").disabled = unusedClips < p10w;
+    document.getElementById("btnWireDronex100").disabled = unusedClips < p100w;
+    document.getElementById("btnWireDronex1000").disabled = unusedClips < p1000w;
+    document.getElementById("btnWireDronex10000").disabled = unusedClips < p10000w;
+    document.getElementById("btnWireDronex100000").disabled = unusedClips < p100000w;
 }
 
 
@@ -2683,11 +2679,23 @@ function sellClips(number) {
 }
 
 function modifyPrice(amount) {
-  var newMargin = margin + (amount / 100.0);
-  newMargin = Math.round(newMargin * 100) / 100;
-  margin = Math.max(0.01, newMargin);
+  var manualMargin = document.getElementById("manualMargin");
+  if (isNaN(amount) && manualMargin.offsetParent !== null && isNaN()) {
+    var newMargin = Math.round(parseFloat(manualMargin.value, 10) * 100) / 100;
+    margin = Math.max(0.01, newMargin);
+  } else if (!isNaN(amount)) {
+    var newMargin = margin + (amount / 100.0);
+    newMargin = Math.round(newMargin * 100) / 100;
+    margin = Math.max(0.01, newMargin);
+
+    manualMargin.value = margin;
+  }
   document.getElementById("demand").innerHTML = demand.toFixed(2);
   document.getElementById("margin").innerHTML = margin.toFixed(2);
+}
+
+function setPriceToDemand(amount) {
+  // TBD: Needs numerical approach :(
 }
 
 /*
@@ -3238,6 +3246,10 @@ function timeCruncher(t) {
 }
 
 function numberCruncher(num) {
+  if (isNaN(num)) {
+    return "???";
+  }
+  
   if (Math.abs(num) < 1000) {
     return `${Math.round(num)}`;
   }
@@ -3319,11 +3331,22 @@ function increaseMaxTrust(amount) {
   honor = honor - (maxTrustCost * maxIncrease);
   maxTrust += 10 * maxIncrease;
 
+  document.getElementById("setMaxTrustValue").value = maxTrust;
+
   document.getElementById("honorDisplay").innerHTML = Math.round(honor).toLocaleString();
   // maxTrustCost = Math.floor(Math.pow(maxTrust, 1.17)*1000);
   document.getElementById('maxTrustDisplay').innerHTML = maxTrust.toLocaleString();
   // document.getElementById('maxTrustCostDisplay').innerHTML = Math.floor(maxTrustCost).toLocaleString();
   displayMessage("Maximum trust increased, probe design space expanded");
+}
+
+function setMaxTrust(amount) {
+  if (isNaN(amount)) {
+    amount = parseInt(document.getElementById("setMaxTrustValue").value, 10);
+  }
+  maxTrust = isNaN(amount) ? maxTrust : Math.max(1, amount);
+  document.getElementById('maxTrustDisplay').innerHTML = maxTrust.toLocaleString();
+  displayMessage("Maximum trust set manually (cheater...)");
 }
 
 // function raiseAllProbeMetrics(amount) {

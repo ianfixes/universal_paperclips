@@ -150,6 +150,8 @@
               <button class="button2" id="btnHarvesterx10" onclick="makeHarvester(10)">+10</button>
               <button class="button2" id="btnHarvesterx100" onclick="makeHarvester(100)">+100</button>
               <button class="button2" id="btnHarvesterx1000" onclick="makeHarvester(1000)">+1k</button>
+              <button class="button2" id="btnHarvesterx10000" data-cheatUi style="display: none;" onclick="makeHarvester(10000)">+10k</button>
+              <button class="button2" id="btnHarvesterx100000" data-cheatUi style="display: none;" onclick="makeHarvester(100000)">+100k</button>
               <button class="button2" id="btnHarvesterxMAX" onclick="makeHarvester(Infinity)" data-cheatUi style="display: none;">+MAX</button><!--
               <br />
               <button class="button2" id="btnHarvesterMinus10" onclick="harvesterReboot()">-10</button>
@@ -184,6 +186,8 @@
                 <button class="button2" id="btnWireDronex10" onclick="makeWireDrone(10)">+10</button>
                 <button class="button2" id="btnWireDronex100" onclick="makeWireDrone(100)">+100</button>
                 <button class="button2" id="btnWireDronex1000" onclick="makeWireDrone(1000)">+1k</button>
+                <button class="button2" id="btnWireDronex10000" data-cheatUi style="display: none;" onclick="makeWireDrone(10000)">+1k</button>
+                <button class="button2" id="btnWireDronex100000" data-cheatUi style="display: none;" onclick="makeWireDrone(100000)">+1k</button>
                 <button class="button2" id="btnWireDronexMAX" onclick="makeWireDrone(Infinity)" data-cheatUi style="display: none;">+MAX</button></p>
               </div>
 
@@ -262,13 +266,20 @@
 
               </div>
               Unsold Inventory: <span id="unsoldClips">0</span><br />
-              <button class="button2" id="btnLower100Price" onclick="modifyPrice(-100)">-$1</button>
-              <button class="button2" id="btnLower10Price" onclick="modifyPrice(-10)">-10￠</button>
+              <button class="button2" data-cheatUi style="display: none;" id="btnLower100Price" onclick="modifyPrice(-100)">-$1</button>
+              <button class="button2" data-cheatUi style="display: none;" id="btnLower10Price" onclick="modifyPrice(-10)">-10￠</button>
               <button class="button2" id="btnLowerPrice" onclick="modifyPrice(-1)">-1￠</button>
               <button class="button2" id="btnRaisePrice" onclick="modifyPrice(1)">+1￠</button>
-              <button class="button2" id="btnRaise10Price" onclick="modifyPrice(10)">+10￠</button>
-              <button class="button2" id="btnRaise100Price" onclick="modifyPrice(100)">+$1</button>
+              <button class="button2" data-cheatUi style="display: none;" id="btnRaise10Price" onclick="modifyPrice(10)">+10￠</button>
+              <button class="button2" data-cheatUi style="display: none;" id="btnRaise100Price" onclick="modifyPrice(100)">+$1</button>
+              <br data-cheatUi style="display: none;" />
               Price per Clip: $ <span id="margin">.25</span><br />
+
+              <span data-cheatUi style="display:none;">$</span><input type="number" min="0.01" step="0.01" value="1.00" id="manualMargin" data-cheatUi style="display: none; width: 5em;"/>
+              <button class="button2" data-cheatUi style="display:none;" id="setManualMargin" onclick="modifyPrice()">Set price</button>
+
+              <!--<button class="button2" data-cheatUi style="display:none;" id="equalizeDemand" onclick="setPriceToDemand()">Set to demand</button>
+              <br data-cheatUi style="display: none;" />-->
 
               Public Demand: <span id="demand">10</span>%<br />
               <br />
@@ -842,8 +853,10 @@
 
 
             <button class="button2" id="btnZeroProbeSpeed" onclick="lowerProbeSpeed(Infinity)" data-cheatUi style="display: none">0</button>
+            <button class="button2" id="btnLowerProbeSpeed10" data-cheatUi style="display: none;" onclick="lowerProbeSpeed(10)">-10</button>
             <button class="button2" id="btnLowerProbeSpeed" onclick="lowerProbeSpeed()"><strong>-</strong></button>
             <button class="button2" id="btnRaiseProbeSpeed" onclick="raiseProbeSpeed()"><strong>+</strong></button>
+            <button class="button2" id="btnRaiseProbeSpeed10" data-cheatUi style="display: none;" onclick="raiseProbeSpeed(10)">+10</button>
             <button class="button2" id="btnMaxProbeSpeed" data-cheatUi style="display: none;" onclick="raiseProbeSpeed(Infinity)">MAX</button>
 
             <div class="toolTip2">
@@ -857,8 +870,10 @@
 
 
             <button class="button2" id="btnZeroProbeNav" onclick="lowerProbeNav(Infinity)" data-cheatUi style="display: none">0</button>
+            <button class="button2" id="btnLowerProbeNav10" data-cheatUi style="display: none;" onclick="lowerProbeNav(10)">-10</button>
             <button class="button2" id="btnLowerProbeNav" onclick="lowerProbeNav()"><strong>-</strong></button>
             <button class="button2" id="btnRaiseProbeNav" onclick="raiseProbeNav()"><strong>+</strong></button>
+            <button class="button2" id="btnRaiseProbeNav10" data-cheatUi style="display: none;" onclick="raiseProbeNav(10)">+10</button>
             <button class="button2" id="btnMaxProbeNav" data-cheatUi style="display: none;" onclick="raiseProbeNav(Infinity)">MAX</button>
 
             <div class="toolTip2">
@@ -870,8 +885,10 @@
             </div><br />
 
             <button class="button2" id="btnZeroProbeRep" onclick="lowerProbeRep(Infinity)" data-cheatUi style="display: none">0</button>
+            <button class="button2" id="btnLowerProbeRep10" data-cheatUi style="display: none;" onclick="lowerProbeRep(10)">-10</button>
             <button class="button2" id="btnLowerProbeRep" onclick="lowerProbeRep()"><strong>-</strong></button>
             <button class="button2" id="btnRaiseProbeRep" onclick="raiseProbeRep()"><strong>+</strong></button>
+            <button class="button2" id="btnRaiseProbeRep10" data-cheatUi style="display: none;" onclick="raiseProbeRep(10)">+10</button>
             <button class="button2" id="btnMaxProbeRep" data-cheatUi style="display: none;" onclick="raiseProbeRep(Infinity)">MAX</button>
 
             <div class="toolTip2">
@@ -883,8 +900,10 @@
             </div><br />
 
             <button class="button2" id="btnZeroProbeHaz" onclick="lowerProbeHaz(Infinity)" data-cheatUi style="display: none">0</button>
+            <button class="button2" id="btnLowerProbeHaz10" data-cheatUi style="display: none;" onclick="lowerProbeHaz(10)">-10</button>
             <button class="button2" id="btnLowerProbeHaz" onclick="lowerProbeHaz()"><strong>-</strong></button>
             <button class="button2" id="btnRaiseProbeHaz" onclick="raiseProbeHaz()"><strong>+</strong></button>
+            <button class="button2" id="btnRaiseProbeHaz10" data-cheatUi style="display: none;" onclick="raiseProbeHaz(10)">+10</button>
             <button class="button2" id="btnMaxProbeHaz" data-cheatUi style="display: none;" onclick="raiseProbeHaz(Infinity)">MAX</button>
 
             <div class="toolTip2">
@@ -896,8 +915,10 @@
             </div>    <br />
 
             <button class="button2" id="btnZeroProbeFac" onclick="lowerProbeFac(Infinity)" data-cheatUi style="display: none">0</button>
+            <button class="button2" id="btnLowerProbeFac10" data-cheatUi style="display: none;" onclick="lowerProbeFac(10)">-10</button>
             <button class="button2" id="btnLowerProbeFac" onclick="lowerProbeFac()"><strong>-</strong></button>
             <button class="button2" id="btnRaiseProbeFac" onclick="raiseProbeFac()"><strong>+</strong></button>
+            <button class="button2" id="btnRaiseProbeFac10" data-cheatUi style="display: none;" onclick="raiseProbeFac(10)">+10</button>
             <button class="button2" id="btnMaxProbeFac" data-cheatUi style="display: none;" onclick="raiseProbeFac(Infinity)">MAX</button>
 
             <div class="toolTip2">
@@ -909,8 +930,10 @@
             </div>    <br />
 
             <button class="button2" id="btnZeroProbeHarv" onclick="lowerProbeHarv(Infinity)" data-cheatUi style="display: none">0</button>
+            <button class="button2" id="btnLowerProbeHarv10" onclick="lowerProbeHarv(10)" data-cheatUi style="display: none;">-10</button>
             <button class="button2" id="btnLowerProbeHarv" onclick="lowerProbeHarv()"><strong>-</strong></button>
             <button class="button2" id="btnRaiseProbeHarv" onclick="raiseProbeHarv()"><strong>+</strong></button>
+            <button class="button2" id="btnRaiseProbeHarv10" onclick="raiseProbeHarv(10)" data-cheatUi style="display: none;">+10</button>
             <button class="button2" id="btnMaxProbeHarv" data-cheatUi style="display: none;" onclick="raiseProbeHarv(Infinity)">MAX</button>
 
             <div class="toolTip2">
@@ -922,8 +945,10 @@
             </div>     <br />
 
             <button class="button2" id="btnZeroProbeWire" onclick="lowerProbeWire(Infinity)" data-cheatUi style="display: none">0</button>
+            <button class="button2" id="btnLowerProbeWire10" data-cheatUi style="display: none;" onclick="lowerProbeWire(10)">-10</button>
             <button class="button2" id="btnLowerProbeWire" onclick="lowerProbeWire()"><strong>-</strong></button>
             <button class="button2" id="btnRaiseProbeWire" onclick="raiseProbeWire()"><strong>+</strong></button>
+            <button class="button2" id="btnRaiseProbeWire10" data-cheatUi style="display: none;" onclick="raiseProbeWire(10)">+10</button>
             <button class="button2" id="btnMaxProbeWire" data-cheatUi style="display: none;" onclick="raiseProbeWire(Infinity)">MAX</button>
 
             <div class="toolTip2">
@@ -937,8 +962,10 @@
 
             <div id="combatButtonDiv">
               <button class="button2" id="btnZeroProbeCombat" onclick="lowerProbeCombat(Infinity)" data-cheatUi style="display: none">0</button>
+              <button class="button2" id="btnLowerProbeCombat10" data-cheatUi style="display: none;" onclick="lowerProbeCombat(10)">-10</button>
               <button class="button2" id="btnLowerProbeCombat" onclick="lowerProbeCombat()"><strong>-</strong></button>
               <button class="button2" id="btnRaiseProbeCombat" onclick="raiseProbeCombat()"><strong>+</strong></button>
+              <button class="button2" id="btnRaiseProbeCombat10" data-cheatUi style="display: none;" onclick="raiseProbeCombat(10)">+10</button>
               <button class="button2" id="btnMaxProbeCombat" data-cheatUi style="display: none;" onclick="raiseProbeCombat(Infinity)">MAX</button>
 
               <div class="toolTip2">
@@ -965,6 +992,8 @@
           <div class="enginetext1" id="increaseMaxTrustDiv">
             <button class="button2" id="btnIncreaseMaxTrust" onclick="increaseMaxTrust()">Increase Max Trust</button><br />
             <button class="button2" id="btnMaxOutMaxTrust" onclick="increaseMaxTrust(Infinity)" data-cheatUi style="display: none;">Max-out Max Trust</button><br />
+            <input type="number" id="setMaxTrustValue" min="1" step="1" value="20" data-cheatUi style="display:none; width:5em;"/>
+            <button class="button2" data-cheatUi style="display: none;" onclick="setMaxTrust();">Set max trust</button>
             <p class="engineText8">Cost: <span id="maxTrustCostDisplay">91,117.99</span> honor</p>
           </div>
 
