@@ -278,6 +278,11 @@ canvas
   background-color: #808080;
 }
 
+#og-cheats {
+  background: repeating-linear-gradient(-45deg,#eee,#eee 15px, transparent 15px, transparent 30px);
+  padding: 0.5em;
+}
+
 #og-cheats input[type=number] {
   width: 10ch;
   text-overflow: ellipsis;
@@ -732,6 +737,8 @@ div button[data-cheatUi]:active {
   color: #333;
 }
 
+
+
 @media (prefers-color-scheme: dark)
 {
   body, html
@@ -863,7 +870,14 @@ div button[data-cheatUi]:active {
     accent-color: #b64;
   }
 
-  /* TODO: STYLES FOR LIGHT MODE TOO */
+  #og-cheats {
+    background: repeating-linear-gradient(-45deg,#333,#333 15px, transparent 15px, transparent 30px);
+  }
+
+  #og-cheats input[type=number] {
+    background: #111;
+  }
+
   button[data-cheatUi], div[data-cheatUi] button {
     background: linear-gradient(0deg, #510, #a53);
     border: 1px solid #733;
