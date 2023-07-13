@@ -262,11 +262,12 @@
 
               </div>
               Unsold Inventory: <span id="unsoldClips">0</span><br />
-
+              <button class="button2" id="btnLower100Price" onclick="modifyPrice(-100)">-$1</button>
               <button class="button2" id="btnLower10Price" onclick="modifyPrice(-10)">-10￠</button>
               <button class="button2" id="btnLowerPrice" onclick="modifyPrice(-1)">-1￠</button>
               <button class="button2" id="btnRaisePrice" onclick="modifyPrice(1)">+1￠</button>
-              <button class="button2" id="btnRaise10Price" onclick="modifyPrice(10)">+10</button>
+              <button class="button2" id="btnRaise10Price" onclick="modifyPrice(10)">+10￠</button>
+              <button class="button2" id="btnRaise100Price" onclick="modifyPrice(100)">+$1</button>
               Price per Clip: $ <span id="margin">.25</span><br />
 
               Public Demand: <span id="demand">10</span>%<br />
@@ -351,10 +352,17 @@
         <button id="freeProcButton" onclick="addProc(1E4, false)">Free Proc</button>
         <button id="freeMemButton" onclick="addMem(1E4, false)">Free Mem</button>
         <br />
+        <input id="freeCreatIncrement" type="number" min="1" max="1E99" value="1000" data-default="1000" onchange="enforceValue(this);" />
         <button id="freeCreatButton" onclick="cheatCreat()">Free Creativity</button><br />
+
+        <input id="freeYomiIncrement" type="number" min="1" max="1E99" value="1000000" data-default="1000000" onchange="enforceValue(this);" />
         <button id="freeYomiButton" onclick="cheatYomi()">Free Yomi</button><br />
-        <button id="freeGiftsButton" onclick="cheatGifts(1E3)">Free Gifts</button><br />
-        <button id="freeHonorButton" onclick="cheatHonor(1E6)">Free Honor</button><br />
+
+        <input id="freeGiftsIncrement" type="number" min="1" max="1E10" value="100" data-default="100" onchange="enforceValue(this);" />
+        <button id="freeGiftsButton" onclick="cheatGifts()">Free Gifts</button><br />
+
+        <input id="freeHonorIncrement" type="number" min="1" max="1E99" value="1000000" data-default="1000000" onchange="enforceValue(this);" />
+        <button id="freeHonorButton" onclick="cheatHonor()">Free Honor</button><br />
         <button id="resetPrestige" onclick="resetPrestige()">Reset Prestige</button><br />
         <br />
         <button id="unlockInvest" onclick="project21.effect()">Unlock Investment Engine</button><br />

@@ -512,14 +512,6 @@ function buttonUpdate() {
   } else {
     document.getElementById("btnExpandMarketing").disabled = false;
   }
-  
-  document.getElementById("btnLower10Price").disabled = (margin <= 0.10);
-  
-  if (margin <= 0.01) {
-    document.getElementById("btnLowerPrice").disabled = true;
-  } else {
-    document.getElementById("btnLowerPrice").disabled = false;
-  }
 
   if (trust <= processors + memory && swarmGifts <= 0) {
     document.getElementById("btnAddProc").disabled = true;
@@ -2714,6 +2706,7 @@ function lowerPrice() {
     document.getElementById("margin").innerHTML = margin.toFixed(2);
   }
 }
+*/
 
 // Unused?
 function setMargin(price) {
@@ -2721,7 +2714,7 @@ function setMargin(price) {
   document.getElementById("demand").innerHTML = demand.toFixed(2);
   document.getElementById("margin").innerHTML = margin.toFixed(2);
 }
-*/
+
 
 function updateStats() {
 
@@ -2972,7 +2965,8 @@ function cheatOps(amount) {
 function cheatCreat(amount) {
   creativityOn = 1;
   if (isNaN(amount)) {
-    creativity = creativity + 1000;
+    var creativityIncrement = parseInt(document.getElementById("freeCreativityIncrement").value, 10) || 1;
+    creativity += creativityIncrement
   } else {
     creativity = amount;
   }
@@ -2981,7 +2975,8 @@ function cheatCreat(amount) {
 
 function cheatYomi(amount) {
   if (isNaN(amount)) {
-    yomi = yomi + 1000000;
+    var yomiIncrement = parseInt(document.getElementById("freeYomiIncrement").value, 10) || 1;
+    yomi += yomiIncrement;
   } else {
     yomi = amount;
   }
@@ -3082,7 +3077,12 @@ function maxProcAndMem() {
 }
 
 function cheatGifts(amount) {
-  swarmGifts += amount;
+  if (isNaN(amount)) {
+    var giftsIncrement = parseInt(document.getElementById("freeGiftsIncrement").value, 10) || 1;
+    swarmGifts += giftsIncrement;
+  } else {
+    swarmGifts += amount;
+  }
   document.getElementById("swarmGifts").innerHTML = numberCruncher(swarmGifts);
 }
 
@@ -3301,7 +3301,12 @@ function increaseProbeTrust(amount) {
 }
 
 function cheatHonor(amount) {
-  honor += amount;
+  if (isNaN(amount)) {
+    var honorIncrement = parseInt(document.getElementById("freeHonorIncrement").value, 10) || 1;
+    honor += honorIncrement;
+  } else {
+    honor += amount;
+  }
 
   document.getElementById("honorDisplay").innerHTML = Math.round(honor).toLocaleString();
 }
