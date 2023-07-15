@@ -6,6 +6,15 @@ h2 {
   word-break: break-all;
 }
 
+/* HEY WHY THE FUCK AREN'T YOU PICKING UP ON THIS YOU DUMBASS */
+section#mainGame {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: left;
+  align-items: flex-start;
+  gap: 1em;
+}
+
 #btnMakeProbe
 {
   margin-bottom: 2px;
@@ -387,14 +396,6 @@ canvas
   width: 65%;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 11px;
-}
-
-section#mainGame {
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: left;
-  align-items: flex-start;
-  gap: 1em;
 }
 
 #horizStrat

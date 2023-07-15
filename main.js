@@ -2940,6 +2940,18 @@ function cheatClips(amount) {
   document.getElementById("unusedClipsDisplay").innerText = numberCruncher(unusedClips);
 }
 
+function cheatAds(amount) {
+  if (isNaN(amount)) {
+    var adsIncrcement = parseInt(document.getElementById("freeAdsIncrement").value, 10) || 1;
+    marketingLvl += adsIncrement;
+  } else {
+    marketingLvl += amount;
+  }
+
+  displayMessage("you just cheated");
+  document.getElementById('marketingLvl').innerHTML = marketingLvl;
+}
+
 function cheatMoney(amount) {
   if (isNaN(amount)) {
     var fundsIncrement = parseInt(document.getElementById("freeMoneyIncrement").value, 10) || 10_000_000;

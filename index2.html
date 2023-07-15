@@ -286,6 +286,8 @@
                 <br />
 
                 <button class="button2" id="btnExpandMarketing" onclick="buyAds()">Marketing</button>
+                <button class="button2" onclick="buyAds(10);" data-cheatUi style="display: none;">+10</button>
+                <button class="button2" onclick="buyAds(100);" data-cheatUi style="display: none;">+100</button>
                 <button class="button2" onclick="buyAds(Infinity);" data-cheatUi style="display: none;">+MAX</button>
                 
                 <span class="engineText6"> Level: </span><span class="engineText6" id="marketingLvl">1</span><br />
@@ -349,10 +351,13 @@
           <button id="load1Button" onclick="load1()">LOAD SLOT 1</button><br />
           <button id="save2Button" onclick="save2()">SAVE SLOT 2</button>
           <button id="load2Button" onclick="load2()">LOAD SLOT 2</button><br />
-          <button id="resetButton" onclick="reset()">RESET ALL PROGRESS</button><br />
+          <button id="resetButton" onclick="reset()">RESET ALL PROGRESS</button><br /><br />
 
           <input id="freeClipsIncrement" type="number" min="1" max="1E99" value="100000000" data-default="100000000" onchange="enforceValue(this);" />
           <button id="freeClipsButton" onclick="cheatClips()">Free Clips</button><br />
+
+          <input id="freeAdsIncrement" type="number" min="1" value="1" data-default="1" onchange="enforceValue(this);" />
+          <button id="freeAdsButton" onclick="cheatAds()">Free Marketing</button>
           
           $<input id="freeMoneyIncrement" type="number" pattern="^\d*(\.\d{0,2})?$" min="0.01" max="1E99" value="10000000" data-default="10000000" onchange="enforceValue(this);" />
           <button id="freeMoneyButton" onclick="cheatMoney()">Free Money</button><br />
