@@ -2942,7 +2942,7 @@ function cheatClips(amount) {
 
 function cheatAds(amount) {
   if (isNaN(amount)) {
-    var adsIncrcement = parseInt(document.getElementById("freeAdsIncrement").value, 10) || 1;
+    var adsIncrement = parseInt(document.getElementById("freeAdsIncrement").value, 10) || 1;
     marketingLvl += adsIncrement;
   } else {
     marketingLvl += amount;
