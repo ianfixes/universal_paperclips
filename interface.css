@@ -389,7 +389,7 @@ canvas
   font-size: 11px;
 }
 
-#mainGame {
+section#mainGame {
   display: flex;
   flex-wrap: nowrap;
   justify-content: left;
