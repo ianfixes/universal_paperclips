@@ -278,6 +278,11 @@ canvas
   background-color: #808080;
 }
 
+#og-cheats {
+  background: repeating-linear-gradient(-45deg,#eee,#eee 15px, transparent 15px, transparent 30px);
+  padding: 0.5em;
+}
+
 #og-cheats input[type=number] {
   width: 10ch;
   text-overflow: ellipsis;
@@ -722,6 +727,26 @@ p.hypnoDrone
   border: 1px solid #ffffff;
 }
 
+button[data-cheatUi], div[data-cheatUi] button {
+  background: linear-gradient(0deg, #fc9, #fec);
+  border: 1px solid #fac;
+}
+
+button[data-cheatUi]:hover, div button[data-cheatUi]:hover {
+  background: linear-gradient(0deg, #fda, #ffd);
+  /* border: 1px solid #733; */
+}
+
+button[data-cheatUi]:hover:active,
+button[data-cheatUi]:active,
+div button[data-cheatUi]:hover:active,
+div button[data-cheatUi]:active {
+  background: linear-gradient(180deg, #fda, #ffd);
+  color: #333;
+}
+
+
+
 @media (prefers-color-scheme: dark)
 {
   body, html
@@ -853,7 +878,14 @@ p.hypnoDrone
     accent-color: #b64;
   }
 
-  /* TODO: STYLES FOR LIGHT MODE TOO */
+  #og-cheats {
+    background: repeating-linear-gradient(-45deg,#333,#333 15px, transparent 15px, transparent 30px);
+  }
+
+  #og-cheats input[type=number] {
+    background: #111;
+  }
+
   button[data-cheatUi], div[data-cheatUi] button {
     background: linear-gradient(0deg, #510, #a53);
     border: 1px solid #733;
