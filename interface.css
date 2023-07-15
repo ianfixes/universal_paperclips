@@ -6,7 +6,6 @@ h2 {
   word-break: break-all;
 }
 
-/* HEY WHY THE FUCK AREN'T YOU PICKING UP ON THIS YOU DUMBASS */
 section#mainGame {
   display: flex;
   flex-wrap: nowrap;
