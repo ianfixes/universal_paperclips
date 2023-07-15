@@ -384,6 +384,14 @@ canvas
   font-size: 11px;
 }
 
+#mainGame {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: left;
+  align-items: flex-start;
+  gap: 1em;
+}
+
 #horizStrat
 {
   float: left;

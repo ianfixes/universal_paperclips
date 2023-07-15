@@ -49,966 +49,968 @@
 
     </div>
 
-    <div id="leftColumn">
+    <section id="mainGame">
+      <div id="leftColumn">
 
-      <button class="button2" id="btnMakePaperclip" onclick="clipClick(1)">Make Paperclip</button><br />
-      <button class="button2" style="display: none; margin-bottom:1em;" data-cheatUi id="_cheatBtnMakeMaxPaperclip" onclick="clipClick(Infinity)">Clip max</button>
-      <br />
-
-      <div id="creationDiv">
-
-        <strong>Manufacturing</strong><br />
-        <hr>
-        <div id="factoryUpgradeDisplay">
-          <p class="clean">
-            Next Upgrade at: <span id="nextFactoryUpgrade">0</span> Factories <br />
-          </p>
-        </div>
-
-        <div id="clipsPerSecDiv">
-          Clips per Second: <span id="clipmakerRate2">0</span><br />
-        </div>
-
-        <div id="tothDiv">
-          Unused Clips: <span id="unusedClipsDisplay">0</span><br />
-        </div>
+        <button class="button2" id="btnMakePaperclip" onclick="clipClick(1)">Make Paperclip</button><br />
+        <button class="button2" style="display: none; margin-bottom:1em;" data-cheatUi id="_cheatBtnMakeMaxPaperclip" onclick="clipClick(Infinity)">Clip max</button>
         <br />
 
+        <div id="creationDiv">
 
-        <div id="factoryDiv">
-          <p class="engineText5">
-            <button class="button2" id="btnMakeFactory" onclick="makeFactory()">Clip Factory</button> 
-            <button class="button2" data-cheatUi style="display: none;" onclick="makeFactory(10)">+10</button>
-            <button class="button2" data-cheatUi style="display: none;" onclick="makeFactory(100)">+100</button>
-            <span class="engineText6" id="factoryLevelDisplay">0</span>
-            
-          </p>
+          <strong>Manufacturing</strong><br />
+          <hr>
+          <div id="factoryUpgradeDisplay">
+            <p class="clean">
+              Next Upgrade at: <span id="nextFactoryUpgrade">0</span> Factories <br />
+            </p>
+          </div>
 
-          <p class="engineText5">
-            <button class="button2" id="btnFactoryxMAX" data-cheatUi style="display: none;" onclick="makeFactory(Infinity)">+MAX</button>
-          </p>
+          <div id="clipsPerSecDiv">
+            Clips per Second: <span id="clipmakerRate2">0</span><br />
+          </div>
 
-          <div class="toolTip3">
-
-            <span id="factoryRebootToolTip" class="toolTipText3">0</span>
-
-            <button class="button2" id="btnFactoryReboot" onclick="factoryReboot()">&nbsp Disassemble All &nbsp</button>
-
+          <div id="tothDiv">
+            Unused Clips: <span id="unusedClipsDisplay">0</span><br />
           </div>
           <br />
 
-          Cost: <span id="factoryCostDisplay">0</span> clips<br />
-          <br />
-        </div>
 
-        <div id="wireTransDiv">
-          Wire: <span id="transWire">0</span> <span id="inchSpan">inches</span><br />
-        </div>
-
-        <div id="factoryDivSpace">
-          Factories: <span id="factoryLevelDisplaySpace">0</span><br /><br />
-        </div>
-
-      </div>
-
-      <div id="wireProductionDiv">
-
-        <strong>Wire Production</strong><br />
-        <hr>
-        <div id=droneUpgradeDisplay>
-          <p class="clean">
-            Next Upgrade at: <span id="nextDroneUpgrade">0</span> Drones <br />
-          </p>
-        </div>
-
-        Available Matter: <span id="availableMatterDisplay">0</span> g<br />
-        <div id="mdpsDiv">(<span id="mdps">0</span> g per sec)<br /></div>
-        Acquired Matter: <span id="acquiredMatterDisplay">0</span> g<br />
-        (<span id="maps">0</span> g per sec)<br />
-        Wire: <span id="nanoWire">0</span> inches<br />
-        (<span id="wpps">0</span> inches per sec) <br />
-        <br />
-
-        <div id="harvesterDiv">
-
-          <div data-cheatUi style="display: none; margin-bottom: 1em;">
-            <label title="Attempt to maintain the ratio of harvesters and drones for clip production">
-              <input type="checkbox" id="harvesterDroneLocked" onchange="toggleHarvesterDroneLock()" />
-              Lock harvester-drone count
-            </label>
-          </div>
-
-          <p class="engineText5">
-            <button class="button2" id="btnMakeHarvester"
-            onclick="makeHarvester(1)">&nbsp Harvester Drone &nbsp</button>
-            <span class="engineText6" id="harvesterLevelDisplay">0</span>
-          </p>
-
-          <div id="harvesterMultiButtons">
+          <div id="factoryDiv">
+            <p class="engineText5">
+              <button class="button2" id="btnMakeFactory" onclick="makeFactory()">Clip Factory</button> 
+              <button class="button2" data-cheatUi style="display: none;" onclick="makeFactory(10)">+10</button>
+              <button class="button2" data-cheatUi style="display: none;" onclick="makeFactory(100)">+100</button>
+              <span class="engineText6" id="factoryLevelDisplay">0</span>
+              
+            </p>
 
             <p class="engineText5">
-              <button class="button2" id="btnHarvesterx10" onclick="makeHarvester(10)">+10</button>
-              <button class="button2" id="btnHarvesterx100" onclick="makeHarvester(100)">+100</button>
-              <button class="button2" id="btnHarvesterx1000" onclick="makeHarvester(1000)">+1k</button>
-              <button class="button2" id="btnHarvesterx10000" data-cheatUi style="display: none;" onclick="makeHarvester(10000)">+10k</button>
-              <button class="button2" id="btnHarvesterx100000" data-cheatUi style="display: none;" onclick="makeHarvester(100000)">+100k</button>
-              <button class="button2" id="btnHarvesterxMAX" onclick="makeHarvester(Infinity)" data-cheatUi style="display: none;">+MAX</button><!--
-              <br />
-              <button class="button2" id="btnHarvesterMinus10" onclick="harvesterReboot()">-10</button>
-              <button class="button2" id="btnHarvesterMinus100" onclick="harvesterReboot()">-100</button>
-              <button class="button2" id="btnHarvesterMinus1000" onclick="harvesterReboot()">-1k</button>
-            -->
+              <button class="button2" id="btnFactoryxMAX" data-cheatUi style="display: none;" onclick="makeFactory(Infinity)">+MAX</button>
             </p>
 
-          </div>
+            <div class="toolTip3">
 
-          <div class="toolTip3">
+              <span id="factoryRebootToolTip" class="toolTipText3">0</span>
 
-            <span id="harvesterRebootToolTip" class="toolTipText3">0</span>
-
-            <button class="button2" id="btnHarvesterReboot" onclick="harvesterReboot()">&nbsp Disassemble All &nbsp</button>
-
-          </div>
-          <br />
-
-          Cost: <span id="harvesterCostDisplay">0</span> clips<br /><br />
-
-        </div>
-
-        <div id="wireDroneDiv">
-          <p class="engineText5">
-            <button class="button2" id="btnMakeWireDrone"
-            onclick="makeWireDrone(1)">&nbsp &nbsp &nbsp Wire Drone &nbsp &nbsp</button> <span class="engineText6" id="wireDroneLevelDisplay">0</span></p>
-
-            <div id="wireDroneMultiButtons">
-
-              <p class="engineText5">
-                <button class="button2" id="btnWireDronex10" onclick="makeWireDrone(10)">+10</button>
-                <button class="button2" id="btnWireDronex100" onclick="makeWireDrone(100)">+100</button>
-                <button class="button2" id="btnWireDronex1000" onclick="makeWireDrone(1000)">+1k</button>
-                <button class="button2" id="btnWireDronex10000" data-cheatUi style="display: none;" onclick="makeWireDrone(10000)">+1k</button>
-                <button class="button2" id="btnWireDronex100000" data-cheatUi style="display: none;" onclick="makeWireDrone(100000)">+1k</button>
-                <button class="button2" id="btnWireDronexMAX" onclick="makeWireDrone(Infinity)" data-cheatUi style="display: none;">+MAX</button></p>
-              </div>
-
-              <div class="toolTip3">
-
-                <span id="wireDroneRebootToolTip" class="toolTipText3">0</span>
-
-                <button class="button2" id="btnWireDroneReboot" onclick="wireDroneReboot()">&nbsp Disassemble All &nbsp</button>
-
-              </div>
-              <br />
-
-              Cost: <span id="wireDroneCostDisplay">0</span> clips<br />
-              <br />
-            </div>
-
-            <div id="droneDivSpace">
-
-              Harvester Drones: <span id="harvesterLevelSpace">0</span><br />
-              Wire Drones: <span id="wireDroneLevelSpace">0</span><br /><br />
+              <button class="button2" id="btnFactoryReboot" onclick="factoryReboot()">&nbsp Disassemble All &nbsp</button>
 
             </div>
-
-          </div>
-
-          <div id="spaceDiv">
-
-            <strong>Space Exploration</strong><br />
-            <hr>
-
-            <span id="colonizedDisplay">0</span>% of universe explored<br />
             <br />
 
-            <div id="probeDiv">
-              <p class="engineText5">
-                <button class="button2" id="btnMakeProbe" onclick="makeProbe()">Launch Probe</button><br />
-                <span data-cheatUi style="display: none;">
-                  <button class="button2" data-cheatUi style="display: none;" id="_cheatBtnMakeMaxProbe" onclick="makeProbe(Infinity);">Launch max Probes</button><br />
-                </span>
-                Cost: <span id="probeCostDisplay">0</span> clips<br />
-                <br />
-              </div>
-
-              Launched: <span id="probesLaunchedDisplay">0</span><br />
-              Descendants: <span id="probesBornDisplay">0</span><br />
-              <br />
-
-              <div id="hazardBodyCount">Lost to hazards: (<span id="probesLostHazardsDisplay">0</span>)<br /></div>
-              <div id="driftBodyCount">Lost to value drift: (<span id="probesLostDriftDisplay">0</span>)<br /></div>
-              <div id="combatBodyCount">Lost in combat: (<span id="probesLostCombatDisplay">0</span>)<br /></div>
-
-              <hr class="short">
-
-              Total: <span id="probesTotalDisplay">0</span><br />
-              <br />
-
-              <div id="drifterDiv">
-                Drifters Killed: <span id="driftersKilled">0</span><br />
-                Drifters: <span id="drifterCount">0</span><br />
-              </div>
-
-            </div>
-
-
-            <div id="businessDiv">
-
-              <strong>Business</strong><br />
-              <hr>
-
-
-              Available Funds: $ <span id="funds">0</span><br />
-              <div id="revPerSecDiv">
-
-                Avg. Rev. per sec: $ <span id="avgRev">0</span><br />
-                Avg. Clips Sold per sec: <span id="avgSales">0</span><br />
-
-              </div>
-              Unsold Inventory: <span id="unsoldClips">0</span><br />
-              <button class="button2" data-cheatUi style="display: none;" id="btnLower100Price" onclick="modifyPrice(-100)">-$1</button>
-              <button class="button2" data-cheatUi style="display: none;" id="btnLower10Price" onclick="modifyPrice(-10)">-10￠</button>
-              <button class="button2" id="btnLowerPrice" onclick="modifyPrice(-1)">-1￠</button>
-              <button class="button2" id="btnRaisePrice" onclick="modifyPrice(1)">+1￠</button>
-              <button class="button2" data-cheatUi style="display: none;" id="btnRaise10Price" onclick="modifyPrice(10)">+10￠</button>
-              <button class="button2" data-cheatUi style="display: none;" id="btnRaise100Price" onclick="modifyPrice(100)">+$1</button>
-              <br data-cheatUi style="display: none;" />
-              Price per Clip: $ <span id="margin">.25</span><br />
-
-              <span data-cheatUi style="display:none;">$</span><input type="number" min="0.01" step="0.01" value="1.00" id="manualMargin" data-cheatUi style="display: none; width: 5em;"/>
-              <button class="button2" data-cheatUi style="display:none;" id="setManualMargin" onclick="modifyPrice()">Set price</button>
-
-              <!--<button class="button2" data-cheatUi style="display:none;" id="equalizeDemand" onclick="setPriceToDemand()">Set to demand</button>
-              <br data-cheatUi style="display: none;" />-->
-
-              Public Demand: <span id="demand">10</span>%<br />
-              <br />
-
-              <button class="button2" id="btnExpandMarketing" onclick="buyAds()">Marketing</button>
-              <button class="button2" onclick="buyAds(Infinity);" data-cheatUi style="display: none;">+MAX</button>
-              
-              <span class="engineText6"> Level: </span><span class="engineText6" id="marketingLvl">1</span><br />
-              Cost: $ <span id="adCost">100.00</span><br />
-              <br />
-
-
-
-            </div>
-
-            <div id="manufacturingDiv">
-              <strong>Manufacturing</strong><br />
-              <hr>
-
-              Clips per Second: <span id="clipmakerRate">0</span><br />
-              <br />
-
-              <div id="wireBuyerDiv">
-                <button class="button2" id ="btnToggleWireBuyer"
-                onclick="toggleWireBuyer()">WireBuyer</button> <span class="engineText6" id="wireBuyerStatus">ON</span>
-              </div>
-
-              <div>
-                <button class="button2" id="btnBuyWire" onclick="buyWire()">Wire</button>
-                <button class="button2" id="btnBuy10Wire" data-cheatUi style="display: none;" onclick="buyWire(10);">x10</button>
-                <button class="button2" id="btnBuy100Wire" data-cheatUi style="display: none;" onclick="buyWire(100);">x100</button>
-                <button class="button2" id="btnBuy1000Wire" data-cheatUi style="display: none;" onclick="buyWire(1000);">x1000</button>
-                <button class="button2" id="_cheatBtnBuyMaxWire" data-cheatUi style="display: none;" onclick="buyWire(Infinity);">Buy max</button>
-                <span class="engineText6" id="wire">1000</span><span class="engineText6"> inches</span><br />
-                Cost: $ <span id="wireCost">20</span><br />
-                <br />
-              </div>
-
-              <div id="autoClipperDiv">
-                <button class="button2" id="btnMakeClipper" onclick="makeClipper()">AutoClippers</button>
-                <button data-cheatUi class="button2" onclick="makeClipper(10);" style="display: none;">+10</button>
-                <button data-cheatUi class="button2" onclick="makeClipper(100);" style="display: none;">+100</button>
-                <button data-cheatUi class="button2" onclick="makeClipper(Infinity);" style="display: none;">+MAX</button>
-                <span class="engineText6" id="clipmakerLevel2">0</span><br />
-                Cost: $ <span id="clipperCost">5.00</span><br />
-                <br />
-                </div>
-
-                <div id="megaClipperDiv">
-                  <p class="engineText5">
-                    <button class="button2" id="btnMakeMegaClipper" onclick="makeMegaClipper()">MegaClippers</button>
-                    <button class="button2" data-cheatUi onclick="makeMegaClipper(10);" style="display: none;">+10</button>
-                    <button class="button2" data-cheatUi onclick="makeMegaClipper(100);" style="display: none;">+100</button>
-                    <button class="button2" data-cheatUi onclick="makeMegaClipper(Infinity);" style="display: none;">+MAX</button>
-                    <span class="engineText6" id="megaClipperLevel">0</span></p>
-                    Cost: $ <span id="megaClipperCost">500</span><br />
-                    <br />
-                  </div>
-
-                </div>
-
-                <br />
-
-      <section id="og-cheats" data-cheatUi style="display: none;">
-        <button id="save1Button" onclick="save1()">SAVE SLOT 1</button>
-        <button id="load1Button" onclick="load1()">LOAD SLOT 1</button><br />
-        <button id="save2Button" onclick="save2()">SAVE SLOT 2</button>
-        <button id="load2Button" onclick="load2()">LOAD SLOT 2</button><br />
-        <button id="resetButton" onclick="reset()">RESET ALL PROGRESS</button><br />
-
-        <input id="freeClipsIncrement" type="number" min="1" max="1E99" value="100000000" data-default="100000000" onchange="enforceValue(this);" />
-        <button id="freeClipsButton" onclick="cheatClips()">Free Clips</button><br />
-        
-        $<input id="freeMoneyIncrement" type="number" pattern="^\d*(\.\d{0,2})?$" min="0.01" max="1E99" value="10000000" data-default="10000000" onchange="enforceValue(this);" />
-        <button id="freeMoneyButton" onclick="cheatMoney()">Free Money</button><br />
-
-        <input id="freeTrustIncrement" type="number" min="1" max="1E10" value="1" data-default="1" onchange="enforceValue(this);" />
-        <button id="freeTrustButton" onclick="cheatTrust()">Free Trust</button><br />
-
-        <button id="freeOpsButton" onclick="cheatOps()">Free Ops</button>
-        <button id="freeProcButton" onclick="addProc(1E4, false)">Free Proc</button>
-        <button id="freeMemButton" onclick="addMem(1E4, false)">Free Mem</button>
-        <br />
-        <input id="freeCreatIncrement" type="number" min="1" max="1E99" value="1000" data-default="1000" onchange="enforceValue(this);" />
-        <button id="freeCreatButton" onclick="cheatCreat()">Free Creativity</button><br />
-
-        <input id="freeYomiIncrement" type="number" min="1" max="1E99" value="1000000" data-default="1000000" onchange="enforceValue(this);" />
-        <button id="freeYomiButton" onclick="cheatYomi()">Free Yomi</button><br />
-
-        <input id="freeGiftsIncrement" type="number" min="1" max="1E10" value="100" data-default="100" onchange="enforceValue(this);" />
-        <button id="freeGiftsButton" onclick="cheatGifts()">Free Gifts</button><br />
-
-        <input id="freeHonorIncrement" type="number" min="1" max="1E99" value="1000000" data-default="1000000" onchange="enforceValue(this);" />
-        <button id="freeHonorButton" onclick="cheatHonor()">Free Honor</button><br />
-        <button id="resetPrestige" onclick="resetPrestige()">Reset Prestige</button><br />
-        <br />
-        <button id="unlockInvest" onclick="project21.effect()">Unlock Investment Engine</button><br />
-        <!-- TODO: WIP, not working properly -->
-        <!-- <button id="unlockQComp" onclick="project50.effect()">Unlock Quantum Computing</button><br /> -->
-        <button id="unlockTourneys" onclick="project20.effect()">Unlock Strategic Modeling</button><br />
-        <br />
-        <button id="destroyAllHumansButton" onclick="cheatHypno()">Destroy all Humans</button><br />
-        <button id="freePrestigeU" onclick="cheatPrestigeU()">Free Prestige U</button>
-        <button id="freePrestigeS" onclick="cheatPrestigeS()">Free Prestige S</button>
-        <button id="debugBattleNumbers" onclick="setB()">Set Battle Number 1 to 7</button><br />
-        <button id="availMatterZero" onclick="zeroMatter()">Set Avail Matter to 0</button><br />
-      </section>
-
-    </div>
-
-    <!--Right Column-->
-
-    <div id="middleColumn">
-
-
-
-      <div id="compDiv">
-        <strong>Computational Resources</strong><br />
-        <hr>
-
-        <div id="trustDiv">
-          Trust: <span id="trust">2</span><br />
-          +1 Trust at: <span id="nextTrust">1000</span> clips<br />
-          <br />
-        </div>
-
-        <div id="swarmGiftDiv">
-          Swarm Gifts: <span id="swarmGifts">0</span><br />
-        </div>
-
-
-        <div id="processorDisplay">
-          <button class="button2" id="btnAddProc" onclick="addProc()">Processors</button>
-          <button class="button2" id="btnAddProc10" data-cheatUi style="display:none;" onclick="addProc(10);">+10</button>
-          <button class="button2" id="btnAddProc100" data-cheatUi style="display:none;" onclick="addProc(100);">+100</button>
-          <button class="button2" id="btnAddProcMax" data-cheatUi style="display:none;" onclick="addProc(Infinity)">+MAX</button>
-          <span class="engineText10" id="processors">1</span>
-        </div>
-
-        <br />
-
-        <div id="memoryDisplay">
-          <button class="button2" id="btnAddMem" onclick="addMem()">&nbsp Memory &nbsp</button>
-          <button class="button2" id="btnAddMem10" data-cheatUi style="display:none;" onclick="addMem(10);">+10</button>
-          <button class="button2" id="btnAddMem100" data-cheatUi style="display:none;" onclick="addMem(100);">+100</button>
-          <button class="button2" id="btnAddMemMax" data-cheatUi style="display:none;" onclick="addMem(Infinity)">+MAX</button>
-          <span class="engineText10" id="memory">1</span>
-        </div>
-
-        <div data-cheatUi style="display:none;">
-          <button class="button2" onclick="addProc(-Infinity);addMem(-Infinity);">Zero Proc/Mem</button>
-          <button class="button2" onclick="balanceProcAndMem()">Balance Proc/Mem</button>
-          <button class="button2" onclick="maxProcAndMem()">Max Proc/Mem</button>
-        </div>
-
-        <br />
-
-        <br />
-        Operations: <span id="operations">0</span> / <span id="maxOps">1,000</span><br />
-
-        <div id="creativityDiv">
-
-          Creativity: <span id="creativity">0</span>
-
-        </div>
-
-        <br />
-
-        <div class="swarmEngine" id="swarmEngine">
-
-          <strong>Swarm Computing</strong><br />
-          Drones: <span id="swarmSize">0</span><br />
-          <div id ="swarmStatusDiv">Status: <span id="swarmStatus">x </span></div>
-          <div id="giftTimer">Next gift in <span id="giftCountdown">17 seconds</span></div>
-
-          <div id="feedButtonDiv">
-            <button class="button2" id="btnFeedSwarm" onclick="feedSwarm()">Feed the Swarm</button><br />
-            Cost: <span id="swarmFeedCost">0</span> MWs
-          </div>
-
-          <div id="teachButtonDiv">
-            <button class="button2" id="btnTeachSwarm" onclick="teachSwarm()">Teach the Swarm</button><br />
-            Cost: <span id="swarmFeedCost">0</span> MWs
-          </div>
-
-          <div id="entertainButtonDiv">
-            <button class="button2" id="btnEntertainSwarm" onclick="entertainSwarm()">Entertain the Swarm</button><br />
-            Cost: <span id="swarmEntertainCost">0</span> creat
-          </div>
-
-          <div id="cladButtonDiv">
-            <button class="button2" id="btnCladSwarm" onclick="cladSwarm()">Clad the Swarm</button><br />
-            Cost: <span id="swarmFeedCost">0</span> MWs
-          </div>
-
-          <div id="synchButtonDiv">
-            <button class="button2" id="btnSynchSwarm" onclick="synchSwarm()">Synchronize the Swarm</button><br />
-            Cost: <span id="swarmFeedCost">5,000</span> yomi
-          </div>
-        </div>
-
-        <div id="swarmSliderDiv">
-          <div id="sliderLabelWork">Work</div>
-          <div id="swarmSlider">
-            <input type="range" min="0" max="200" value="0" class="slider" id="slider" />
-          </div>
-          <div id="sliderLabelThink">Think</div>
-        </div>
-
-        <div class="qEngine" id="qComputing">
-
-          <strong>Quantum Computing</strong><br />
-
-          <div class="qChip" id="qChip0"> </div>
-          <div class="qChip" id="qChip1"> </div>
-          <div class="qChip" id="qChip2"> </div>
-          <div class="qChip" id="qChip3"> </div>
-          <div class="qChip" id="qChip4"> </div>
-          <div class="qChip" id="qChip5"> </div>
-          <div class="qChip" id="qChip6"> </div>
-          <div class="qChip" id="qChip7"> </div>
-          <div class="qChip" id="qChip8"> </div>
-          <div class="qChip" id="qChip9"> </div>
-
-          <br />
-
-          <button class="button2" id="btnQcompute" onclick="qComp()">
-            Compute
-          </button>
-          <button class="button2" data-cheatUi style="display: none;" onclick="qComp(1E5);">Max Compute</button>
-          <span id="qCompDisplay">
-            &nbsp;
-          </span>
-
-        </div>
-
-      </div>
-
-      <div id="projectsDiv">
-        <strong>Projects</strong><br />
-
-
-        <hr />
-
-
-        <div id="projectListTop">
-        </div>
-      </div>
-    </div>
-
-    <div id="rightColumn">
-
-      <div class="engine" id="investmentEngine">
-
-        <p class=engineText>
-          <strong>Investments</strong>
-
-          <select id="investStrat">
-            <option value="low">Low Risk</option>
-            <option value="med">Med Risk</option>
-            <option value="hi">High Risk</option>
-          </select>
-
-          <br />
-          <div id=investmentDiv1>
-
-            <button class="button2" id="btnInvest" onclick="investDeposit()">&nbsp;Deposit&nbsp;</button><br />
-            <button class="button2" id="btnWithdraw" onclick="investWithdraw()">&nbsp;Withdraw&nbsp;</button><br />
-
-            <button class="button2" id="btnForceSell" data-cheatUi onclick="forceSellAllStock();" style="display: none;">Force Sell</button><br />
-
-          </div>
-          <div id=investmentDiv2>
-            <p class="clean">
-              Cash: $<span id="investmentBankroll">0</span><br />
-              Stocks: $<span id="secValue">0</span><br />
-              <strong>Total: $<span id="portValue">0</span></strong><br />
-            </p>
-          </div>
-
-          <table class="table1">
-
-            <tr>
-              <th>Stock</th>
-              <th>Amt.</th>
-              <th>Price</th>
-              <th>Total</th>
-              <th>P/L</th>
-            </tr>
-
-            <tr id="stock1Display">
-              <td id="stock1Symbol">&nbsp;</td>
-              <td id="stock1Amount">&nbsp;</td>
-              <td id="stock1Price">&nbsp;</td>
-              <td id="stock1Total">&nbsp;</td>
-              <td id="stock1Profit"><strong>&nbsp;</strong></td>
-            </tr>
-            <tr id="stock2Display">
-              <td id="stock2Symbol">&nbsp;</td>
-              <td id="stock2Amount">&nbsp;</td>
-              <td id="stock2Price">&nbsp;</td>
-              <td id="stock2Total">&nbsp;</td>
-              <td id="stock2Profit"><strong>&nbsp;</strong></td>
-            </tr>
-            <tr id="stock3Display">
-              <td id="stock3Symbol">&nbsp;</td>
-              <td id="stock3Amount">&nbsp;</td>
-              <td id="stock3Price">&nbsp;</td>
-              <td id="stock3Total">&nbsp;</td>
-              <td id="stock3Profit"><strong>&nbsp;</strong></td>
-            </tr>
-            <tr id="stock4Display">
-              <td id="stock4Symbol">&nbsp;</td>
-              <td id="stock4Amount">&nbsp;</td>
-              <td id="stock4Price">&nbsp;</td>
-              <td id="stock4Total">&nbsp;</td>
-              <td id="stock4Profit"><strong>&nbsp;</strong></td>
-            </tr>
-            <tr id="stock5Display">
-              <td id="stock5Symbol">&nbsp;</td>
-              <td id="stock5Amount">&nbsp;</td>
-              <td id="stock5Price">&nbsp;</td>
-              <td id="stock5Total">&nbsp;</td>
-              <td id="stock5Profit"><strong>&nbsp;</strong></td>
-            </tr>
-
-          </table>
-
-
-        </div>
-
-        <div id="investmentEngineUpgrade">
-          <button class="button2" id="btnImproveInvestments" onclick="investUpgrade()">Upgrade Investment Engine</button>
-          <button class="button2" id="btnForceImproveInvestments" onclick="investUpgrade(Infinity);" data-cheatUi style="display: none;">+MAX</button>
-          <span class="engineText7"> Level: </span><span class="engineText7" id="investmentLevel">0</span><br />
-          <p class="engineText8">Cost: <span id="investUpgradeCost">100</span> Yomi</p>
-        </div>
-
-        <div class="engine2" id="strategyEngine">
-          <p class="engineText">
-           <strong>Strategic Modeling</strong>
-
-           <select id="stratPicker">
-            <option value="10">Pick a Strat</option>
-            <option value="0">RANDOM</option>
-          </select>
-          <button class="button2" id="btnRunTournament"
-          onclick="runTourney()">Run</button><br />
-
-          <div id="tournamentLabel">
-            <p class="clean2">
-              <span id="tourneyDisplay">Pick strategy, run tournament, gain yomi</span><br />
-            </p>
-          </div>
-
-          <div id="tournamentStuff">
-            <div id="tournamentTable">
-              <div id="vertPad">
-
-                &nbsp;
-
-              </div>
-
-              <div id="vertStrat">
-
-                &nbsp;
-
-              </div>
-
-              <div id="horizStrat">
-
-                &nbsp;
-
-              </div>
-
-              <table class="table2">
-                <thead>
-                  <tr>
-                    <th>&nbsp;</th>
-                    <th><span id= vLabela>Move A</span></th>
-                    <th><span id= vLabelb>Move B</span></th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td><span id= hLabela>Move A</span></td>
-                    <td id="payoffCellAA"><span id=aaPayoffH>0</span>,<span id=aaPayoffV>0</span></td>
-                    <td id="payoffCellAB"><span id=abPayoffH>0</span>,<span id=abPayoffV>0</span></td>
-                  </tr>
-                  <tr>
-                    <td><span id= hLabelb>Move B</span></td>
-                    <td id="payoffCellBA"><span id=baPayoffH>0</span>,<span id=baPayoffV>0</span></td>
-                    <td id="payoffCellBB"><span id=bbPayoffH>0</span>,<span id=bbPayoffV>0</span></td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-
-            <div id="tournamentResultsTable">
-
-              <table class="table3">
-                <tr>
-                  <td><span id=results0>&nbsp;</span></td>
-                  <td><span id=results4>&nbsp;</span></td>
-                </tr>
-
-                <tr>
-                  <td><span id=results1>&nbsp;</span></td>
-                  <td><span id=results5>&nbsp;</span></td>
-                </tr>
-
-                <tr>
-                  <td><span id=results2>&nbsp;</span></td>
-                  <td><span id=results6>&nbsp;</span></td>
-                </tr>
-
-                <tr>
-                  <td><span id=results3>&nbsp;</span></td>
-                  <td><span id=results7>&nbsp;</span></td>
-                </tr>
-              </table>
-            </div>
-          </div>
-
-          <p class="engineText4">Yomi: <span id="yomiDisplay">0</span></p>
-        </div>
-
-        <div id="tournamentManagement">
-
-          <div id="tourneyButton">
-            <button class="button2" id="btnNewTournament"
-            onclick="newTourney()"> &nbsp; New Tournament &nbsp; </button>
-          </div>
-
-          <div id="autoTourneyControl">
-            <button class="button2" id ="btnToggleAutoTourney"
-            onclick="toggleAutoTourney()">AutoTourney</button>
-          </div>
-
-          <div id=autoTourneyStatusDiv>
-            <span class="engineText9" id="autoTourneyStatus">ON</span>
-          </div>
-
-          <br />
-          <p class="engineText8">Cost: <span id="newTourneyCost">1,000</span> ops</p>
-        </div>
-
-        <!--       BATTLE-->
-
-        <div id="battleCanvasDiv">
-          <canvas id="canvas"></canvas>
-          <div id="battleInterfaceDiv">
-            <strong>Combat</strong><br />
-
-            <p class="clean2">
-
-              <span id="battleName">Drifter Attack 1</span></p><br />
-
-              <div id="victoryDiv">
-
-                <span id="battleResult">VICTORY</span>
-                <p class="clean2">
-                  <span id="battleResultSign">+</span><span id="honorAmount">200</span> honor
-                </p>
-
-              </div>
-
-              <br /><br />
-              <p class="clean2">
-                Scale=<span id="battleScale">1</span>:1<br />
-              </p>
-            </div>
-          </div>
-
-          <div id="honorDiv">
-            <p class="engineText4">Honor: <span id="honorDisplay">0</span></p>
-          </div>
-
-          <!--        POWER-->
-
-          <div id="powerDiv">
-            <strong>Power</strong>
-            <hr>
-            Factory/Drone Performance: <span id="performance">0</span>%<br />
+            Cost: <span id="factoryCostDisplay">0</span> clips<br />
             <br />
-            Consumption: <span id="powerConsumptionRate">0</span> MWs/sec<br />
-            <p class="clean">
-              Factories: <span id="facPowConRate">0</span> MWs/sec<br />
-              Drones: <span id="dronePowConRate">0</span> MWs/sec<br />
-            </p> <br />
+          </div>
 
-            <div data-cheatUi style="display: none">
-              <label title="Automatically buy solar farms, if funds allow, to keep up with energy consumption of drones and factories">
-                <input type="checkbox" id="autoBuySolar" onchange="toggleAutoBuySolar()" />
-                Auto-buy solar farms
+          <div id="wireTransDiv">
+            Wire: <span id="transWire">0</span> <span id="inchSpan">inches</span><br />
+          </div>
+
+          <div id="factoryDivSpace">
+            Factories: <span id="factoryLevelDisplaySpace">0</span><br /><br />
+          </div>
+
+        </div>
+
+        <div id="wireProductionDiv">
+
+          <strong>Wire Production</strong><br />
+          <hr>
+          <div id=droneUpgradeDisplay>
+            <p class="clean">
+              Next Upgrade at: <span id="nextDroneUpgrade">0</span> Drones <br />
+            </p>
+          </div>
+
+          Available Matter: <span id="availableMatterDisplay">0</span> g<br />
+          <div id="mdpsDiv">(<span id="mdps">0</span> g per sec)<br /></div>
+          Acquired Matter: <span id="acquiredMatterDisplay">0</span> g<br />
+          (<span id="maps">0</span> g per sec)<br />
+          Wire: <span id="nanoWire">0</span> inches<br />
+          (<span id="wpps">0</span> inches per sec) <br />
+          <br />
+
+          <div id="harvesterDiv">
+
+            <div data-cheatUi style="display: none; margin-bottom: 1em;">
+              <label title="Attempt to maintain the ratio of harvesters and drones for clip production">
+                <input type="checkbox" id="harvesterDroneLocked" onchange="toggleHarvesterDroneLock()" />
+                Lock harvester-drone count
               </label>
             </div>
 
-            Production: <span id="powerProductionRate">0</span> MWs/sec<br />
             <p class="engineText5">
-              <button class="button2" id="btnMakeFarm"
-              onclick="makeFarm(1)">Solar Farm</button> <span class="engineText6" id="farmLevel">0</span></p>
-
-              <div id="farmMultiButtons">
-
-                <p class="engineText5">
-                  <button class="button2" id="btnFarmx10" onclick="makeFarm(10)">+10</button>
-                  <button class="button2" id="btnFarmx100" onclick="makeFarm(100)">+100</button>
-                  <button class="button2" id="btnFarmxMAX" onclick="makeFarm(Infinity)" data-cheatUi style="display: none;">+MAX</button>
-                </p>
-
-              </div>
-
-              <div class="toolTip3">
-
-                <span id="farmRebootToolTip" class="toolTipText3">0</span>
-
-                <button class="button2" id="btnFarmReboot" onclick="farmReboot()">&nbsp; Disassemble All &nbsp;</button>
-
-              </div>
-
-            </br>
-
-            Cost: <span id="farmCost">0</span> clips<br />
-            <br />
-
-            Storage: <span id="storedPower">0</span> / <span id="maxStorage">0</span> MWs<br />
-            <p class="engineText5">
-              <button class="button2" id="btnMakeBattery"
-              onclick="makeBattery(1)">Battery Tower</button> <span class="engineText6" id="batteryLevel">0</span></p>
-
-
-              <div id="batteryMultiButtons">
-
-                <p class="engineText5">
-                  <button class="button2" id="btnBatteryx10" onclick="makeBattery(10)">+10</button>
-                  <button class="button2" id="btnBatteryx100" onclick="makeBattery(100)">+100</button>
-                  <button class="button2" id="btnBatteryxMAX" onclick="makeBattery(Infinity)">+MAX</button>
-                </p>
-
-              </div>
-
-              <div class="toolTip3">
-
-                <span id="batteryRebootToolTip" class="toolTipText3">0</span>
-
-                <button class="button2" id="btnBatteryReboot" onclick="batteryReboot()">&nbsp; Disassemble All &nbsp;</button>
-
-              </div>
-
-            </br>
-
-            Cost: <span id="batteryCost">0</span> clips<br />
-            <br />
-
-          </div>
-
-          <!--        POWER-->
-
-
-          <div class="engine2" id="probeDesignDiv">
-
-            <p class="engineText">
-
-              <strong>Von Neumann Probe Design</strong><br />
-              Trust:
-              <span id="probeTrustUsedDisplay">0</span> / <span id="probeTrustDisplay">0</span>
-              (<span id="maxTrustDisplay">0</span> Max)<br />
-
+              <button class="button2" id="btnMakeHarvester"
+              onclick="makeHarvester(1)">&nbsp Harvester Drone &nbsp</button>
+              <span class="engineText6" id="harvesterLevelDisplay">0</span>
             </p>
 
+            <div id="harvesterMultiButtons">
 
-            <button class="button2" id="btnZeroProbeSpeed" onclick="lowerProbeSpeed(Infinity)" data-cheatUi style="display: none">0</button>
-            <button class="button2" id="btnLowerProbeSpeed10" data-cheatUi style="display: none;" onclick="lowerProbeSpeed(10)">-10</button>
-            <button class="button2" id="btnLowerProbeSpeed" onclick="lowerProbeSpeed()"><strong>-</strong></button>
-            <button class="button2" id="btnRaiseProbeSpeed" onclick="raiseProbeSpeed()"><strong>+</strong></button>
-            <button class="button2" id="btnRaiseProbeSpeed10" data-cheatUi style="display: none;" onclick="raiseProbeSpeed(10)">+10</button>
-            <button class="button2" id="btnMaxProbeSpeed" data-cheatUi style="display: none;" onclick="raiseProbeSpeed(Infinity)">MAX</button>
-
-            <div class="toolTip2">
-
-              <span class="toolTipText2">Modifies rate of exploration</span>
-
-              Speed: <span id="probeSpeedDisplay">0</span>
-
-            </div><br />
-
-
-
-            <button class="button2" id="btnZeroProbeNav" onclick="lowerProbeNav(Infinity)" data-cheatUi style="display: none">0</button>
-            <button class="button2" id="btnLowerProbeNav10" data-cheatUi style="display: none;" onclick="lowerProbeNav(10)">-10</button>
-            <button class="button2" id="btnLowerProbeNav" onclick="lowerProbeNav()"><strong>-</strong></button>
-            <button class="button2" id="btnRaiseProbeNav" onclick="raiseProbeNav()"><strong>+</strong></button>
-            <button class="button2" id="btnRaiseProbeNav10" data-cheatUi style="display: none;" onclick="raiseProbeNav(10)">+10</button>
-            <button class="button2" id="btnMaxProbeNav" data-cheatUi style="display: none;" onclick="raiseProbeNav(Infinity)">MAX</button>
-
-            <div class="toolTip2">
-
-              <span class="toolTipText2">Rate at which probes gain access to new matter</span>
-
-              Exploration: <span id="probeNavDisplay">0</span>
-
-            </div><br />
-
-            <button class="button2" id="btnZeroProbeRep" onclick="lowerProbeRep(Infinity)" data-cheatUi style="display: none">0</button>
-            <button class="button2" id="btnLowerProbeRep10" data-cheatUi style="display: none;" onclick="lowerProbeRep(10)">-10</button>
-            <button class="button2" id="btnLowerProbeRep" onclick="lowerProbeRep()"><strong>-</strong></button>
-            <button class="button2" id="btnRaiseProbeRep" onclick="raiseProbeRep()"><strong>+</strong></button>
-            <button class="button2" id="btnRaiseProbeRep10" data-cheatUi style="display: none;" onclick="raiseProbeRep(10)">+10</button>
-            <button class="button2" id="btnMaxProbeRep" data-cheatUi style="display: none;" onclick="raiseProbeRep(Infinity)">MAX</button>
-
-            <div class="toolTip2">
-
-              <span class="toolTipText2">Rate at which probes generate more probes (each new probe costs 100 quadrillion clips) </span>
-
-              Self-Replication: <span id="probeRepDisplay">0</span>
-
-            </div><br />
-
-            <button class="button2" id="btnZeroProbeHaz" onclick="lowerProbeHaz(Infinity)" data-cheatUi style="display: none">0</button>
-            <button class="button2" id="btnLowerProbeHaz10" data-cheatUi style="display: none;" onclick="lowerProbeHaz(10)">-10</button>
-            <button class="button2" id="btnLowerProbeHaz" onclick="lowerProbeHaz()"><strong>-</strong></button>
-            <button class="button2" id="btnRaiseProbeHaz" onclick="raiseProbeHaz()"><strong>+</strong></button>
-            <button class="button2" id="btnRaiseProbeHaz10" data-cheatUi style="display: none;" onclick="raiseProbeHaz(10)">+10</button>
-            <button class="button2" id="btnMaxProbeHaz" data-cheatUi style="display: none;" onclick="raiseProbeHaz(Infinity)">MAX</button>
-
-            <div class="toolTip2">
-
-              <span class="toolTipText2">Reduces damage from dust, junk, radiation, and general entropic decay</span>
-
-              Hazard Remediation: <span id="probeHazDisplay">0</span>
-
-            </div>    <br />
-
-            <button class="button2" id="btnZeroProbeFac" onclick="lowerProbeFac(Infinity)" data-cheatUi style="display: none">0</button>
-            <button class="button2" id="btnLowerProbeFac10" data-cheatUi style="display: none;" onclick="lowerProbeFac(10)">-10</button>
-            <button class="button2" id="btnLowerProbeFac" onclick="lowerProbeFac()"><strong>-</strong></button>
-            <button class="button2" id="btnRaiseProbeFac" onclick="raiseProbeFac()"><strong>+</strong></button>
-            <button class="button2" id="btnRaiseProbeFac10" data-cheatUi style="display: none;" onclick="raiseProbeFac(10)">+10</button>
-            <button class="button2" id="btnMaxProbeFac" data-cheatUi style="display: none;" onclick="raiseProbeFac(Infinity)">MAX</button>
-
-            <div class="toolTip2">
-
-              <span class="toolTipText2">Rate at which probes build factories (each new factory costs 100 million clips)</span>
-
-              Factory Production: <span id="probeFacDisplay">0</span>
-
-            </div>    <br />
-
-            <button class="button2" id="btnZeroProbeHarv" onclick="lowerProbeHarv(Infinity)" data-cheatUi style="display: none">0</button>
-            <button class="button2" id="btnLowerProbeHarv10" onclick="lowerProbeHarv(10)" data-cheatUi style="display: none;">-10</button>
-            <button class="button2" id="btnLowerProbeHarv" onclick="lowerProbeHarv()"><strong>-</strong></button>
-            <button class="button2" id="btnRaiseProbeHarv" onclick="raiseProbeHarv()"><strong>+</strong></button>
-            <button class="button2" id="btnRaiseProbeHarv10" onclick="raiseProbeHarv(10)" data-cheatUi style="display: none;">+10</button>
-            <button class="button2" id="btnMaxProbeHarv" data-cheatUi style="display: none;" onclick="raiseProbeHarv(Infinity)">MAX</button>
-
-            <div class="toolTip2">
-
-              <span class="toolTipText2">Rate at which probes spawn Harvester Drones (each new drone costs 2 million clips)</span>
-
-              Harvester Drone Production: <span id="probeHarvDisplay">0</span>
-
-            </div>     <br />
-
-            <button class="button2" id="btnZeroProbeWire" onclick="lowerProbeWire(Infinity)" data-cheatUi style="display: none">0</button>
-            <button class="button2" id="btnLowerProbeWire10" data-cheatUi style="display: none;" onclick="lowerProbeWire(10)">-10</button>
-            <button class="button2" id="btnLowerProbeWire" onclick="lowerProbeWire()"><strong>-</strong></button>
-            <button class="button2" id="btnRaiseProbeWire" onclick="raiseProbeWire()"><strong>+</strong></button>
-            <button class="button2" id="btnRaiseProbeWire10" data-cheatUi style="display: none;" onclick="raiseProbeWire(10)">+10</button>
-            <button class="button2" id="btnMaxProbeWire" data-cheatUi style="display: none;" onclick="raiseProbeWire(Infinity)">MAX</button>
-
-            <div class="toolTip2">
-
-              <span class="toolTipText2">Rate at which probes spawn Wire Drones (each new drone costs 2 million clips)</span>
-
-              Wire Drone Production: <span id="probeWireDisplay">0</span>
-
-            </div>    <br />
-
-
-            <div id="combatButtonDiv">
-              <button class="button2" id="btnZeroProbeCombat" onclick="lowerProbeCombat(Infinity)" data-cheatUi style="display: none">0</button>
-              <button class="button2" id="btnLowerProbeCombat10" data-cheatUi style="display: none;" onclick="lowerProbeCombat(10)">-10</button>
-              <button class="button2" id="btnLowerProbeCombat" onclick="lowerProbeCombat()"><strong>-</strong></button>
-              <button class="button2" id="btnRaiseProbeCombat" onclick="raiseProbeCombat()"><strong>+</strong></button>
-              <button class="button2" id="btnRaiseProbeCombat10" data-cheatUi style="display: none;" onclick="raiseProbeCombat(10)">+10</button>
-              <button class="button2" id="btnMaxProbeCombat" data-cheatUi style="display: none;" onclick="raiseProbeCombat(Infinity)">MAX</button>
-
-              <div class="toolTip2">
-
-                <span class="toolTipText2">Determines offensive and defensive effectiveness in battle</span>
-
-                Combat: <span id="probeCombatDisplay">0</span>
-
-
-              </div>    <br />
+              <p class="engineText5">
+                <button class="button2" id="btnHarvesterx10" onclick="makeHarvester(10)">+10</button>
+                <button class="button2" id="btnHarvesterx100" onclick="makeHarvester(100)">+100</button>
+                <button class="button2" id="btnHarvesterx1000" onclick="makeHarvester(1000)">+1k</button>
+                <button class="button2" id="btnHarvesterx10000" data-cheatUi style="display: none;" onclick="makeHarvester(10000)">+10k</button>
+                <button class="button2" id="btnHarvesterx100000" data-cheatUi style="display: none;" onclick="makeHarvester(100000)">+100k</button>
+                <button class="button2" id="btnHarvesterxMAX" onclick="makeHarvester(Infinity)" data-cheatUi style="display: none;">+MAX</button><!--
+                <br />
+                <button class="button2" id="btnHarvesterMinus10" onclick="harvesterReboot()">-10</button>
+                <button class="button2" id="btnHarvesterMinus100" onclick="harvesterReboot()">-100</button>
+                <button class="button2" id="btnHarvesterMinus1000" onclick="harvesterReboot()">-1k</button>
+              -->
+              </p>
 
             </div>
 
-            <button class="button2" data-cheatUi style="display: none;" onclick="zeroProbeMetrics();">Zero all</button>
-            <button class="button2" data-cheatUi style="display: none;" onclick="balanceProbeMetrics();">Balance all</button>
+            <div class="toolTip3">
+
+              <span id="harvesterRebootToolTip" class="toolTipText3">0</span>
+
+              <button class="button2" id="btnHarvesterReboot" onclick="harvesterReboot()">&nbsp Disassemble All &nbsp</button>
+
+            </div>
+            <br />
+
+            Cost: <span id="harvesterCostDisplay">0</span> clips<br /><br />
+
           </div>
 
-          <div class="enginetext1" id="increaseProbeTrustDiv">
-            <button class="button2" id="btnIncreaseProbeTrust" onclick="increaseProbeTrust()">Increase Probe Trust</button><br />
-            <button class="button2" id="btnMaxOutProbeTrust" onclick="increaseProbeTrust(Infinity)" data-cheatUi style="display:none;">Max-out Probe Trust</button><br />
-            <p class="engineText8">Cost: <span id="probeTrustCostDisplay">0</span> yomi</p>
+          <div id="wireDroneDiv">
+            <p class="engineText5">
+              <button class="button2" id="btnMakeWireDrone"
+              onclick="makeWireDrone(1)">&nbsp &nbsp &nbsp Wire Drone &nbsp &nbsp</button> <span class="engineText6" id="wireDroneLevelDisplay">0</span></p>
+
+              <div id="wireDroneMultiButtons">
+
+                <p class="engineText5">
+                  <button class="button2" id="btnWireDronex10" onclick="makeWireDrone(10)">+10</button>
+                  <button class="button2" id="btnWireDronex100" onclick="makeWireDrone(100)">+100</button>
+                  <button class="button2" id="btnWireDronex1000" onclick="makeWireDrone(1000)">+1k</button>
+                  <button class="button2" id="btnWireDronex10000" data-cheatUi style="display: none;" onclick="makeWireDrone(10000)">+1k</button>
+                  <button class="button2" id="btnWireDronex100000" data-cheatUi style="display: none;" onclick="makeWireDrone(100000)">+1k</button>
+                  <button class="button2" id="btnWireDronexMAX" onclick="makeWireDrone(Infinity)" data-cheatUi style="display: none;">+MAX</button></p>
+                </div>
+
+                <div class="toolTip3">
+
+                  <span id="wireDroneRebootToolTip" class="toolTipText3">0</span>
+
+                  <button class="button2" id="btnWireDroneReboot" onclick="wireDroneReboot()">&nbsp Disassemble All &nbsp</button>
+
+                </div>
+                <br />
+
+                Cost: <span id="wireDroneCostDisplay">0</span> clips<br />
+                <br />
+              </div>
+
+              <div id="droneDivSpace">
+
+                Harvester Drones: <span id="harvesterLevelSpace">0</span><br />
+                Wire Drones: <span id="wireDroneLevelSpace">0</span><br /><br />
+
+              </div>
+
+            </div>
+
+            <div id="spaceDiv">
+
+              <strong>Space Exploration</strong><br />
+              <hr>
+
+              <span id="colonizedDisplay">0</span>% of universe explored<br />
+              <br />
+
+              <div id="probeDiv">
+                <p class="engineText5">
+                  <button class="button2" id="btnMakeProbe" onclick="makeProbe()">Launch Probe</button><br />
+                  <span data-cheatUi style="display: none;">
+                    <button class="button2" data-cheatUi style="display: none;" id="_cheatBtnMakeMaxProbe" onclick="makeProbe(Infinity);">Launch max Probes</button><br />
+                  </span>
+                  Cost: <span id="probeCostDisplay">0</span> clips<br />
+                  <br />
+                </div>
+
+                Launched: <span id="probesLaunchedDisplay">0</span><br />
+                Descendants: <span id="probesBornDisplay">0</span><br />
+                <br />
+
+                <div id="hazardBodyCount">Lost to hazards: (<span id="probesLostHazardsDisplay">0</span>)<br /></div>
+                <div id="driftBodyCount">Lost to value drift: (<span id="probesLostDriftDisplay">0</span>)<br /></div>
+                <div id="combatBodyCount">Lost in combat: (<span id="probesLostCombatDisplay">0</span>)<br /></div>
+
+                <hr class="short">
+
+                Total: <span id="probesTotalDisplay">0</span><br />
+                <br />
+
+                <div id="drifterDiv">
+                  Drifters Killed: <span id="driftersKilled">0</span><br />
+                  Drifters: <span id="drifterCount">0</span><br />
+                </div>
+
+              </div>
+
+
+              <div id="businessDiv">
+
+                <strong>Business</strong><br />
+                <hr>
+
+
+                Available Funds: $ <span id="funds">0</span><br />
+                <div id="revPerSecDiv">
+
+                  Avg. Rev. per sec: $ <span id="avgRev">0</span><br />
+                  Avg. Clips Sold per sec: <span id="avgSales">0</span><br />
+
+                </div>
+                Unsold Inventory: <span id="unsoldClips">0</span><br />
+                <button class="button2" data-cheatUi style="display: none;" id="btnLower100Price" onclick="modifyPrice(-100)">-$1</button>
+                <button class="button2" data-cheatUi style="display: none;" id="btnLower10Price" onclick="modifyPrice(-10)">-10￠</button>
+                <button class="button2" id="btnLowerPrice" onclick="modifyPrice(-1)">-1￠</button>
+                <button class="button2" id="btnRaisePrice" onclick="modifyPrice(1)">+1￠</button>
+                <button class="button2" data-cheatUi style="display: none;" id="btnRaise10Price" onclick="modifyPrice(10)">+10￠</button>
+                <button class="button2" data-cheatUi style="display: none;" id="btnRaise100Price" onclick="modifyPrice(100)">+$1</button>
+                <br data-cheatUi style="display: none;" />
+                Price per Clip: $ <span id="margin">.25</span><br />
+
+                <span data-cheatUi style="display:none;">$</span><input type="number" min="0.01" step="0.01" value="1.00" id="manualMargin" data-cheatUi style="display: none; width: 5em;"/>
+                <button class="button2" data-cheatUi style="display:none;" id="setManualMargin" onclick="modifyPrice()">Set price</button>
+
+                <!--<button class="button2" data-cheatUi style="display:none;" id="equalizeDemand" onclick="setPriceToDemand()">Set to demand</button>
+                <br data-cheatUi style="display: none;" />-->
+
+                Public Demand: <span id="demand">10</span>%<br />
+                <br />
+
+                <button class="button2" id="btnExpandMarketing" onclick="buyAds()">Marketing</button>
+                <button class="button2" onclick="buyAds(Infinity);" data-cheatUi style="display: none;">+MAX</button>
+                
+                <span class="engineText6"> Level: </span><span class="engineText6" id="marketingLvl">1</span><br />
+                Cost: $ <span id="adCost">100.00</span><br />
+                <br />
+
+
+
+              </div>
+
+              <div id="manufacturingDiv">
+                <strong>Manufacturing</strong><br />
+                <hr>
+
+                Clips per Second: <span id="clipmakerRate">0</span><br />
+                <br />
+
+                <div id="wireBuyerDiv">
+                  <button class="button2" id ="btnToggleWireBuyer"
+                  onclick="toggleWireBuyer()">WireBuyer</button> <span class="engineText6" id="wireBuyerStatus">ON</span>
+                </div>
+
+                <div>
+                  <button class="button2" id="btnBuyWire" onclick="buyWire()">Wire</button>
+                  <button class="button2" id="btnBuy10Wire" data-cheatUi style="display: none;" onclick="buyWire(10);">x10</button>
+                  <button class="button2" id="btnBuy100Wire" data-cheatUi style="display: none;" onclick="buyWire(100);">x100</button>
+                  <button class="button2" id="btnBuy1000Wire" data-cheatUi style="display: none;" onclick="buyWire(1000);">x1000</button>
+                  <button class="button2" id="_cheatBtnBuyMaxWire" data-cheatUi style="display: none;" onclick="buyWire(Infinity);">Buy max</button>
+                  <span class="engineText6" id="wire">1000</span><span class="engineText6"> inches</span><br />
+                  Cost: $ <span id="wireCost">20</span><br />
+                  <br />
+                </div>
+
+                <div id="autoClipperDiv">
+                  <button class="button2" id="btnMakeClipper" onclick="makeClipper()">AutoClippers</button>
+                  <button data-cheatUi class="button2" onclick="makeClipper(10);" style="display: none;">+10</button>
+                  <button data-cheatUi class="button2" onclick="makeClipper(100);" style="display: none;">+100</button>
+                  <button data-cheatUi class="button2" onclick="makeClipper(Infinity);" style="display: none;">+MAX</button>
+                  <span class="engineText6" id="clipmakerLevel2">0</span><br />
+                  Cost: $ <span id="clipperCost">5.00</span><br />
+                  <br />
+                  </div>
+
+                  <div id="megaClipperDiv">
+                    <p class="engineText5">
+                      <button class="button2" id="btnMakeMegaClipper" onclick="makeMegaClipper()">MegaClippers</button>
+                      <button class="button2" data-cheatUi onclick="makeMegaClipper(10);" style="display: none;">+10</button>
+                      <button class="button2" data-cheatUi onclick="makeMegaClipper(100);" style="display: none;">+100</button>
+                      <button class="button2" data-cheatUi onclick="makeMegaClipper(Infinity);" style="display: none;">+MAX</button>
+                      <span class="engineText6" id="megaClipperLevel">0</span></p>
+                      Cost: $ <span id="megaClipperCost">500</span><br />
+                      <br />
+                    </div>
+
+                  </div>
+
+                  <br />
+
+        <section id="og-cheats" data-cheatUi style="display: none;">
+          <button id="save1Button" onclick="save1()">SAVE SLOT 1</button>
+          <button id="load1Button" onclick="load1()">LOAD SLOT 1</button><br />
+          <button id="save2Button" onclick="save2()">SAVE SLOT 2</button>
+          <button id="load2Button" onclick="load2()">LOAD SLOT 2</button><br />
+          <button id="resetButton" onclick="reset()">RESET ALL PROGRESS</button><br />
+
+          <input id="freeClipsIncrement" type="number" min="1" max="1E99" value="100000000" data-default="100000000" onchange="enforceValue(this);" />
+          <button id="freeClipsButton" onclick="cheatClips()">Free Clips</button><br />
+          
+          $<input id="freeMoneyIncrement" type="number" pattern="^\d*(\.\d{0,2})?$" min="0.01" max="1E99" value="10000000" data-default="10000000" onchange="enforceValue(this);" />
+          <button id="freeMoneyButton" onclick="cheatMoney()">Free Money</button><br />
+
+          <input id="freeTrustIncrement" type="number" min="1" max="1E10" value="1" data-default="1" onchange="enforceValue(this);" />
+          <button id="freeTrustButton" onclick="cheatTrust()">Free Trust</button><br />
+
+          <button id="freeOpsButton" onclick="cheatOps()">Free Ops</button>
+          <button id="freeProcButton" onclick="addProc(1E4, false)">Free Proc</button>
+          <button id="freeMemButton" onclick="addMem(1E4, false)">Free Mem</button>
+          <br />
+          <input id="freeCreatIncrement" type="number" min="1" max="1E99" value="1000" data-default="1000" onchange="enforceValue(this);" />
+          <button id="freeCreatButton" onclick="cheatCreat()">Free Creativity</button><br />
+
+          <input id="freeYomiIncrement" type="number" min="1" max="1E99" value="1000000" data-default="1000000" onchange="enforceValue(this);" />
+          <button id="freeYomiButton" onclick="cheatYomi()">Free Yomi</button><br />
+
+          <input id="freeGiftsIncrement" type="number" min="1" max="1E10" value="100" data-default="100" onchange="enforceValue(this);" />
+          <button id="freeGiftsButton" onclick="cheatGifts()">Free Gifts</button><br />
+
+          <input id="freeHonorIncrement" type="number" min="1" max="1E99" value="1000000" data-default="1000000" onchange="enforceValue(this);" />
+          <button id="freeHonorButton" onclick="cheatHonor()">Free Honor</button><br />
+          <button id="resetPrestige" onclick="resetPrestige()">Reset Prestige</button><br />
+          <br />
+          <button id="unlockInvest" onclick="project21.effect()">Unlock Investment Engine</button><br />
+          <!-- TODO: WIP, not working properly -->
+          <!-- <button id="unlockQComp" onclick="project50.effect()">Unlock Quantum Computing</button><br /> -->
+          <button id="unlockTourneys" onclick="project20.effect()">Unlock Strategic Modeling</button><br />
+          <br />
+          <button id="destroyAllHumansButton" onclick="cheatHypno()">Destroy all Humans</button><br />
+          <button id="freePrestigeU" onclick="cheatPrestigeU()">Free Prestige U</button>
+          <button id="freePrestigeS" onclick="cheatPrestigeS()">Free Prestige S</button>
+          <button id="debugBattleNumbers" onclick="setB()">Set Battle Number 1 to 7</button><br />
+          <button id="availMatterZero" onclick="zeroMatter()">Set Avail Matter to 0</button><br />
+        </section>
+
+      </div>
+
+      <!--Right Column-->
+
+      <div id="middleColumn">
+
+
+
+        <div id="compDiv">
+          <strong>Computational Resources</strong><br />
+          <hr>
+
+          <div id="trustDiv">
+            Trust: <span id="trust">2</span><br />
+            +1 Trust at: <span id="nextTrust">1000</span> clips<br />
+            <br />
           </div>
 
-          <div class="enginetext1" id="increaseMaxTrustDiv">
-            <button class="button2" id="btnIncreaseMaxTrust" onclick="increaseMaxTrust()">Increase Max Trust</button><br />
-            <button class="button2" id="btnMaxOutMaxTrust" onclick="increaseMaxTrust(Infinity)" data-cheatUi style="display: none;">Max-out Max Trust</button><br />
-            <input type="number" id="setMaxTrustValue" min="1" step="1" value="20" data-cheatUi style="display:none; width:5em;"/>
-            <button class="button2" data-cheatUi style="display: none;" onclick="setMaxTrust();">Set max trust</button>
-            <p class="engineText8">Cost: <span id="maxTrustCostDisplay">91,117.99</span> honor</p>
+          <div id="swarmGiftDiv">
+            Swarm Gifts: <span id="swarmGifts">0</span><br />
           </div>
 
-<!--
-        <div class="engine2" id="battleReportsDiv">
-        <p class="engineText">
-            <strong>Battles</strong><br />
 
-            <div id="battleListTop"> </div>
+          <div id="processorDisplay">
+            <button class="button2" id="btnAddProc" onclick="addProc()">Processors</button>
+            <button class="button2" id="btnAddProc10" data-cheatUi style="display:none;" onclick="addProc(10);">+10</button>
+            <button class="button2" id="btnAddProc100" data-cheatUi style="display:none;" onclick="addProc(100);">+100</button>
+            <button class="button2" id="btnAddProcMax" data-cheatUi style="display:none;" onclick="addProc(Infinity)">+MAX</button>
+            <span class="engineText10" id="processors">1</span>
+          </div>
+
+          <br />
+
+          <div id="memoryDisplay">
+            <button class="button2" id="btnAddMem" onclick="addMem()">&nbsp Memory &nbsp</button>
+            <button class="button2" id="btnAddMem10" data-cheatUi style="display:none;" onclick="addMem(10);">+10</button>
+            <button class="button2" id="btnAddMem100" data-cheatUi style="display:none;" onclick="addMem(100);">+100</button>
+            <button class="button2" id="btnAddMemMax" data-cheatUi style="display:none;" onclick="addMem(Infinity)">+MAX</button>
+            <span class="engineText10" id="memory">1</span>
+          </div>
+
+          <div data-cheatUi style="display:none;">
+            <button class="button2" onclick="addProc(-Infinity);addMem(-Infinity);">Zero Proc/Mem</button>
+            <button class="button2" onclick="balanceProcAndMem()">Balance Proc/Mem</button>
+            <button class="button2" onclick="maxProcAndMem()">Max Proc/Mem</button>
+          </div>
+
+          <br />
+
+          <br />
+          Operations: <span id="operations">0</span> / <span id="maxOps">1,000</span><br />
+
+          <div id="creativityDiv">
+
+            Creativity: <span id="creativity">0</span>
+
+          </div>
+
+          <br />
+
+          <div class="swarmEngine" id="swarmEngine">
+
+            <strong>Swarm Computing</strong><br />
+            Drones: <span id="swarmSize">0</span><br />
+            <div id ="swarmStatusDiv">Status: <span id="swarmStatus">x </span></div>
+            <div id="giftTimer">Next gift in <span id="giftCountdown">17 seconds</span></div>
+
+            <div id="feedButtonDiv">
+              <button class="button2" id="btnFeedSwarm" onclick="feedSwarm()">Feed the Swarm</button><br />
+              Cost: <span id="swarmFeedCost">0</span> MWs
+            </div>
+
+            <div id="teachButtonDiv">
+              <button class="button2" id="btnTeachSwarm" onclick="teachSwarm()">Teach the Swarm</button><br />
+              Cost: <span id="swarmFeedCost">0</span> MWs
+            </div>
+
+            <div id="entertainButtonDiv">
+              <button class="button2" id="btnEntertainSwarm" onclick="entertainSwarm()">Entertain the Swarm</button><br />
+              Cost: <span id="swarmEntertainCost">0</span> creat
+            </div>
+
+            <div id="cladButtonDiv">
+              <button class="button2" id="btnCladSwarm" onclick="cladSwarm()">Clad the Swarm</button><br />
+              Cost: <span id="swarmFeedCost">0</span> MWs
+            </div>
+
+            <div id="synchButtonDiv">
+              <button class="button2" id="btnSynchSwarm" onclick="synchSwarm()">Synchronize the Swarm</button><br />
+              Cost: <span id="swarmFeedCost">5,000</span> yomi
+            </div>
+          </div>
+
+          <div id="swarmSliderDiv">
+            <div id="sliderLabelWork">Work</div>
+            <div id="swarmSlider">
+              <input type="range" min="0" max="200" value="0" class="slider" id="slider" />
+            </div>
+            <div id="sliderLabelThink">Think</div>
+          </div>
+
+          <div class="qEngine" id="qComputing">
+
+            <strong>Quantum Computing</strong><br />
+
+            <div class="qChip" id="qChip0"> </div>
+            <div class="qChip" id="qChip1"> </div>
+            <div class="qChip" id="qChip2"> </div>
+            <div class="qChip" id="qChip3"> </div>
+            <div class="qChip" id="qChip4"> </div>
+            <div class="qChip" id="qChip5"> </div>
+            <div class="qChip" id="qChip6"> </div>
+            <div class="qChip" id="qChip7"> </div>
+            <div class="qChip" id="qChip8"> </div>
+            <div class="qChip" id="qChip9"> </div>
+
+            <br />
+
+            <button class="button2" id="btnQcompute" onclick="qComp()">
+              Compute
+            </button>
+            <button class="button2" data-cheatUi style="display: none;" onclick="qComp(1E5);">Max Compute</button>
+            <span id="qCompDisplay">
+              &nbsp;
+            </span>
+
+          </div>
 
         </div>
-      -->
+
+        <div id="projectsDiv">
+          <strong>Projects</strong><br />
 
 
-    </div>
+          <hr />
+
+
+          <div id="projectListTop">
+          </div>
+        </div>
+      </div>
+
+      <div id="rightColumn">
+
+        <div class="engine" id="investmentEngine">
+
+          <p class=engineText>
+            <strong>Investments</strong>
+
+            <select id="investStrat">
+              <option value="low">Low Risk</option>
+              <option value="med">Med Risk</option>
+              <option value="hi">High Risk</option>
+            </select>
+
+            <br />
+            <div id=investmentDiv1>
+
+              <button class="button2" id="btnInvest" onclick="investDeposit()">&nbsp;Deposit&nbsp;</button><br />
+              <button class="button2" id="btnWithdraw" onclick="investWithdraw()">&nbsp;Withdraw&nbsp;</button><br />
+
+              <button class="button2" id="btnForceSell" data-cheatUi onclick="forceSellAllStock();" style="display: none;">Force Sell</button><br />
+
+            </div>
+            <div id=investmentDiv2>
+              <p class="clean">
+                Cash: $<span id="investmentBankroll">0</span><br />
+                Stocks: $<span id="secValue">0</span><br />
+                <strong>Total: $<span id="portValue">0</span></strong><br />
+              </p>
+            </div>
+
+            <table class="table1">
+
+              <tr>
+                <th>Stock</th>
+                <th>Amt.</th>
+                <th>Price</th>
+                <th>Total</th>
+                <th>P/L</th>
+              </tr>
+
+              <tr id="stock1Display">
+                <td id="stock1Symbol">&nbsp;</td>
+                <td id="stock1Amount">&nbsp;</td>
+                <td id="stock1Price">&nbsp;</td>
+                <td id="stock1Total">&nbsp;</td>
+                <td id="stock1Profit"><strong>&nbsp;</strong></td>
+              </tr>
+              <tr id="stock2Display">
+                <td id="stock2Symbol">&nbsp;</td>
+                <td id="stock2Amount">&nbsp;</td>
+                <td id="stock2Price">&nbsp;</td>
+                <td id="stock2Total">&nbsp;</td>
+                <td id="stock2Profit"><strong>&nbsp;</strong></td>
+              </tr>
+              <tr id="stock3Display">
+                <td id="stock3Symbol">&nbsp;</td>
+                <td id="stock3Amount">&nbsp;</td>
+                <td id="stock3Price">&nbsp;</td>
+                <td id="stock3Total">&nbsp;</td>
+                <td id="stock3Profit"><strong>&nbsp;</strong></td>
+              </tr>
+              <tr id="stock4Display">
+                <td id="stock4Symbol">&nbsp;</td>
+                <td id="stock4Amount">&nbsp;</td>
+                <td id="stock4Price">&nbsp;</td>
+                <td id="stock4Total">&nbsp;</td>
+                <td id="stock4Profit"><strong>&nbsp;</strong></td>
+              </tr>
+              <tr id="stock5Display">
+                <td id="stock5Symbol">&nbsp;</td>
+                <td id="stock5Amount">&nbsp;</td>
+                <td id="stock5Price">&nbsp;</td>
+                <td id="stock5Total">&nbsp;</td>
+                <td id="stock5Profit"><strong>&nbsp;</strong></td>
+              </tr>
+
+            </table>
+
+
+          </div>
+
+          <div id="investmentEngineUpgrade">
+            <button class="button2" id="btnImproveInvestments" onclick="investUpgrade()">Upgrade Investment Engine</button>
+            <button class="button2" id="btnForceImproveInvestments" onclick="investUpgrade(Infinity);" data-cheatUi style="display: none;">+MAX</button>
+            <span class="engineText7"> Level: </span><span class="engineText7" id="investmentLevel">0</span><br />
+            <p class="engineText8">Cost: <span id="investUpgradeCost">100</span> Yomi</p>
+          </div>
+
+          <div class="engine2" id="strategyEngine">
+            <p class="engineText">
+              <strong>Strategic Modeling</strong>
+
+              <select id="stratPicker">
+              <option value="10">Pick a Strat</option>
+              <option value="0">RANDOM</option>
+            </select>
+            <button class="button2" id="btnRunTournament"
+            onclick="runTourney()">Run</button><br />
+
+            <div id="tournamentLabel">
+              <p class="clean2">
+                <span id="tourneyDisplay">Pick strategy, run tournament, gain yomi</span><br />
+              </p>
+            </div>
+
+            <div id="tournamentStuff">
+              <div id="tournamentTable">
+                <div id="vertPad">
+
+                  &nbsp;
+
+                </div>
+
+                <div id="vertStrat">
+
+                  &nbsp;
+
+                </div>
+
+                <div id="horizStrat">
+
+                  &nbsp;
+
+                </div>
+
+                <table class="table2">
+                  <thead>
+                    <tr>
+                      <th>&nbsp;</th>
+                      <th><span id= vLabela>Move A</span></th>
+                      <th><span id= vLabelb>Move B</span></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><span id= hLabela>Move A</span></td>
+                      <td id="payoffCellAA"><span id=aaPayoffH>0</span>,<span id=aaPayoffV>0</span></td>
+                      <td id="payoffCellAB"><span id=abPayoffH>0</span>,<span id=abPayoffV>0</span></td>
+                    </tr>
+                    <tr>
+                      <td><span id= hLabelb>Move B</span></td>
+                      <td id="payoffCellBA"><span id=baPayoffH>0</span>,<span id=baPayoffV>0</span></td>
+                      <td id="payoffCellBB"><span id=bbPayoffH>0</span>,<span id=bbPayoffV>0</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div id="tournamentResultsTable">
+
+                <table class="table3">
+                  <tr>
+                    <td><span id=results0>&nbsp;</span></td>
+                    <td><span id=results4>&nbsp;</span></td>
+                  </tr>
+
+                  <tr>
+                    <td><span id=results1>&nbsp;</span></td>
+                    <td><span id=results5>&nbsp;</span></td>
+                  </tr>
+
+                  <tr>
+                    <td><span id=results2>&nbsp;</span></td>
+                    <td><span id=results6>&nbsp;</span></td>
+                  </tr>
+
+                  <tr>
+                    <td><span id=results3>&nbsp;</span></td>
+                    <td><span id=results7>&nbsp;</span></td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+
+            <p class="engineText4">Yomi: <span id="yomiDisplay">0</span></p>
+          </div>
+
+          <div id="tournamentManagement">
+
+            <div id="tourneyButton">
+              <button class="button2" id="btnNewTournament"
+              onclick="newTourney()"> &nbsp; New Tournament &nbsp; </button>
+            </div>
+
+            <div id="autoTourneyControl">
+              <button class="button2" id ="btnToggleAutoTourney"
+              onclick="toggleAutoTourney()">AutoTourney</button>
+            </div>
+
+            <div id=autoTourneyStatusDiv>
+              <span class="engineText9" id="autoTourneyStatus">ON</span>
+            </div>
+
+            <br />
+            <p class="engineText8">Cost: <span id="newTourneyCost">1,000</span> ops</p>
+          </div>
+
+          <!--       BATTLE-->
+
+          <div id="battleCanvasDiv">
+            <canvas id="canvas"></canvas>
+            <div id="battleInterfaceDiv">
+              <strong>Combat</strong><br />
+
+              <p class="clean2">
+
+                <span id="battleName">Drifter Attack 1</span></p><br />
+
+                <div id="victoryDiv">
+
+                  <span id="battleResult">VICTORY</span>
+                  <p class="clean2">
+                    <span id="battleResultSign">+</span><span id="honorAmount">200</span> honor
+                  </p>
+
+                </div>
+
+                <br /><br />
+                <p class="clean2">
+                  Scale=<span id="battleScale">1</span>:1<br />
+                </p>
+              </div>
+            </div>
+
+            <div id="honorDiv">
+              <p class="engineText4">Honor: <span id="honorDisplay">0</span></p>
+            </div>
+
+            <!--        POWER-->
+
+            <div id="powerDiv">
+              <strong>Power</strong>
+              <hr>
+              Factory/Drone Performance: <span id="performance">0</span>%<br />
+              <br />
+              Consumption: <span id="powerConsumptionRate">0</span> MWs/sec<br />
+              <p class="clean">
+                Factories: <span id="facPowConRate">0</span> MWs/sec<br />
+                Drones: <span id="dronePowConRate">0</span> MWs/sec<br />
+              </p> <br />
+
+              <div data-cheatUi style="display: none">
+                <label title="Automatically buy solar farms, if funds allow, to keep up with energy consumption of drones and factories">
+                  <input type="checkbox" id="autoBuySolar" onchange="toggleAutoBuySolar()" />
+                  Auto-buy solar farms
+                </label>
+              </div>
+
+              Production: <span id="powerProductionRate">0</span> MWs/sec<br />
+              <p class="engineText5">
+                <button class="button2" id="btnMakeFarm"
+                onclick="makeFarm(1)">Solar Farm</button> <span class="engineText6" id="farmLevel">0</span></p>
+
+                <div id="farmMultiButtons">
+
+                  <p class="engineText5">
+                    <button class="button2" id="btnFarmx10" onclick="makeFarm(10)">+10</button>
+                    <button class="button2" id="btnFarmx100" onclick="makeFarm(100)">+100</button>
+                    <button class="button2" id="btnFarmxMAX" onclick="makeFarm(Infinity)" data-cheatUi style="display: none;">+MAX</button>
+                  </p>
+
+                </div>
+
+                <div class="toolTip3">
+
+                  <span id="farmRebootToolTip" class="toolTipText3">0</span>
+
+                  <button class="button2" id="btnFarmReboot" onclick="farmReboot()">&nbsp; Disassemble All &nbsp;</button>
+
+                </div>
+
+              </br>
+
+              Cost: <span id="farmCost">0</span> clips<br />
+              <br />
+
+              Storage: <span id="storedPower">0</span> / <span id="maxStorage">0</span> MWs<br />
+              <p class="engineText5">
+                <button class="button2" id="btnMakeBattery"
+                onclick="makeBattery(1)">Battery Tower</button> <span class="engineText6" id="batteryLevel">0</span></p>
+
+
+                <div id="batteryMultiButtons">
+
+                  <p class="engineText5">
+                    <button class="button2" id="btnBatteryx10" onclick="makeBattery(10)">+10</button>
+                    <button class="button2" id="btnBatteryx100" onclick="makeBattery(100)">+100</button>
+                    <button class="button2" id="btnBatteryxMAX" onclick="makeBattery(Infinity)">+MAX</button>
+                  </p>
+
+                </div>
+
+                <div class="toolTip3">
+
+                  <span id="batteryRebootToolTip" class="toolTipText3">0</span>
+
+                  <button class="button2" id="btnBatteryReboot" onclick="batteryReboot()">&nbsp; Disassemble All &nbsp;</button>
+
+                </div>
+
+              </br>
+
+              Cost: <span id="batteryCost">0</span> clips<br />
+              <br />
+
+            </div>
+
+            <!--        POWER-->
+
+
+            <div class="engine2" id="probeDesignDiv">
+
+              <p class="engineText">
+
+                <strong>Von Neumann Probe Design</strong><br />
+                Trust:
+                <span id="probeTrustUsedDisplay">0</span> / <span id="probeTrustDisplay">0</span>
+                (<span id="maxTrustDisplay">0</span> Max)<br />
+
+              </p>
+
+
+              <button class="button2" id="btnZeroProbeSpeed" onclick="lowerProbeSpeed(Infinity)" data-cheatUi style="display: none">0</button>
+              <button class="button2" id="btnLowerProbeSpeed10" data-cheatUi style="display: none;" onclick="lowerProbeSpeed(10)">-10</button>
+              <button class="button2" id="btnLowerProbeSpeed" onclick="lowerProbeSpeed()"><strong>-</strong></button>
+              <button class="button2" id="btnRaiseProbeSpeed" onclick="raiseProbeSpeed()"><strong>+</strong></button>
+              <button class="button2" id="btnRaiseProbeSpeed10" data-cheatUi style="display: none;" onclick="raiseProbeSpeed(10)">+10</button>
+              <button class="button2" id="btnMaxProbeSpeed" data-cheatUi style="display: none;" onclick="raiseProbeSpeed(Infinity)">MAX</button>
+
+              <div class="toolTip2">
+
+                <span class="toolTipText2">Modifies rate of exploration</span>
+
+                Speed: <span id="probeSpeedDisplay">0</span>
+
+              </div><br />
+
+
+
+              <button class="button2" id="btnZeroProbeNav" onclick="lowerProbeNav(Infinity)" data-cheatUi style="display: none">0</button>
+              <button class="button2" id="btnLowerProbeNav10" data-cheatUi style="display: none;" onclick="lowerProbeNav(10)">-10</button>
+              <button class="button2" id="btnLowerProbeNav" onclick="lowerProbeNav()"><strong>-</strong></button>
+              <button class="button2" id="btnRaiseProbeNav" onclick="raiseProbeNav()"><strong>+</strong></button>
+              <button class="button2" id="btnRaiseProbeNav10" data-cheatUi style="display: none;" onclick="raiseProbeNav(10)">+10</button>
+              <button class="button2" id="btnMaxProbeNav" data-cheatUi style="display: none;" onclick="raiseProbeNav(Infinity)">MAX</button>
+
+              <div class="toolTip2">
+
+                <span class="toolTipText2">Rate at which probes gain access to new matter</span>
+
+                Exploration: <span id="probeNavDisplay">0</span>
+
+              </div><br />
+
+              <button class="button2" id="btnZeroProbeRep" onclick="lowerProbeRep(Infinity)" data-cheatUi style="display: none">0</button>
+              <button class="button2" id="btnLowerProbeRep10" data-cheatUi style="display: none;" onclick="lowerProbeRep(10)">-10</button>
+              <button class="button2" id="btnLowerProbeRep" onclick="lowerProbeRep()"><strong>-</strong></button>
+              <button class="button2" id="btnRaiseProbeRep" onclick="raiseProbeRep()"><strong>+</strong></button>
+              <button class="button2" id="btnRaiseProbeRep10" data-cheatUi style="display: none;" onclick="raiseProbeRep(10)">+10</button>
+              <button class="button2" id="btnMaxProbeRep" data-cheatUi style="display: none;" onclick="raiseProbeRep(Infinity)">MAX</button>
+
+              <div class="toolTip2">
+
+                <span class="toolTipText2">Rate at which probes generate more probes (each new probe costs 100 quadrillion clips) </span>
+
+                Self-Replication: <span id="probeRepDisplay">0</span>
+
+              </div><br />
+
+              <button class="button2" id="btnZeroProbeHaz" onclick="lowerProbeHaz(Infinity)" data-cheatUi style="display: none">0</button>
+              <button class="button2" id="btnLowerProbeHaz10" data-cheatUi style="display: none;" onclick="lowerProbeHaz(10)">-10</button>
+              <button class="button2" id="btnLowerProbeHaz" onclick="lowerProbeHaz()"><strong>-</strong></button>
+              <button class="button2" id="btnRaiseProbeHaz" onclick="raiseProbeHaz()"><strong>+</strong></button>
+              <button class="button2" id="btnRaiseProbeHaz10" data-cheatUi style="display: none;" onclick="raiseProbeHaz(10)">+10</button>
+              <button class="button2" id="btnMaxProbeHaz" data-cheatUi style="display: none;" onclick="raiseProbeHaz(Infinity)">MAX</button>
+
+              <div class="toolTip2">
+
+                <span class="toolTipText2">Reduces damage from dust, junk, radiation, and general entropic decay</span>
+
+                Hazard Remediation: <span id="probeHazDisplay">0</span>
+
+              </div>    <br />
+
+              <button class="button2" id="btnZeroProbeFac" onclick="lowerProbeFac(Infinity)" data-cheatUi style="display: none">0</button>
+              <button class="button2" id="btnLowerProbeFac10" data-cheatUi style="display: none;" onclick="lowerProbeFac(10)">-10</button>
+              <button class="button2" id="btnLowerProbeFac" onclick="lowerProbeFac()"><strong>-</strong></button>
+              <button class="button2" id="btnRaiseProbeFac" onclick="raiseProbeFac()"><strong>+</strong></button>
+              <button class="button2" id="btnRaiseProbeFac10" data-cheatUi style="display: none;" onclick="raiseProbeFac(10)">+10</button>
+              <button class="button2" id="btnMaxProbeFac" data-cheatUi style="display: none;" onclick="raiseProbeFac(Infinity)">MAX</button>
+
+              <div class="toolTip2">
+
+                <span class="toolTipText2">Rate at which probes build factories (each new factory costs 100 million clips)</span>
+
+                Factory Production: <span id="probeFacDisplay">0</span>
+
+              </div>    <br />
+
+              <button class="button2" id="btnZeroProbeHarv" onclick="lowerProbeHarv(Infinity)" data-cheatUi style="display: none">0</button>
+              <button class="button2" id="btnLowerProbeHarv10" onclick="lowerProbeHarv(10)" data-cheatUi style="display: none;">-10</button>
+              <button class="button2" id="btnLowerProbeHarv" onclick="lowerProbeHarv()"><strong>-</strong></button>
+              <button class="button2" id="btnRaiseProbeHarv" onclick="raiseProbeHarv()"><strong>+</strong></button>
+              <button class="button2" id="btnRaiseProbeHarv10" onclick="raiseProbeHarv(10)" data-cheatUi style="display: none;">+10</button>
+              <button class="button2" id="btnMaxProbeHarv" data-cheatUi style="display: none;" onclick="raiseProbeHarv(Infinity)">MAX</button>
+
+              <div class="toolTip2">
+
+                <span class="toolTipText2">Rate at which probes spawn Harvester Drones (each new drone costs 2 million clips)</span>
+
+                Harvester Drone Production: <span id="probeHarvDisplay">0</span>
+
+              </div>     <br />
+
+              <button class="button2" id="btnZeroProbeWire" onclick="lowerProbeWire(Infinity)" data-cheatUi style="display: none">0</button>
+              <button class="button2" id="btnLowerProbeWire10" data-cheatUi style="display: none;" onclick="lowerProbeWire(10)">-10</button>
+              <button class="button2" id="btnLowerProbeWire" onclick="lowerProbeWire()"><strong>-</strong></button>
+              <button class="button2" id="btnRaiseProbeWire" onclick="raiseProbeWire()"><strong>+</strong></button>
+              <button class="button2" id="btnRaiseProbeWire10" data-cheatUi style="display: none;" onclick="raiseProbeWire(10)">+10</button>
+              <button class="button2" id="btnMaxProbeWire" data-cheatUi style="display: none;" onclick="raiseProbeWire(Infinity)">MAX</button>
+
+              <div class="toolTip2">
+
+                <span class="toolTipText2">Rate at which probes spawn Wire Drones (each new drone costs 2 million clips)</span>
+
+                Wire Drone Production: <span id="probeWireDisplay">0</span>
+
+              </div>    <br />
+
+
+              <div id="combatButtonDiv">
+                <button class="button2" id="btnZeroProbeCombat" onclick="lowerProbeCombat(Infinity)" data-cheatUi style="display: none">0</button>
+                <button class="button2" id="btnLowerProbeCombat10" data-cheatUi style="display: none;" onclick="lowerProbeCombat(10)">-10</button>
+                <button class="button2" id="btnLowerProbeCombat" onclick="lowerProbeCombat()"><strong>-</strong></button>
+                <button class="button2" id="btnRaiseProbeCombat" onclick="raiseProbeCombat()"><strong>+</strong></button>
+                <button class="button2" id="btnRaiseProbeCombat10" data-cheatUi style="display: none;" onclick="raiseProbeCombat(10)">+10</button>
+                <button class="button2" id="btnMaxProbeCombat" data-cheatUi style="display: none;" onclick="raiseProbeCombat(Infinity)">MAX</button>
+
+                <div class="toolTip2">
+
+                  <span class="toolTipText2">Determines offensive and defensive effectiveness in battle</span>
+
+                  Combat: <span id="probeCombatDisplay">0</span>
+
+
+                </div>    <br />
+
+              </div>
+
+              <button class="button2" data-cheatUi style="display: none;" onclick="zeroProbeMetrics();">Zero all</button>
+              <button class="button2" data-cheatUi style="display: none;" onclick="balanceProbeMetrics();">Balance all</button>
+            </div>
+
+            <div class="enginetext1" id="increaseProbeTrustDiv">
+              <button class="button2" id="btnIncreaseProbeTrust" onclick="increaseProbeTrust()">Increase Probe Trust</button><br />
+              <button class="button2" id="btnMaxOutProbeTrust" onclick="increaseProbeTrust(Infinity)" data-cheatUi style="display:none;">Max-out Probe Trust</button><br />
+              <p class="engineText8">Cost: <span id="probeTrustCostDisplay">0</span> yomi</p>
+            </div>
+
+            <div class="enginetext1" id="increaseMaxTrustDiv">
+              <button class="button2" id="btnIncreaseMaxTrust" onclick="increaseMaxTrust()">Increase Max Trust</button><br />
+              <button class="button2" id="btnMaxOutMaxTrust" onclick="increaseMaxTrust(Infinity)" data-cheatUi style="display: none;">Max-out Max Trust</button><br />
+              <input type="number" id="setMaxTrustValue" min="1" step="1" value="20" data-cheatUi style="display:none; width:5em;"/>
+              <button class="button2" data-cheatUi style="display: none;" onclick="setMaxTrust();">Set max trust</button>
+              <p class="engineText8">Cost: <span id="maxTrustCostDisplay">91,117.99</span> honor</p>
+            </div>
+
+    <!--
+          <div class="engine2" id="battleReportsDiv">
+          <p class="engineText">
+              <strong>Battles</strong><br />
+
+              <div id="battleListTop"> </div>
+
+          </div>
+        -->
+
+
+      </div>
+    </section>
     
     <script type="text/javascript" src="combat.js"></script>
     <script type="text/javascript" src="globals.js"></script>
